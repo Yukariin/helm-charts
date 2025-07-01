@@ -10,9 +10,9 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["(^|/)Chart\\.yaml$"],
+      "managerFilePatterns": ["(^|/)Chart\\.ya?ml$"],
       "matchStrings": [
-        "image: (?:(?<registryUrls>.*?)\\/)?(?<depName>.*?\\/.*?):(?<currentValue>.*?)\\s+"
+        "#\\s?renovate: image=(?:(?<registryUrls>.*?)\\/)?(?<depName>.*?\\/.*?)\\s?appVersion:\\s?\\\"?(?<currentValue>[\\w+\\.\\-]*)\""
       ],
       "datasourceTemplate": "docker"
     }
