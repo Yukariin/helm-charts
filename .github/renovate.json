@@ -6,5 +6,15 @@
   ],
   "postUpdateOptions": [
     "helmUpdateSubChartArchives"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["(^|/)Chart\\.yaml$"],
+      "matchStrings": [
+        "image: (?:(?<registryUrls>.*?)\\/)?(?<depName>.*?\\/.*?):(?<currentValue>.*?)\\s+"
+      ],
+      "datasourceTemplate": "docker"
+    }
   ]
 }
