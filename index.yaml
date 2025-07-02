@@ -3,6 +3,16 @@ entries:
   radarr:
   - apiVersion: v2
     appVersion: 5.26.2.10099-ls276
+    created: "2025-07-02T17:05:09.864766783Z"
+    description: A Radarr Helm chart for Kubernetes
+    digest: 66f07b6c687af1697bac1c271e2ae5b7e9a9976e8535b34bb4f325c89c49bafc
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/radarr-0.1.2/radarr-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 5.26.2.10099-ls276
     created: "2025-07-02T17:01:27.890929534Z"
     description: A Radarr Helm chart for Kubernetes
     digest: c4741ff5bd6b227ca5b9b050f94eda6ef058ef7ed73b74e40859c3379ec2d0b7
@@ -72,4 +82,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-02T17:01:27.890944823Z"
+generated: "2025-07-02T17:05:09.864783965Z"
