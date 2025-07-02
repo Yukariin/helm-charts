@@ -3,6 +3,16 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.15.2941-ls285
+    created: "2025-07-02T15:56:28.802886628Z"
+    description: A Sonarr Helm chart for Kubernetes
+    digest: 3183ca4b4a5933bfdd8b3ac30ad677cb1337f0270d5413aa9163ec45d0b0e708
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.2.1/sonarr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 4.0.15.2941-ls285
     created: "2025-07-02T15:34:50.330161527Z"
     description: A Sonarr Helm chart for Kubernetes
     digest: c5d95c5b493ce8e93e560a8e02c40db7bb13e0a6cd08182ee159abb6dd82ade5
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-02T15:34:50.33017373Z"
+generated: "2025-07-02T15:56:28.802908388Z"
