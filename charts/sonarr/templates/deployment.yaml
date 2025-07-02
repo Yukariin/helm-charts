@@ -56,14 +56,27 @@ spec:
           resources:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          {{- with .Values.volumeMounts }}
           volumeMounts:
+            {{- range $name, $config := .Values.persistence }}
+            {{- if $config.enabled }}
+            - name: {{ $name }}
+              mountPath: {{ $config.mountPath }}
+            {{- end }}
+            {{- end }}
+            {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
-          {{- end }}
-      {{- with .Values.volumes }}
+            {{- end }}
       volumes:
+        {{- range $name, $config := .Values.persistence }}
+        {{- if $config.enabled }}
+        - name: {{ $name }}
+          persistentVolumeClaim:
+            claimName: {{ include "sonarr.fullname" $ }}-{{ $name }}
+        {{- end }}
+        {{- end }}
+        {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
