@@ -129,9 +129,9 @@ persistence:
     accessMode: ReadWriteOnce
     storageClass: ""
     mountPath: /config
-  data:
+  media:
     enabled: false
     size: 100Gi
     accessMode: ReadWriteOnce
     storageClass: ""
-    mountPath: /data
+    mountPath: /media
