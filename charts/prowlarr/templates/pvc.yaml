@@ -1,0 +1,24 @@
+{{- range $name, $config := .Values.persistence }}
+{{- if and $config.enabled (not $config.existingClaim) }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "prowlarr.fullname" $ }}-{{ $name }}
+  labels:
+    {{- include "prowlarr.labels" $ | nindent 4 }}
+spec:
+  accessModes:
+    - {{ $config.accessMode | default "ReadWriteOnce" }}
+  resources:
+    requests:
+      storage: {{ $config.size | quote }}
+  {{- if $config.storageClass }}
+  {{- if (eq "-" $config.storageClass) }}
+  storageClassName: ""
+  {{- else }}
+  storageClassName: {{ $config.storageClass }}
+  {{- end }}
+  {{- end }}
+{{- end }}
+{{- end }}

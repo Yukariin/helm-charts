@@ -23,6 +23,7 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": [
+        "linuxserver/prowlarr",
         "linuxserver/radarr",
         "linuxserver/sonarr"
       ],
