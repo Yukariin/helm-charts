@@ -121,3 +121,17 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+persistence:
+  config:
+    enabled: true
+    size: 500Mi
+    accessMode: ReadWriteOnce
+    storageClass: ""
+    mountPath: /config
+  data:
+    enabled: false
+    size: 100Gi
+    accessMode: ReadWriteOnce
+    storageClass: ""
+    mountPath: /data
