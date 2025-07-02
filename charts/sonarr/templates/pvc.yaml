@@ -13,12 +13,8 @@ spec:
   resources:
     requests:
       storage: {{ $config.size | quote }}
-  {{- if $config.storageClass }}
-  {{- if (eq "-" $config.storageClass) }}
-  storageClassName: ""
-  {{- else }}
-  storageClassName: {{ $config.storageClass }}
-  {{- end }}
+  {{- with $config.storageClass }}
+  storageClassName: {{ if eq "-" . }}""{{ else }}{{ . }}{{ end }}
   {{- end }}
 {{- end }}
 {{- end }}
