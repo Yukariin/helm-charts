@@ -10,7 +10,9 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)Chart\\.ya?ml$"],
+      "managerFilePatterns": [
+        "/(^|/)Chart\\.ya?ml$/"
+      ],
       "matchStrings": [
         "#\\s*renovate:\\s*image=(?<depName>.*?)\\n\\s*appVersion:\\s*\"?(?<currentValue>[\\w.-]+)\"?"
       ],
