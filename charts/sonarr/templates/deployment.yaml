@@ -61,6 +61,9 @@ spec:
             {{- if $config.enabled }}
             - name: {{ $name }}
               mountPath: {{ $config.mountPath }}
+              {{- if $config.subPath }}
+              subPath: {{ $config.subPath }}
+              {{- end }}
             {{- end }}
             {{- end }}
             {{- with .Values.volumeMounts }}
@@ -71,7 +74,7 @@ spec:
         {{- if $config.enabled }}
         - name: {{ $name }}
           persistentVolumeClaim:
-            claimName: {{ include "sonarr.fullname" $ }}-{{ $name }}
+            claimName: {{ $config.existingClaim | default (printf "%s-%s" (include "sonarr.fullname" $) $name) }}
         {{- end }}
         {{- end }}
         {{- with .Values.volumes }}
