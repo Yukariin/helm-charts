@@ -1,21 +1,24 @@
-{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+{{- range $name, $config := .Values.persistence }}
+{{- if $config.enabled }}
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "sonarr.fullname" . }}
+  name: {{ include "sonarr.fullname" $ }}-{{ $name }}
   labels:
-    {{- include "sonarr.labels" . | nindent 4 }}
-  {{- with .Values.persistence.annotations }}
-  annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
+    {{- include "sonarr.labels" $ | nindent 4 }}
 spec:
   accessModes:
-    {{- toYaml .Values.persistence.accessModes | nindent 4 }}
+    - {{ $config.accessMode | default "ReadWriteOnce" }}
   resources:
     requests:
-      storage: {{ .Values.persistence.size | quote }}
-  {{- if .Values.persistence.storageClassName }}
-  storageClassName: {{ .Values.persistence.storageClassName }}
+      storage: {{ $config.size | quote }}
+  {{- if $config.storageClass }}
+  {{- if (eq "-" $config.storageClass) }}
+  storageClassName: ""
+  {{- else }}
+  storageClassName: {{ $config.storageClass }}
   {{- end }}
+  {{- end }}
+{{- end }}
 {{- end }}
