@@ -23,6 +23,7 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": [
+        "linuxserver/radarr",
         "linuxserver/sonarr"
       ],
       "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+-ls\\d+)$",
