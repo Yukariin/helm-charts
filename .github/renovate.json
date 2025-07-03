@@ -9,10 +9,9 @@
   ],
   "customManagers": [
     {
+      "description": ["Process Helm charts"],
       "customType": "regex",
-      "managerFilePatterns": [
-        "/(^|/)Chart\\.ya?ml$/"
-      ],
+      "managerFilePatterns": ["/(^|/)Chart\\.ya?ml$/"],
       "matchStrings": [
         "#\\s*renovate:\\s*image=(?<depName>.*?)\\n\\s*appVersion:\\s*\"?(?<currentValue>[\\w.-]+)\"?"
       ],
