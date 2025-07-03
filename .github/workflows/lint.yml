@@ -1,0 +1,46 @@
+name: Lint and Test
+
+on:
+  - pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Install helm
+        uses: azure/setup-helm@v4
+      
+      - name: Set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      
+      - name: Run pre-commit
+        uses: pre-commit/action@v3
+
+      - name: Set up chart-testing
+        uses: helm/chart-testing-action@v2.7.0
+      
+      - name: Run chart-testing (list-changed)
+        id: list-changed
+        run: |
+          changed=$(ct list-changed --target-branch ${TARGET_BRANCH})
+          if [[ -n "$changed" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          TARGET_BRANCH: ${{ github.base_ref }}
+      
+      - name: Run chart-testing
+        if: steps.list-changed.outputs.changed == 'true'
+        run: ct lint --target-branch ${TARGET_BRANCH} --validate-maintainers=false
+        env:
+          TARGET_BRANCH: ${{ github.base_ref }}
