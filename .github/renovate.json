@@ -2,11 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    "replacements:k8s-registry-move",
     ":semanticCommitTypeAll(chore)"
   ],
   "postUpdateOptions": [
     "helmUpdateSubChartArchives"
   ],
+  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
   "customManagers": [
     {
       "description": ["Process Helm charts"],
