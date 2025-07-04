@@ -11,6 +11,17 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/autobrr-0.1.0/autobrr-0.1.0.tgz
     version: 0.1.0
+  navidrome:
+  - apiVersion: v2
+    appVersion: 0.57.0
+    created: "2025-07-04T17:05:56.873531407Z"
+    description: A Helm chart for Kubernetes
+    digest: 83f2c7b2f0d2062d724797aad13b5a4d1b86f1e1d001882ce47bd4065ca6aca0
+    name: navidrome
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/navidrome-0.1.0/navidrome-0.1.0.tgz
+    version: 0.1.0
   prowlarr:
   - apiVersion: v2
     appVersion: 1.37.0.5076-ls120
@@ -145,4 +156,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-04T16:17:17.676681083Z"
+generated: "2025-07-04T17:05:56.873563177Z"
