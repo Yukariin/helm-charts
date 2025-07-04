@@ -3,6 +3,16 @@ entries:
   autobrr:
   - apiVersion: v2
     appVersion: v1.63.1
+    created: "2025-07-04T17:50:27.101545679Z"
+    description: An Autobrr Helm chart for Kubernetes
+    digest: c115fa6759d93ecd5ad6cc401541bee4f70ad74d4f6be0332520b1f0cabc0dfa
+    name: autobrr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/autobrr-0.1.1/autobrr-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: v1.63.1
     created: "2025-07-03T12:35:19.30413071Z"
     description: An Autobrr Helm chart for Kubernetes
     digest: a4af1eeeb75c026ae67834165461606bac1d233176ce99d26bfe56b2f5f67eb8
@@ -35,6 +45,16 @@ entries:
   prowlarr:
   - apiVersion: v2
     appVersion: 1.37.0.5076-ls120
+    created: "2025-07-04T17:50:27.222642856Z"
+    description: A Prowlarr Helm chart for Kubernetes
+    digest: b64d7ed14076396468377239059e25cba88e78e66058bca8076948983bd8decc
+    name: prowlarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/prowlarr-0.1.2/prowlarr-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.37.0.5076-ls120
     created: "2025-07-02T19:16:10.927699536Z"
     description: A Prowlarr Helm chart for Kubernetes
     digest: 14294c56e4e8b15fdc1fb5a4c864c7eeea4a52e22e9d2d5fd13baac429667c25
@@ -54,6 +74,16 @@ entries:
     - https://github.com/Yukariin/helm-charts/releases/download/prowlarr-0.1.0/prowlarr-0.1.0.tgz
     version: 0.1.0
   radarr:
+  - apiVersion: v2
+    appVersion: 5.26.2.10099-ls276
+    created: "2025-07-04T17:50:27.375328813Z"
+    description: A Radarr Helm chart for Kubernetes
+    digest: dc6b71cbd659c9792b269c735f3accc8ecfe6fd13b0400cba45962ac6d38b0fe
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/radarr-0.1.4/radarr-0.1.4.tgz
+    version: 0.1.4
   - apiVersion: v2
     appVersion: 5.26.2.10099-ls276
     created: "2025-07-02T19:16:11.053804299Z"
@@ -97,6 +127,16 @@ entries:
   slskd:
   - apiVersion: v2
     appVersion: 0.22.5
+    created: "2025-07-04T17:50:27.729626413Z"
+    description: An slskd Helm chart for Kubernetes
+    digest: 6bf5530ffb841e75fba725a3e0fbea7098179e52651284a78d89e028e938ac9c
+    name: slskd
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/slskd-0.1.2/slskd-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.22.5
     created: "2025-07-04T16:17:17.587443418Z"
     description: An slskd Helm chart for Kubernetes
     digest: 4b1fbd46e609b5205e183d8f0bdec7999ad1d6699422233407653895518e2963
@@ -106,6 +146,16 @@ entries:
     - https://github.com/Yukariin/helm-charts/releases/download/slskd-0.1.1/slskd-0.1.1.tgz
     version: 0.1.1
   sonarr:
+  - apiVersion: v2
+    appVersion: 4.0.15.2941-ls285
+    created: "2025-07-04T17:50:27.878454853Z"
+    description: A Sonarr Helm chart for Kubernetes
+    digest: 2d395bf575f50a20dade8333da393d67728890c65ce4f0cf43289c61183204b3
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.2.4/sonarr-0.2.4.tgz
+    version: 0.2.4
   - apiVersion: v2
     appVersion: 4.0.15.2941-ls285
     created: "2025-07-02T19:16:11.193148973Z"
@@ -166,4 +216,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-04T17:44:39.10725477Z"
+generated: "2025-07-04T17:50:27.878533861Z"
