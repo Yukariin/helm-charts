@@ -41,16 +41,61 @@ jobs:
             echo "changed_list=${changed//$'\n'/ }" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: run renovate-post-upgrade-hook
+      - name: Bump chart version
         if: steps.list-changed.outputs.changed == 'true'
         env:
           CHART: ${{ steps.list-changed.outputs.changed_list }}
         #language=bash
         run: |
-          if [[ -x "$CHART/hack/renovate-post-upgrade-hook.sh" ]]; then
-            cd "$CHART"
-            ./hack/renovate-post-upgrade-hook.sh
+          if [[ ! -d "${CHART}" ]]; then
+            echo "${CHART} directory not found"
+            exit 0
           fi
+
+          # Extract current appVersion and chart version from Chart.yaml
+          APP_VERSION=$(grep -e "^appVersion:" "$CHART/Chart.yaml" | cut -d ":" -f 2 | tr -d '[:space:]' | tr -d '"')
+          CHART_VERSION=$(grep -e "^version:" "$CHART/Chart.yaml" | cut -d ":" -f 2 | tr -d '[:space:]' | tr -d '"')
+
+          # Extract major, minor and patch versions of appVersion
+          APP_MAJOR_VERSION=$(printf '%s' "$APP_VERSION" | cut -d "." -f 1)
+          APP_MINOR_VERSION=$(printf '%s' "$APP_VERSION" | cut -d "." -f 2)
+          APP_PATCH_VERSION=$(printf '%s' "$APP_VERSION" | cut -d "." -f 3)
+
+          # Extract major, minor and patch versions of chart version
+          CHART_MAJOR_VERSION=$(printf '%s' "$CHART_VERSION" | cut -d "." -f 1)
+          CHART_MINOR_VERSION=$(printf '%s' "$CHART_VERSION" | cut -d "." -f 2)
+          CHART_PATCH_VERSION=$(printf '%s' "$CHART_VERSION" | cut -d "." -f 3)
+
+          # Get previous appVersion from the base commit of the pull request
+          BASE_COMMIT=$(git merge-base origin/main HEAD)
+          PREV_APP_VERSION=$(git show "$BASE_COMMIT":"$CHART/Chart.yaml" | grep -e "^appVersion:" | cut -d ":" -f 2 | tr -d '[:space:]' | tr -d '"')
+
+          # Extract major, minor and patch versions of previous appVersion
+          PREV_APP_MAJOR_VERSION=$(printf '%s' "$PREV_APP_VERSION" | cut -d "." -f 1)
+          PREV_APP_MINOR_VERSION=$(printf '%s' "$PREV_APP_VERSION" | cut -d "." -f 2)
+          PREV_APP_PATCH_VERSION=$(printf '%s' "$PREV_APP_VERSION" | cut -d "." -f 3)
+
+          # Check if the major, minor, or patch version of appVersion has changed
+          if [[ "$APP_MAJOR_VERSION" != "$PREV_APP_MAJOR_VERSION" ]]; then
+            # Bump major version of the chart and reset minor and patch versions to 0
+            CHART_MAJOR_VERSION=$((CHART_MAJOR_VERSION+1))
+            CHART_MINOR_VERSION=0
+            CHART_PATCH_VERSION=0
+          elif [[ "$APP_MINOR_VERSION" != "$PREV_APP_MINOR_VERSION" ]]; then
+            # Bump minor version of the chart and reset patch version to 0
+            CHART_MINOR_VERSION=$((CHART_MINOR_VERSION+1))
+            CHART_PATCH_VERSION=0
+          elif [[ "$APP_PATCH_VERSION" != "$PREV_APP_PATCH_VERSION" ]]; then
+            # Bump patch version of the chart
+            CHART_PATCH_VERSION=$((CHART_PATCH_VERSION+1))
+          fi
+
+          # Update the chart version in Chart.yaml
+          CHART_NEW_VERSION="${CHART_MAJOR_VERSION}.${CHART_MINOR_VERSION}.${CHART_PATCH_VERSION}"
+          sed -i "s/^version:.*/version: ${CHART_NEW_VERSION}/" "$CHART/Chart.yaml"
+
+          # Generate chart README.md file
+          pre-commit run --all-files || echo "Ignoring pre-commit failure as it is expected due to helm-docs file modifications"
 
       - name: Commit changes
         if: steps.list-changed.outputs.changed == 'true'
