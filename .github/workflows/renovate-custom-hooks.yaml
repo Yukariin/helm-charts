@@ -18,13 +18,10 @@ jobs:
           fetch-depth: 0
 
       # Using a GitHub App token, because GitHub Actions doesn't run on commits from github-actions bot
-      # Used App:
-      # https://github.com/organizations/prometheus-community/settings/apps/helm-charts-renovate-helper.
-      # Ref: https://github.com/prometheus-community/helm-charts/issues/5213.
       - uses: actions/create-github-app-token@v2.0.6
         id: app-token
         with:
-          app-id: 1179738
+          app-id: 1514274
           private-key: ${{ secrets.APP_RENOVATE_HELPER_PRIVATE_KEY }}
 
       - uses: actions/setup-python@v5.6.0
