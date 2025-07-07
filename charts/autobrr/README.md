@@ -1,32 +1,45 @@
 # autobrr
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.63.1](https://img.shields.io/badge/AppVersion-v1.63.1-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.63.1](https://img.shields.io/badge/AppVersion-v1.63.1-informational?style=flat-square)
 
 An Autobrr Helm chart for Kubernetes
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| file://../common | common | 0.1.0 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| deployments.main.autoscaling.enabled | bool | `false` |  |
+| deployments.main.autoscaling.maxReplicas | int | `100` |  |
+| deployments.main.autoscaling.minReplicas | int | `1` |  |
+| deployments.main.autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| deployments.main.image.pullPolicy | string | `"IfNotPresent"` |  |
+| deployments.main.image.repository | string | `"ghcr.io/autobrr/autobrr"` |  |
+| deployments.main.image.tag | string | `""` |  |
+| deployments.main.livenessProbe.httpGet.path | string | `"/api/healthz/liveness"` |  |
+| deployments.main.livenessProbe.httpGet.port | string | `"http"` |  |
+| deployments.main.ports[0].containerPort | int | `7474` |  |
+| deployments.main.ports[0].name | string | `"http"` |  |
+| deployments.main.ports[0].protocol | string | `"TCP"` |  |
+| deployments.main.readinessProbe.httpGet.path | string | `"/api/healthz/readiness"` |  |
+| deployments.main.readinessProbe.httpGet.port | string | `"http"` |  |
+| deployments.main.replicaCount | int | `1` |  |
+| deployments.main.resources | object | `{}` |  |
 | fullnameOverride | string | `""` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"ghcr.io/autobrr/autobrr"` |  |
-| image.tag | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
-| ingress.annotations | object | `{}` |  |
-| ingress.className | string | `""` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts[0].host | string | `"chart-example.local"` |  |
-| ingress.hosts[0].paths[0].path | string | `"/"` |  |
-| ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
-| ingress.tls | list | `[]` |  |
-| livenessProbe.httpGet.path | string | `"/api/healthz/liveness"` |  |
-| livenessProbe.httpGet.port | string | `"http"` |  |
+| ingress.main.annotations | object | `{}` |  |
+| ingress.main.className | string | `""` |  |
+| ingress.main.enabled | bool | `false` |  |
+| ingress.main.hosts[0].host | string | `"chart-example.local"` |  |
+| ingress.main.hosts[0].paths[0].path | string | `"/"` |  |
+| ingress.main.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
+| ingress.main.tls | list | `[]` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
@@ -37,18 +50,16 @@ An Autobrr Helm chart for Kubernetes
 | podAnnotations | object | `{}` |  |
 | podLabels | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| readinessProbe.httpGet.path | string | `"/api/healthz/readiness"` |  |
-| readinessProbe.httpGet.port | string | `"http"` |  |
-| replicaCount | int | `1` |  |
-| resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `7474` |  |
-| service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.automount | bool | `true` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
+| services.main.ports[0].name | string | `"http"` |  |
+| services.main.ports[0].port | int | `7474` |  |
+| services.main.ports[0].protocol | string | `"TCP"` |  |
+| services.main.ports[0].targetPort | string | `"http"` |  |
+| services.main.type | string | `"ClusterIP"` |  |
 | tolerations | list | `[]` |  |
-| volumeMounts | list | `[]` |  |
 | volumes | list | `[]` |  |
 
