@@ -1,36 +1,40 @@
-image:
-  # -- image repository
-  repository: ghcr.io/autobrr/autobrr
-  # -- image pull policy
-  pullPolicy: IfNotPresent
-  # -- image tag
-  tag: 
+controllers:
+  main:
+    # -- Set the controller upgrade strategy
+    strategy: RollingUpdate
 
-controller:
-  # -- Set the controller upgrade strategy
-  strategy: RollingUpdate
+    containers:
+      autobrr:
+        image:
+          # -- image repository
+          repository: ghcr.io/autobrr/autobrr
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+          # -- image tag
+          tag: v1.63.1
+        
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env: {}
 
-# -- environment variables.
-# @default -- See [values.yaml](./values.yaml)
-env: {}
+        probes:
+        # -- Configures liveness probe
+        liveness:
+          type: HTTP
+          path: /api/healthz/liveness
+        # -- Configures readiness probe
+        readiness:
+          type: HTTP
+          path: /api/healthz/readiness
 
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
 service:
   main:
+    controller: main
     ports:
       http:
         port: 7474
-
-probes:
-  # -- Configures liveness probe
-  liveness:
-    type: HTTP
-    path: /api/healthz/liveness
-  # -- Configures readiness probe
-  readiness:
-    type: HTTP
-    path: /api/healthz/readiness
 
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
@@ -46,19 +50,11 @@ ingress:
     #     hosts:
     #       - chart-example.local
 
-# -- Enable and configure redis subchart under this key.
-#    For more options see [redis chart documentation](https://github.com/bitnami/charts/tree/main/bitnami/redis)
-# @default -- See [values.yaml](./values.yaml)
-redis:
-  enabled: true
-  replica:
-    replicaCount: 0
-
 persistence:
   config:
     enabled: true
     mountPath: /config
     retain: true
     size: 500Mi
+    accessMode: ReadWriteOnce
     # storageClass: ""
-    # accessMode: ReadWriteOnce
