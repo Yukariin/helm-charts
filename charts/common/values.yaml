@@ -47,7 +47,7 @@ deployments:
     replicaCount: 1
     image:
       repository: nginx
-      tag: "1.21"
+      tag: "1.29"
       pullPolicy: IfNotPresent
 
     # Container ports
