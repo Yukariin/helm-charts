@@ -48,6 +48,16 @@ entries:
   common:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2025-07-07T11:48:15.705896783Z"
+    description: A library chart for common Kubernetes resources
+    digest: d748894148e437640e411a3db1d3b8b859d97b66ec293ffc06b98fc8efd8e551
+    name: common
+    type: library
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/common-0.1.1/common-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2025-07-07T11:24:14.595123637Z"
     description: A library chart for common Kubernetes resources
     digest: 8df016c6eabb1edfebcb3a60786d857d73c5bcaf898b68b4a8cc16920cd6884c
@@ -339,4 +349,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T11:44:55.201920183Z"
+generated: "2025-07-07T11:48:15.705966553Z"
