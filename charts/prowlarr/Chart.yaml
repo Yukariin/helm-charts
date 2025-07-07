@@ -11,5 +11,5 @@ appVersion: "1.37.0.5076-ls120"
 
 dependencies:
   - name: common
-    version: "0.1.1"
-    repository: "https://yukariin.github.io/helm-charts"
+    version: 4.1.2
+    repository: https://bjw-s-labs.github.io/helm-charts
