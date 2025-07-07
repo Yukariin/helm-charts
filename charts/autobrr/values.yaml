@@ -1,3 +1,6 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+
 controllers:
   main:
     # -- Set the controller upgrade strategy
@@ -18,14 +21,14 @@ controllers:
         env: {}
 
         probes:
-        # -- Configures liveness probe
-        liveness:
-          type: HTTP
-          path: /api/healthz/liveness
-        # -- Configures readiness probe
-        readiness:
-          type: HTTP
-          path: /api/healthz/readiness
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /api/healthz/liveness
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /api/healthz/readiness
 
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
