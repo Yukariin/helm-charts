@@ -18,7 +18,8 @@ controllers:
         
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
-        env: {}
+        env:
+          SLSKD_REMOTE_CONFIGURATION: true
 
         probes:
           # -- Configures liveness probe
@@ -56,10 +57,10 @@ ingress:
     #       - chart-example.local
 
 persistence:
-  config:
+  app:
     retain: true
     accessMode: ReadWriteOnce
     size: 500Mi
     globalMounts:
-      - path: /config
+      - path: /app
     # storageClass: ""
