@@ -1,0 +1,209 @@
+{{/*
+Common deployment template
+Usage:
+{{- include "common.deployment" (dict "deploymentName" "main" "context" .) }}
+*/}}
+{{- define "common.deployment" -}}
+{{- $deploymentName := .deploymentName -}}
+{{- $context := .context -}}
+{{- $deployment := index $context.Values.deployments $deploymentName -}}
+{{- if $deployment -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "common.deploymentName" . }}
+  labels:
+    {{- include "common.deploymentLabels" . | nindent 4 }}
+spec:
+  {{- if not $deployment.autoscaling.enabled }}
+  replicas: {{ $deployment.replicaCount | default 1 }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "common.deploymentSelectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with $deployment.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "common.deploymentLabels" . | nindent 8 }}
+        {{- with $deployment.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with $deployment.imagePullSecrets | default $context.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "common.serviceAccountName" $context }}
+      {{- with $deployment.podSecurityContext | default $context.Values.podSecurityContext }}
+      securityContext:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ $deploymentName }}
+          {{- with $deployment.securityContext | default $context.Values.securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          image: "{{ $deployment.image.repository }}:{{ $deployment.image.tag | default $context.Chart.AppVersion }}"
+          imagePullPolicy: {{ $deployment.image.pullPolicy | default "IfNotPresent" }}
+          {{- if $deployment.ports }}
+          ports:
+            {{- range $deployment.ports }}
+            - name: {{ .name }}
+              containerPort: {{ .containerPort }}
+              protocol: {{ .protocol | default "TCP" }}
+            {{- end }}
+          {{- end }}
+          {{- with $deployment.env }}
+          env:
+            {{- range $k, $v := . }}
+            - name: {{ $k }}
+              {{- if kindIs "map" $v }}
+              {{- toYaml $v | nindent 14 }}
+              {{- else }}
+              value: {{ $v | quote }}
+              {{- end }}
+            {{- end }}
+          {{- end }}
+          {{- with $deployment.envFrom }}
+          envFrom:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with $deployment.livenessProbe }}
+          livenessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with $deployment.readinessProbe }}
+          readinessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with $deployment.startupProbe }}
+          startupProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with $deployment.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- if or $context.Values.persistence $deployment.volumeMounts }}
+          volumeMounts:
+            {{- range $name, $config := $context.Values.persistence }}
+            {{- if $config.enabled }}
+            - name: {{ $name }}
+              mountPath: {{ $config.mountPath }}
+              {{- if $config.subPath }}
+              subPath: {{ $config.subPath }}
+              {{- end }}
+              {{- if $config.readOnly }}
+              readOnly: {{ $config.readOnly }}
+              {{- end }}
+            {{- end }}
+            {{- end }}
+            {{- with $deployment.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
+          {{- end }}
+        {{- if $deployment.sidecars }}
+        {{- range $deployment.sidecars }}
+        - name: {{ .name }}
+          {{- with .securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          image: "{{ .image.repository }}:{{ .image.tag }}"
+          imagePullPolicy: {{ .image.pullPolicy | default "IfNotPresent" }}
+          {{- if .ports }}
+          ports:
+            {{- range .ports }}
+            - name: {{ .name }}
+              containerPort: {{ .containerPort }}
+              protocol: {{ .protocol | default "TCP" }}
+            {{- end }}
+          {{- end }}
+          {{- with .env }}
+          env:
+            {{- range $k, $v := . }}
+            - name: {{ $k }}
+              {{- if kindIs "string" $v }}
+              value: {{ $v | quote }}
+              {{- else }}
+              {{- toYaml $v | nindent 14 }}
+              {{- end }}
+            {{- end }}
+          {{- end }}
+          {{- with .envFrom }}
+          envFrom:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .livenessProbe }}
+          livenessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .readinessProbe }}
+          readinessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .startupProbe }}
+          startupProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- if or $context.Values.persistence .volumeMounts }}
+          volumeMounts:
+            {{- range $name, $config := $context.Values.persistence }}
+            {{- if $config.enabled }}
+            {{- if has $name (.persistenceAccess | default list) }}
+            - name: {{ $name }}
+              mountPath: {{ $config.mountPath }}
+              {{- if $config.subPath }}
+              subPath: {{ $config.subPath }}
+              {{- end }}
+              {{- if $config.readOnly }}
+              readOnly: {{ $config.readOnly }}
+              {{- end }}
+            {{- end }}
+            {{- end }}
+            {{- end }}
+            {{- with .volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
+        {{- end }}
+      {{- if or $context.Values.persistence $context.Values.volumes $deployment.volumes }}
+      volumes:
+        {{- range $name, $config := $context.Values.persistence }}
+        {{- if $config.enabled }}
+        - name: {{ $name }}
+          persistentVolumeClaim:
+            claimName: {{ include "common.pvcName" (dict "pvcName" $name "config" $config "context" $context) }}
+        {{- end }}
+        {{- end }}
+        {{- with $context.Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+        {{- with $deployment.volumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- end }}
+      {{- with $deployment.nodeSelector | default $context.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $deployment.affinity | default $context.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $deployment.tolerations | default $context.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end -}}
+{{- end -}}

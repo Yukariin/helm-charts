@@ -1,0 +1,59 @@
+{{/*
+Common PVC template
+Usage:
+{{- include "common.pvc" (dict "pvcName" "data" "context" .) }}
+*/}}
+{{- define "common.pvc" -}}
+{{- $pvcName := .pvcName -}}
+{{- $context := .context -}}
+{{- $pvc := index $context.Values.persistence $pvcName -}}
+{{- if and $pvc $pvc.enabled (not $pvc.existingClaim) -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "common.pvcName" . }}
+  labels:
+    {{- include "common.labels" $context | nindent 4 }}
+    {{- with $pvc.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- with $pvc.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  accessModes:
+    {{- if $pvc.accessModes }}
+    {{- range $pvc.accessModes }}
+    - {{ . }}
+    {{- end }}
+    {{- else }}
+    - {{ $pvc.accessMode | default "ReadWriteOnce" }}
+    {{- end }}
+  resources:
+    requests:
+      storage: {{ $pvc.size | default "1Gi" }}
+  {{- if $pvc.storageClass }}
+  {{- if (eq "-" $pvc.storageClass) }}
+  storageClassName: ""
+  {{- else }}
+  storageClassName: {{ $pvc.storageClass }}
+  {{- end }}
+  {{- end }}
+  {{- if $pvc.selector }}
+  selector:
+    {{- toYaml $pvc.selector | nindent 4 }}
+  {{- end }}
+  {{- if $pvc.volumeName }}
+  volumeName: {{ $pvc.volumeName }}
+  {{- end }}
+  {{- if $pvc.dataSource }}
+  dataSource:
+    {{- toYaml $pvc.dataSource | nindent 4 }}
+  {{- end }}
+  {{- if $pvc.dataSourceRef }}
+  dataSourceRef:
+    {{- toYaml $pvc.dataSourceRef | nindent 4 }}
+  {{- end }}
+{{- end -}}
+{{- end -}}
