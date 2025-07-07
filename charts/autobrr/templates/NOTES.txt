@@ -1,1 +1,1 @@
-{{- include "common.notes" . }}
+{{- include "bjw-s.common.lib.chart.notes" . -}}
