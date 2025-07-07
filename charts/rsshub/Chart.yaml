@@ -14,6 +14,6 @@ dependencies:
     version: "0.1.1"
     repository: "https://yukariin.github.io/helm-charts"
   - name: redis
-    version: 20.7.0
+    version: 21.2.7
     repository: https://charts.bitnami.com/bitnami
     condition: redis.enabled
