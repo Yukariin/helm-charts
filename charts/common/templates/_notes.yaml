@@ -1,0 +1,57 @@
+{{/*
+Common NOTES template
+Usage:
+{{- include "common.notes" . }}
+*/}}
+{{- define "common.notes" -}}
+{{- $context := . -}}
+1. Get the application URL by running these commands:
+{{- if $context.Values.ingress }}
+{{- range $ingressName, $ingress := $context.Values.ingress }}
+{{- if $ingress.enabled }}
+{{- range $host := $ingress.hosts }}
+  {{- range .paths }}
+  http{{ if $ingress.tls }}s{{ end }}://{{ $host.host }}{{ .path }}
+  {{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- else if contains "NodePort" ($context.Values.services.main.type | default "ClusterIP") }}
+  export NODE_PORT=$(kubectl get --namespace {{ $context.Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "common.fullname" $context }})
+  export NODE_IP=$(kubectl get nodes --namespace {{ $context.Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+{{- else if contains "LoadBalancer" ($context.Values.services.main.type | default "ClusterIP") }}
+     NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+           You can watch the status of by running 'kubectl get --namespace {{ $context.Release.Namespace }} svc -w {{ include "common.fullname" $context }}'
+  export SERVICE_IP=$(kubectl get svc --namespace {{ $context.Release.Namespace }} {{ include "common.fullname" $context }} --template "{{"{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}"}}")
+  echo http://$SERVICE_IP:{{ $context.Values.services.main.ports | first | get "port" }}
+{{- else if contains "ClusterIP" ($context.Values.services.main.type | default "ClusterIP") }}
+  export POD_NAME=$(kubectl get pods --namespace {{ $context.Release.Namespace }} -l "app.kubernetes.io/name={{ include "common.name" $context }},app.kubernetes.io/instance={{ $context.Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  export CONTAINER_PORT=$(kubectl get pod --namespace {{ $context.Release.Namespace }} $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl --namespace {{ $context.Release.Namespace }} port-forward $POD_NAME 8080:$CONTAINER_PORT
+{{- end }}
+
+{{- if $context.Values.deployments }}
+2. Deployments created:
+{{- range $deploymentName, $deployment := $context.Values.deployments }}
+  - {{ include "common.deploymentName" (dict "deploymentName" $deploymentName "context" $context) }}
+{{- end }}
+{{- end }}
+
+{{- if $context.Values.services }}
+3. Services created:
+{{- range $serviceName, $service := $context.Values.services }}
+  - {{ include "common.serviceName" (dict "serviceName" $serviceName "context" $context) }} ({{ $service.type | default "ClusterIP" }})
+{{- end }}
+{{- end }}
+
+{{- if $context.Values.persistence }}
+4. Persistent volumes:
+{{- range $pvcName, $pvc := $context.Values.persistence }}
+{{- if $pvc.enabled }}
+  - {{ include "common.pvcName" (dict "pvcName" $pvcName "config" $pvc "context" $context) }} ({{ $pvc.size | default "1Gi" }})
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end -}}
