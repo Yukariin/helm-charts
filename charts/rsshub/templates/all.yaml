@@ -11,7 +11,7 @@ controllers:
             secretKeyRef:
               name: {{ .Release.Name }}-redis
               key: redis-password
-          REDIS_URL: "redis://:$(REDIS_PASSWORD)@{{ .Release.Name }}-redis-master:6379/"
+          REDIS_URL: "redis://$(REDIS_PASSWORD)@{{ .Release.Name }}-redis-master:6379/"
           {{- end }}
 {{- end -}}
 {{- $_ := merge .Values (include "rsshub.harcodedValues" . | fromYaml) -}}
