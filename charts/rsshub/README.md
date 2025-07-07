@@ -1,6 +1,6 @@
 # rsshub
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025-07-05](https://img.shields.io/badge/AppVersion-2025--07--05-informational?style=flat-square)
+![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025-07-05](https://img.shields.io/badge/AppVersion-2025--07--05-informational?style=flat-square)
 
 An RSShub Helm chart for Kubernetes
 
@@ -8,57 +8,30 @@ An RSShub Helm chart for Kubernetes
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | redis | 20.7.0 |
-| https://yukariin.github.io/helm-charts | common | 0.1.1 |
+| https://bjw-s-labs.github.io/helm-charts | common | 4.1.2 |
+| https://charts.bitnami.com/bitnami | redis | 21.2.7 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity | object | `{}` |  |
-| deployments.main.autoscaling.enabled | bool | `false` |  |
-| deployments.main.autoscaling.maxReplicas | int | `100` |  |
-| deployments.main.autoscaling.minReplicas | int | `1` |  |
-| deployments.main.autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| deployments.main.env.NODE_ENV | string | `"production"` |  |
-| deployments.main.image.pullPolicy | string | `"IfNotPresent"` |  |
-| deployments.main.image.repository | string | `"diygod/rsshub"` |  |
-| deployments.main.image.tag | string | `""` |  |
-| deployments.main.livenessProbe.httpGet.path | string | `"/healthz"` |  |
-| deployments.main.livenessProbe.httpGet.port | string | `"http"` |  |
-| deployments.main.ports[0].containerPort | int | `1200` |  |
-| deployments.main.ports[0].name | string | `"http"` |  |
-| deployments.main.ports[0].protocol | string | `"TCP"` |  |
-| deployments.main.readinessProbe.httpGet.path | string | `"/healthz"` |  |
-| deployments.main.readinessProbe.httpGet.port | string | `"http"` |  |
-| deployments.main.replicaCount | int | `1` |  |
-| deployments.main.resources | object | `{}` |  |
-| fullnameOverride | string | `""` |  |
-| imagePullSecrets | list | `[]` |  |
-| ingress.main.annotations | object | `{}` |  |
-| ingress.main.className | string | `""` |  |
-| ingress.main.enabled | bool | `false` |  |
-| ingress.main.hosts[0].host | string | `"chart-example.local"` |  |
-| ingress.main.hosts[0].paths[0].path | string | `"/"` |  |
-| ingress.main.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
-| ingress.main.tls | list | `[]` |  |
-| nameOverride | string | `""` |  |
-| nodeSelector | object | `{}` |  |
-| podAnnotations | object | `{}` |  |
-| podLabels | object | `{}` |  |
-| podSecurityContext | object | `{}` |  |
-| redis.enabled | bool | `true` |  |
-| redis.replica.replicaCount | int | `0` |  |
-| securityContext | object | `{}` |  |
-| serviceAccount.annotations | object | `{}` |  |
-| serviceAccount.automount | bool | `true` |  |
-| serviceAccount.create | bool | `true` |  |
-| serviceAccount.name | string | `""` |  |
-| services.main.ports[0].name | string | `"http"` |  |
-| services.main.ports[0].port | int | `1200` |  |
-| services.main.ports[0].protocol | string | `"TCP"` |  |
-| services.main.ports[0].targetPort | string | `"http"` |  |
-| services.main.type | string | `"ClusterIP"` |  |
-| tolerations | list | `[]` |  |
-| volumes | list | `[]` |  |
+| controllers.main.containers.browserless.image.repository | string | `"browserless/chrome"` |  |
+| controllers.main.containers.browserless.image.tag | string | `"latest"` |  |
+| controllers.main.containers.browserless.ports[0].containerPort | int | `3000` |  |
+| controllers.main.containers.browserless.probes.liveness.path | string | `"/pressure"` |  |
+| controllers.main.containers.browserless.probes.liveness.type | string | `"HTTP"` |  |
+| controllers.main.containers.browserless.probes.readiness.path | string | `"/pressure"` |  |
+| controllers.main.containers.browserless.probes.readiness.type | string | `"HTTP"` |  |
+| controllers.main.containers.rsshub.env | object | See [values.yaml](./values.yaml) | environment variables. |
+| controllers.main.containers.rsshub.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
+| controllers.main.containers.rsshub.image.repository | string | `"diygod/rsshub"` | image repository |
+| controllers.main.containers.rsshub.image.tag | string | `"2025-07-04"` | image tag |
+| controllers.main.containers.rsshub.probes.liveness | object | `{"path":"/healthz","type":"HTTP"}` | Configures liveness probe |
+| controllers.main.containers.rsshub.probes.readiness | object | `{"path":"/healthz","type":"HTTP"}` | Configures readiness probe |
+| controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
+| ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
+| redis | object | See [values.yaml](./values.yaml) | Enable and configure redis subchart under this key.    For more options see [redis chart documentation](https://github.com/bitnami/charts/tree/main/bitnami/redis) |
+| service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 
+----------------------------------------------
+Autogenerated from chart metadata using [helm-docs v1.14.2](https://github.com/norwoodj/helm-docs/releases/v1.14.2)
