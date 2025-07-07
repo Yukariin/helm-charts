@@ -1,0 +1,16 @@
+{{/* Append the hardcoded settings */}}
+{{- define "rsshub.hardcodedValues" -}}
+deployments:
+  main:
+    env:
+      {{- if .Values.redis.enabled }}
+      CACHE_TYPE: redis
+      REDIS_URL: "redis://redis:6379/"
+      {{- end }}
+{{- end -}}
+
+{{/* Merge hardcoded values with user values */}}
+{{- $_ := mergeOverwrite .Values (include "rsshub.hardcodedValues" . | fromYaml) -}}
+
+{{/* Render the templates */}}
+{{- include "common.loader" . }}
