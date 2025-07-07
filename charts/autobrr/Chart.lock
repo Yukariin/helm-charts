@@ -1,6 +1,6 @@
 dependencies:
 - name: common
-  repository: file://../common
-  version: 0.1.0
-digest: sha256:636a65e9846bdff17cc4e65b0849061f783759a37aa51fb85ff6fd8ba5e68467
-generated: "2025-07-07T14:41:45.819918+03:00"
+  repository: https://yukariin.github.io/helm-charts
+  version: 0.1.1
+digest: sha256:7a883e0efbb542c9ba45c4b46c25a8c80df5b64c1e1492e55f4b3abc8df7df5f
+generated: "2025-07-07T17:26:26.274002+03:00"

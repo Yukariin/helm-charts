@@ -1,6 +1,6 @@
 # rsshub
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025-07-05](https://img.shields.io/badge/AppVersion-2025--07--05-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025-07-05](https://img.shields.io/badge/AppVersion-2025--07--05-informational?style=flat-square)
 
 An RSShub Helm chart for Kubernetes
 
@@ -8,8 +8,8 @@ An RSShub Helm chart for Kubernetes
 
 | Repository | Name | Version |
 |------------|------|---------|
-| file://../common | common | 0.1.1 |
 | https://charts.bitnami.com/bitnami | redis | 20.7.0 |
+| https://yukariin.github.io/helm-charts | common | 0.1.1 |
 
 ## Values
 
