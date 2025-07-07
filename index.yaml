@@ -3,6 +3,20 @@ entries:
   autobrr:
   - apiVersion: v2
     appVersion: v1.63.1
+    created: "2025-07-07T11:44:55.201858817Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: An Autobrr Helm chart for Kubernetes
+    digest: 69e6448b067e3c766d65dcfda4891d191cd6dfdc3a98ca185c9eff5db66dc856
+    name: autobrr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/autobrr-0.2.0/autobrr-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: v1.63.1
     created: "2025-07-07T11:24:14.407185505Z"
     description: An Autobrr Helm chart for Kubernetes
     digest: c2801e6437151ef6db30d9003d1550f56379c662443f67e87a398c4ced5bdbba
@@ -325,4 +339,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T11:39:07.723057182Z"
+generated: "2025-07-07T11:44:55.201920183Z"
