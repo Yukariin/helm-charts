@@ -9,8 +9,8 @@ controllers:
           CACHE_TYPE: redis
           REDIS_PASSWORD:
             secretKeyRef:
-            name: {{ .Release.Name }}-redis
-            key: redis-password
+              name: {{ .Release.Name }}-redis
+              key: redis-password
           REDIS_URL: "redis://:$(REDIS_PASSWORD)@{{ .Release.Name }}-redis-master:6379/"
           {{- end }}
 {{- end -}}
