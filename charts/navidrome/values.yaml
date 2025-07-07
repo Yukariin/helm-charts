@@ -50,28 +50,28 @@ deployments:
       pullPolicy: IfNotPresent
       # Overrides the image tag whose default is the chart appVersion.
       tag: ""
-    
+
     # Container ports
     ports:
       - name: http
         containerPort: 4533
         protocol: TCP
-    
+
     # Environment variables
     env:
       ND_ENABLEINSIGHTSCOLLECTOR: false
-    
+
     # Health checks
     livenessProbe:
       httpGet:
         path: /ping
         port: http
-    
+
     readinessProbe:
       httpGet:
         path: /ping
         port: http
-    
+
     # Resource limits and requests
     resources: {}
       # We usually recommend not to specify default resources and to leave this as a conscious
@@ -84,7 +84,7 @@ deployments:
       # requests:
       #   cpu: 100m
       #   memory: 128Mi
-    
+
     # Autoscaling configuration
     autoscaling:
       enabled: false
