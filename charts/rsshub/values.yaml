@@ -1,126 +1,79 @@
-# Default values for navidrome.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
 
-# Global settings
-nameOverride: ""
-fullnameOverride: ""
-
-# Image pull secrets
-imagePullSecrets: []
-
-# Service account configuration
-serviceAccount:
-  create: true
-  automount: true
-  annotations: {}
-  name: ""
-
-# Pod-level security context
-podSecurityContext: {}
-  # fsGroup: 2000
-
-# Container-level security context
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
-
-# Pod annotations and labels
-podAnnotations: {}
-podLabels: {}
-
-# Node selection
-nodeSelector: {}
-tolerations: []
-affinity: {}
-
-# Additional volumes
-volumes: []
-
-# Deployments configuration
-deployments:
+controllers:
   main:
-    replicaCount: 1
-    image:
-      repository: diygod/rsshub
-      pullPolicy: IfNotPresent
-      # Overrides the image tag whose default is the chart appVersion.
-      tag: ""
+    # -- Set the controller upgrade strategy
+    strategy: RollingUpdate
 
-    # Container ports
-    ports:
-      - name: http
-        containerPort: 1200
-        protocol: TCP
-    
-    # Environment variables
-    env:
-      NODE_ENV: production
+    containers:
+      rsshub:
+        image:
+          # -- image repository
+          repository: diygod/rsshub
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+          # -- image tag
+          tag: "2025-07-04"
+        
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env:
+          NODE_ENV: production
+          PUPPETEER_WS_ENDPOINT: ws://localhost:3000
 
-    # Health checks
-    livenessProbe:
-      httpGet:
-        path: /healthz
-        port: http
+        probes:
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /healthz
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /healthz
+      
+      browserless:
+        image:
+          repository: browserless/chrome
+          tag: latest
+        
+        ports:
+          - containerPort: 3000
+        
+        probes:
+          liveness:
+            type: HTTP
+            path: /pressure
+          readiness:
+            type: HTTP
+            path: /pressure
 
-    readinessProbe:
-      httpGet:
-        path: /healthz
-        port: http
-
-    # Resource limits and requests
-    resources: {}
-      # We usually recommend not to specify default resources and to leave this as a conscious
-      # choice for the user. This also increases chances charts run on environments with little
-      # resources, such as Minikube. If you do want to specify resources, uncomment the following
-      # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-      # limits:
-      #   cpu: 100m
-      #   memory: 128Mi
-      # requests:
-      #   cpu: 100m
-      #   memory: 128Mi
-
-    # Autoscaling configuration
-    autoscaling:
-      enabled: false
-      minReplicas: 1
-      maxReplicas: 100
-      targetCPUUtilizationPercentage: 80
-      # targetMemoryUtilizationPercentage: 80
-
-# Services configuration
-services:
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
   main:
-    type: ClusterIP
+    controller: main
     ports:
-      - name: http
+      http:
         port: 1200
-        targetPort: http
-        protocol: TCP
 
-# Ingress configuration
 ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See [values.yaml](./values.yaml)
   main:
     enabled: false
-    className: ""
-    annotations: {}
-      # kubernetes.io/ingress.class: nginx
-      # kubernetes.io/tls-acme: "true"
-    hosts:
-      - host: chart-example.local
-        paths:
-          - path: /
-            pathType: ImplementationSpecific
-    tls: []
-    #  - secretName: chart-example-tls
-    #    hosts:
-    #      - chart-example.local
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
 
+# -- Enable and configure redis subchart under this key.
+#    For more options see [redis chart documentation](https://github.com/bitnami/charts/tree/main/bitnami/redis)
+# @default -- See [values.yaml](./values.yaml)
 redis:
   enabled: true
   replica:
