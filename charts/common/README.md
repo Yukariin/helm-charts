@@ -1,280 +1,123 @@
-# Common Helm Chart Library
+# common
 
-A comprehensive Helm chart library that provides reusable templates for Kubernetes resources. This library follows the DRY (Don't Repeat Yourself) principle and allows you to define all your Kubernetes resources in a single, maintainable location.
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
-## Features
+A library chart for common Kubernetes resources
 
-- **Single Loader**: One template file renders all Kubernetes resources
-- **Multiple Deployments**: Support for multiple deployments with optional sidecars
-- **Multiple Services**: Different service types and protocols
-- **Flexible Persistence**: Configurable persistent volume claims
-- **Ingress Support**: Multiple ingress configurations
-- **Autoscaling**: Horizontal Pod Autoscaler support
-- **Security**: Service accounts and security contexts
-- **Comprehensive Configuration**: Environment variables, probes, resources, and more
+## Values
 
-## Usage
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| affinity | object | `{}` |  |
+| deployments.main.affinity | object | `{}` |  |
+| deployments.main.autoscaling.behavior | object | `{}` |  |
+| deployments.main.autoscaling.customMetrics | list | `[]` |  |
+| deployments.main.autoscaling.enabled | bool | `false` |  |
+| deployments.main.autoscaling.maxReplicas | int | `100` |  |
+| deployments.main.autoscaling.minReplicas | int | `1` |  |
+| deployments.main.autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| deployments.main.autoscaling.targetMemoryUtilizationPercentage | int | `80` |  |
+| deployments.main.env.ENV_VAR | string | `"value"` |  |
+| deployments.main.envFrom | list | `[]` |  |
+| deployments.main.image.pullPolicy | string | `"IfNotPresent"` |  |
+| deployments.main.image.repository | string | `"nginx"` |  |
+| deployments.main.image.tag | string | `"1.21"` |  |
+| deployments.main.imagePullSecrets | list | `[]` |  |
+| deployments.main.livenessProbe.httpGet.path | string | `"/"` |  |
+| deployments.main.livenessProbe.httpGet.port | string | `"http"` |  |
+| deployments.main.livenessProbe.initialDelaySeconds | int | `30` |  |
+| deployments.main.livenessProbe.periodSeconds | int | `10` |  |
+| deployments.main.nodeSelector | object | `{}` |  |
+| deployments.main.podSecurityContext | object | `{}` |  |
+| deployments.main.ports[0].containerPort | int | `80` |  |
+| deployments.main.ports[0].name | string | `"http"` |  |
+| deployments.main.ports[0].protocol | string | `"TCP"` |  |
+| deployments.main.readinessProbe.httpGet.path | string | `"/"` |  |
+| deployments.main.readinessProbe.httpGet.port | string | `"http"` |  |
+| deployments.main.readinessProbe.initialDelaySeconds | int | `5` |  |
+| deployments.main.readinessProbe.periodSeconds | int | `5` |  |
+| deployments.main.replicaCount | int | `1` |  |
+| deployments.main.resources.limits.cpu | string | `"500m"` |  |
+| deployments.main.resources.limits.memory | string | `"512Mi"` |  |
+| deployments.main.resources.requests.cpu | string | `"250m"` |  |
+| deployments.main.resources.requests.memory | string | `"256Mi"` |  |
+| deployments.main.securityContext | object | `{}` |  |
+| deployments.main.sidecars[0].env.BACKUP_SCHEDULE | string | `"0 2 * * *"` |  |
+| deployments.main.sidecars[0].image.pullPolicy | string | `"IfNotPresent"` |  |
+| deployments.main.sidecars[0].image.repository | string | `"backup-tool"` |  |
+| deployments.main.sidecars[0].image.tag | string | `"latest"` |  |
+| deployments.main.sidecars[0].name | string | `"backup"` |  |
+| deployments.main.sidecars[0].persistenceAccess[0] | string | `"data"` |  |
+| deployments.main.sidecars[0].resources.limits.cpu | string | `"100m"` |  |
+| deployments.main.sidecars[0].resources.limits.memory | string | `"128Mi"` |  |
+| deployments.main.sidecars[0].volumeMounts[0].mountPath | string | `"/etc/backup"` |  |
+| deployments.main.sidecars[0].volumeMounts[0].name | string | `"backup-config"` |  |
+| deployments.main.startupProbe | object | `{}` |  |
+| deployments.main.tolerations | list | `[]` |  |
+| deployments.main.volumeMounts | list | `[]` |  |
+| deployments.main.volumes | list | `[]` |  |
+| deployments.worker.env.WORKER_TYPE | string | `"background"` |  |
+| deployments.worker.image.repository | string | `"worker-app"` |  |
+| deployments.worker.image.tag | string | `"latest"` |  |
+| deployments.worker.replicaCount | int | `2` |  |
+| deployments.worker.resources.limits.cpu | string | `"200m"` |  |
+| deployments.worker.resources.limits.memory | string | `"256Mi"` |  |
+| fullnameOverride | string | `""` |  |
+| imagePullSecrets | list | `[]` |  |
+| ingress.main.annotations | object | `{}` |  |
+| ingress.main.className | string | `""` |  |
+| ingress.main.enabled | bool | `false` |  |
+| ingress.main.hosts[0].host | string | `"chart-example.local"` |  |
+| ingress.main.hosts[0].paths[0].path | string | `"/"` |  |
+| ingress.main.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
+| ingress.main.hosts[0].paths[0].serviceName | string | `""` |  |
+| ingress.main.hosts[0].paths[0].servicePort | int | `80` |  |
+| ingress.main.tls | list | `[]` |  |
+| nameOverride | string | `""` |  |
+| nodeSelector | object | `{}` |  |
+| persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.config.enabled | bool | `false` |  |
+| persistence.config.mountPath | string | `"/config"` |  |
+| persistence.config.size | string | `"100Mi"` |  |
+| persistence.config.storageClass | string | `""` |  |
+| persistence.data.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.data.accessModes | list | `[]` |  |
+| persistence.data.annotations | object | `{}` |  |
+| persistence.data.dataSource | object | `{}` |  |
+| persistence.data.dataSourceRef | object | `{}` |  |
+| persistence.data.enabled | bool | `true` |  |
+| persistence.data.existingClaim | string | `""` |  |
+| persistence.data.labels | object | `{}` |  |
+| persistence.data.mountPath | string | `"/data"` |  |
+| persistence.data.readOnly | bool | `false` |  |
+| persistence.data.selector | object | `{}` |  |
+| persistence.data.size | string | `"1Gi"` |  |
+| persistence.data.storageClass | string | `""` |  |
+| persistence.data.subPath | string | `""` |  |
+| persistence.data.volumeName | string | `""` |  |
+| podAnnotations | object | `{}` |  |
+| podLabels | object | `{}` |  |
+| podSecurityContext | object | `{}` |  |
+| securityContext | object | `{}` |  |
+| serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.automount | bool | `true` |  |
+| serviceAccount.create | bool | `true` |  |
+| serviceAccount.labels | object | `{}` |  |
+| serviceAccount.name | string | `""` |  |
+| services.main.annotations | object | `{}` |  |
+| services.main.labels | object | `{}` |  |
+| services.main.ports[0].name | string | `"http"` |  |
+| services.main.ports[0].port | int | `80` |  |
+| services.main.ports[0].protocol | string | `"TCP"` |  |
+| services.main.ports[0].targetPort | string | `"http"` |  |
+| services.main.type | string | `"ClusterIP"` |  |
+| services.metrics.ports[0].name | string | `"metrics"` |  |
+| services.metrics.ports[0].port | int | `9090` |  |
+| services.metrics.ports[0].protocol | string | `"TCP"` |  |
+| services.metrics.ports[0].targetPort | string | `"metrics"` |  |
+| services.metrics.selector."app.kubernetes.io/component" | string | `"main"` |  |
+| services.metrics.selector."app.kubernetes.io/name" | string | `"my-app"` |  |
+| services.metrics.type | string | `"ClusterIP"` |  |
+| tolerations | list | `[]` |  |
+| volumes | list | `[]` |  |
 
-### 1. Add as Dependency
-
-Add the common chart as a dependency in your `Chart.yaml`:
-
-```yaml
-dependencies:
-  - name: common
-    version: "0.1.0"
-    repository: "https://yukariin.github.io/helm-charts"
-```
-
-### 2. Create Templates
-
-Create a single template file `templates/all.yaml`:
-
-```yaml
-{{- include "common.loader" . }}
-```
-
-Optionally, create `templates/NOTES.txt`:
-
-```yaml
-{{- include "common.notes" . }}
-```
-
-### 3. Configure Values
-
-Structure your `values.yaml` according to the common chart schema:
-
-```yaml
-# Global settings
-nameOverride: ""
-fullnameOverride: ""
-imagePullSecrets: []
-
-# Service account
-serviceAccount:
-  create: true
-  automount: true
-  annotations: {}
-  name: ""
-
-# Security contexts
-podSecurityContext: {}
-securityContext: {}
-
-# Pod configuration
-podAnnotations: {}
-podLabels: {}
-nodeSelector: {}
-tolerations: []
-affinity: {}
-volumes: []
-
-# Deployments (supports multiple)
-deployments:
-  main:
-    replicaCount: 1
-    image:
-      repository: myapp
-      pullPolicy: IfNotPresent
-      tag: "latest"
-    
-    ports:
-      - name: http
-        containerPort: 8080
-        protocol: TCP
-    
-    env:
-      ENV_VAR: "value"
-      COMPLEX_ENV:
-        valueFrom:
-          secretKeyRef:
-            name: my-secret
-            key: password
-    
-    livenessProbe:
-      httpGet:
-        path: /health
-        port: http
-    
-    readinessProbe:
-      httpGet:
-        path: /ready
-        port: http
-    
-    resources:
-      limits:
-        cpu: 500m
-        memory: 512Mi
-      requests:
-        cpu: 250m
-        memory: 256Mi
-    
-    autoscaling:
-      enabled: false
-      minReplicas: 1
-      maxReplicas: 10
-      targetCPUUtilizationPercentage: 80
-    
-    # Optional sidecars
-    sidecars:
-      - name: sidecar
-        image:
-          repository: sidecar-image
-          tag: "latest"
-        ports:
-          - name: metrics
-            containerPort: 9090
-        env:
-          SIDECAR_ENV: "value"
-
-# Services (supports multiple)
-services:
-  main:
-    type: ClusterIP
-    ports:
-      - name: http
-        port: 80
-        targetPort: http
-        protocol: TCP
-  
-  metrics:
-    type: ClusterIP
-    ports:
-      - name: metrics
-        port: 9090
-        targetPort: metrics
-        protocol: TCP
-
-# Ingress (supports multiple)
-ingress:
-  main:
-    enabled: false
-    className: ""
-    annotations: {}
-    hosts:
-      - host: myapp.example.com
-        paths:
-          - path: /
-            pathType: ImplementationSpecific
-    tls: []
-
-# Persistence (supports multiple volumes)
-persistence:
-  data:
-    enabled: true
-    size: 1Gi
-    accessMode: ReadWriteOnce
-    storageClass: ""
-    mountPath: /data
-  
-  config:
-    enabled: false
-    size: 100Mi
-    accessMode: ReadWriteOnce
-    mountPath: /config
-```
-
-## Advanced Features
-
-### Multiple Deployments
-
-You can define multiple deployments for complex applications:
-
-```yaml
-deployments:
-  frontend:
-    replicaCount: 3
-    image:
-      repository: myapp/frontend
-      tag: "v1.0.0"
-    ports:
-      - name: http
-        containerPort: 3000
-  
-  backend:
-    replicaCount: 2
-    image:
-      repository: myapp/backend
-      tag: "v1.0.0"
-    ports:
-      - name: api
-        containerPort: 8080
-```
-
-### Sidecar Containers
-
-Add sidecar containers to your deployments:
-
-```yaml
-deployments:
-  main:
-    # ... main container config
-    sidecars:
-      - name: log-shipper
-        image:
-          repository: fluent/fluent-bit
-          tag: "latest"
-        volumeMounts:
-          - name: logs
-            mountPath: /var/log
-        persistenceAccess:
-          - logs  # Grant access to specific persistence volumes
-```
-
-### Environment Variables
-
-Support for both simple and complex environment variables:
-
-```yaml
-deployments:
-  main:
-    env:
-      # Simple string value
-      SIMPLE_VAR: "value"
-      
-      # Complex object (valueFrom, etc.)
-      SECRET_VAR:
-        valueFrom:
-          secretKeyRef:
-            name: my-secret
-            key: password
-      
-      # ConfigMap reference
-      CONFIG_VAR:
-        valueFrom:
-          configMapKeyRef:
-            name: my-config
-            key: config-value
-```
-
-## Template Functions
-
-The common chart provides several helper functions:
-
-- `common.name`: Generate the application name
-- `common.fullname`: Generate the full application name
-- `common.chart`: Generate the chart label
-- `common.labels`: Generate standard labels
-- `common.selectorLabels`: Generate selector labels
-- `common.serviceAccountName`: Generate service account name
-- `common.deploymentName`: Generate deployment name
-- `common.serviceName`: Generate service name
-- `common.pvcName`: Generate PVC name
-
-## Migration from Individual Templates
-
-To migrate existing charts:
-
-1. Add the common chart dependency
-2. Replace all template files with `templates/all.yaml` containing `{{- include "common.loader" . }}`
-3. Update `values.yaml` to match the common chart structure
-4. Remove individual template files (deployment.yaml, service.yaml, etc.)
-5. Update `templates/NOTES.txt` to use `{{- include "common.notes" . }}`
-
-## Version
-
-Current version: 0.1.0
-
-## License
-
-This chart is licensed under the same terms as the parent repository.
