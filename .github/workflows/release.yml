@@ -6,7 +6,47 @@ on:
       - main
 
 jobs:
+  docs:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install helm-docs
+        run: |
+          cd /tmp
+          wget https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Linux_x86_64.tar.gz
+          tar -xzf helm-docs_1.14.2_Linux_x86_64.tar.gz
+          sudo mv helm-docs /usr/local/bin/
+
+      - name: Generate documentation
+        run: |
+          for dir in charts/*/; do
+            echo "Generating docs for $dir"
+            helm-docs --chart-search-root="$dir"
+          done
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Commit documentation changes
+        run: |
+          git add charts/*/README.md
+          if git diff --staged --quiet; then
+            echo "No documentation changes to commit"
+          else
+            git commit -m "docs: update chart documentation [skip ci]"
+            git push
+          fi
+
   release:
+    needs: docs
     permissions:
       contents: write
     runs-on: ubuntu-latest
