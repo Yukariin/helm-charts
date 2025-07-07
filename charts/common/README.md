@@ -1,6 +1,6 @@
 # common
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
 A library chart for common Kubernetes resources
 
@@ -21,7 +21,7 @@ A library chart for common Kubernetes resources
 | deployments.main.envFrom | list | `[]` |  |
 | deployments.main.image.pullPolicy | string | `"IfNotPresent"` |  |
 | deployments.main.image.repository | string | `"nginx"` |  |
-| deployments.main.image.tag | string | `"1.21"` |  |
+| deployments.main.image.tag | string | `""` |  |
 | deployments.main.imagePullSecrets | list | `[]` |  |
 | deployments.main.livenessProbe.httpGet.path | string | `"/"` |  |
 | deployments.main.livenessProbe.httpGet.port | string | `"http"` |  |
