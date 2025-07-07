@@ -539,6 +539,20 @@ entries:
   slskd:
   - apiVersion: v2
     appVersion: 0.23.1
+    created: "2025-07-07T20:49:53.442271172Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: An slskd Helm chart for Kubernetes
+    digest: 0512b1c4dceade15dcc9088ec07c9ada6c62d5fd64c3320c815a19976c88e944
+    name: slskd
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/slskd-0.4.2/slskd-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v2
+    appVersion: 0.23.1
     created: "2025-07-07T19:21:50.024648782Z"
     dependencies:
     - name: common
@@ -752,4 +766,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T19:21:50.21327724Z"
+generated: "2025-07-07T20:49:53.442410383Z"
