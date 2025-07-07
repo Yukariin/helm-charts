@@ -36,6 +36,7 @@ controllers:
 service:
   main:
     controller: main
+    type: LoadBalancer
     ports:
       http:
         port: 5030
