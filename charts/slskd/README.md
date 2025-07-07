@@ -1,6 +1,6 @@
 # slskd
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
+![Version: 0.4.1](https://img.shields.io/badge/Version-0.4.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
 
 An slskd Helm chart for Kubernetes
 
@@ -22,10 +22,10 @@ An slskd Helm chart for Kubernetes
 | controllers.main.containers.slskd.probes.readiness | object | `{"path":"/health","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
-| persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
-| persistence.config.globalMounts[0].path | string | `"/config"` |  |
-| persistence.config.retain | bool | `true` |  |
-| persistence.config.size | string | `"500Mi"` |  |
+| persistence.app.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.app.globalMounts[0].path | string | `"/app"` |  |
+| persistence.app.retain | bool | `true` |  |
+| persistence.app.size | string | `"500Mi"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 
 ----------------------------------------------
