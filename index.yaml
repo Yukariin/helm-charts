@@ -3,6 +3,20 @@ entries:
   autobrr:
   - apiVersion: v2
     appVersion: v1.63.1
+    created: "2025-07-07T14:29:58.75577698Z"
+    dependencies:
+    - name: common
+      repository: https://yukariin.github.io/helm-charts
+      version: 0.1.1
+    description: An Autobrr Helm chart for Kubernetes
+    digest: 387b103246845a46a4bcd37a6091a3a53659cde0bdd0ecb3ea40988dd64ee574
+    name: autobrr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/autobrr-0.2.1/autobrr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: v1.63.1
     created: "2025-07-07T11:44:55.201858817Z"
     dependencies:
     - name: common
@@ -69,6 +83,20 @@ entries:
   navidrome:
   - apiVersion: v2
     appVersion: 0.57.0
+    created: "2025-07-07T14:29:58.849845635Z"
+    dependencies:
+    - name: common
+      repository: https://yukariin.github.io/helm-charts
+      version: 0.1.1
+    description: A Helm chart for Kubernetes
+    digest: 69cbc0b58861eeb23fefdd8390b127c3682cc4c2ebc2a6eefcc7288a0c4a67d6
+    name: navidrome
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/navidrome-0.2.4/navidrome-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: 0.57.0
     created: "2025-07-07T11:39:07.722997521Z"
     dependencies:
     - name: common
@@ -116,6 +144,20 @@ entries:
     - https://github.com/Yukariin/helm-charts/releases/download/navidrome-0.1.0/navidrome-0.1.0.tgz
     version: 0.1.0
   prowlarr:
+  - apiVersion: v2
+    appVersion: 1.37.0.5076-ls120
+    created: "2025-07-07T14:29:58.996828848Z"
+    dependencies:
+    - name: common
+      repository: https://yukariin.github.io/helm-charts
+      version: 0.1.1
+    description: A Prowlarr Helm chart for Kubernetes
+    digest: f79ebb4b3ae45840bf6d775e468a54ab393e0ec355638ada314e18cb3cf048b6
+    name: prowlarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/prowlarr-0.3.1/prowlarr-0.3.1.tgz
+    version: 0.3.1
   - apiVersion: v2
     appVersion: 1.37.0.5076-ls120
     created: "2025-07-07T12:18:31.795078033Z"
@@ -245,7 +287,40 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/radarr-0.1.0/radarr-0.1.0.tgz
     version: 0.1.0
+  rsshub:
+  - apiVersion: v2
+    appVersion: "2025-07-05"
+    created: "2025-07-07T14:29:59.112445117Z"
+    dependencies:
+    - name: common
+      repository: https://yukariin.github.io/helm-charts
+      version: 0.1.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 20.7.0
+    description: An RSShub Helm chart for Kubernetes
+    digest: ddaab48398c07925706797e4a75a5b28bb94a68f7802800b3a531f0210aebed1
+    name: rsshub
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/rsshub-0.1.3/rsshub-0.1.3.tgz
+    version: 0.1.3
   slskd:
+  - apiVersion: v2
+    appVersion: 0.23.1
+    created: "2025-07-07T14:29:59.371488429Z"
+    dependencies:
+    - name: common
+      repository: https://yukariin.github.io/helm-charts
+      version: 0.1.1
+    description: An slskd Helm chart for Kubernetes
+    digest: 1c73600be944cc5a2204139de02db5cd230739e0d108496a568eff4c11fb3706
+    name: slskd
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/slskd-0.3.1/slskd-0.3.1.tgz
+    version: 0.3.1
   - apiVersion: v2
     appVersion: 0.23.1
     created: "2025-07-07T13:02:53.556245348Z"
@@ -391,4 +466,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T13:02:53.556320498Z"
+generated: "2025-07-07T14:29:59.371591351Z"
