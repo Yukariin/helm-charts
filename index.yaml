@@ -45,6 +45,20 @@ entries:
   navidrome:
   - apiVersion: v2
     appVersion: 0.57.0
+    created: "2025-07-07T11:39:07.722997521Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 0ed207fbfdf0984b595cebddb32aa70ca19bbcbaeacade3ebddad584174dfa10
+    name: navidrome
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/navidrome-0.2.3/navidrome-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: 0.57.0
     created: "2025-07-07T11:24:14.773309664Z"
     dependencies:
     - name: common
@@ -311,4 +325,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T11:24:15.64180361Z"
+generated: "2025-07-07T11:39:07.723057182Z"
