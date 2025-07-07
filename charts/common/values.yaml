@@ -49,13 +49,13 @@ deployments:
       repository: nginx
       tag: "1.21"
       pullPolicy: IfNotPresent
-    
+
     # Container ports
     ports:
       - name: http
         containerPort: 80
         protocol: TCP
-    
+
     # Environment variables
     env:
       ENV_VAR: "value"
@@ -65,14 +65,14 @@ deployments:
       #     secretKeyRef:
       #       name: my-secret
       #       key: password
-    
+
     # Environment from configmaps/secrets
     envFrom: []
     # - configMapRef:
     #     name: my-configmap
     # - secretRef:
     #     name: my-secret
-    
+
     # Health checks
     livenessProbe:
       httpGet:
@@ -80,16 +80,16 @@ deployments:
         port: http
       initialDelaySeconds: 30
       periodSeconds: 10
-    
+
     readinessProbe:
       httpGet:
         path: /
         port: http
       initialDelaySeconds: 5
       periodSeconds: 5
-    
+
     startupProbe: {}
-    
+
     # Resource limits and requests
     resources:
       limits:
@@ -98,7 +98,7 @@ deployments:
       requests:
         cpu: 250m
         memory: 256Mi
-    
+
     # Autoscaling configuration
     autoscaling:
       enabled: false
@@ -108,7 +108,7 @@ deployments:
       targetMemoryUtilizationPercentage: 80
       customMetrics: []
       behavior: {}
-    
+
     # Sidecar containers
     sidecars:
       - name: backup
@@ -128,13 +128,13 @@ deployments:
         volumeMounts:
           - name: backup-config
             mountPath: /etc/backup
-    
+
     # Additional volumes for this deployment
     volumes: []
-    
+
     # Additional volume mounts for main container
     volumeMounts: []
-    
+
     # Override global settings for this deployment
     nodeSelector: {}
     tolerations: []
@@ -169,7 +169,7 @@ services:
     labels: {}
     # Optional: specify which deployment this service targets
     # component: main  # targets deployment with component label
-    
+
   # Example additional service
   metrics:
     type: ClusterIP
@@ -221,7 +221,7 @@ persistence:
     volumeName: ""
     dataSource: {}
     dataSourceRef: {}
-  
+
   config:
     enabled: false
     size: 100Mi
