@@ -55,9 +55,10 @@ ingress:
 
 persistence:
   config:
-    enabled: true
-    mountPath: /config
     retain: true
-    size: 500Mi
     accessMode: ReadWriteOnce
+    size: 500Mi
+    globalMounts:
+      - path: /config
     # storageClass: ""
+
