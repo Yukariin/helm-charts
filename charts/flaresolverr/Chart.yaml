@@ -1,0 +1,15 @@
+apiVersion: v2
+name: sonarr
+description: A Flaresolverr Helm chart for Kubernetes
+
+type: application
+
+version: 0.1.0
+
+# renovate: image=ghcr.io/flaresolverr/flaresolverr
+appVersion: "v3.3.25"
+
+dependencies:
+  - name: common
+    version: 4.1.2
+    repository: https://bjw-s-labs.github.io/helm-charts

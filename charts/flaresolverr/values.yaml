@@ -1,0 +1,61 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+
+controllers:
+  main:
+    # -- Set the controller upgrade strategy
+    strategy: RollingUpdate
+
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: ghcr.io/flaresolverr/flaresolverr
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+          # -- image tag
+          tag: v3.3.25
+        
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env: {}
+
+        resources:
+          requests:
+            cpu: 10m
+            memory: 128Mi
+          limits:
+            memory: 2Gi
+
+        probes:
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /health
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /health
+
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8191
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See [values.yaml](./values.yaml)
+  main:
+    enabled: false
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
