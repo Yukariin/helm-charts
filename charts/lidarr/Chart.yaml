@@ -1,0 +1,15 @@
+apiVersion: v2
+name: lidarr
+description: A Lidarr Helm chart for Kubernetes
+
+type: application
+
+version: 0.1.0
+
+# renovate: image=ghcr.io/linuxserver/lidarr
+appVersion: "2.12.4.4658-ls46"
+
+dependencies:
+  - name: common
+    version: 4.1.2
+    repository: https://bjw-s-labs.github.io/helm-charts
