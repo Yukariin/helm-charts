@@ -154,6 +154,20 @@ entries:
   lidarr:
   - apiVersion: v2
     appVersion: 2.12.4.4658-ls46
+    created: "2025-07-08T16:13:42.837042763Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A Lidarr Helm chart for Kubernetes
+    digest: de4d598deedac5a8ca8c3702e17e91cdb4e7c506bb2496e61735a671118a6ddc
+    name: lidarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/lidarr-0.1.1/lidarr-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 2.12.4.4658-ls46
     created: "2025-07-08T14:01:58.258531874Z"
     dependencies:
     - name: common
@@ -569,6 +583,20 @@ entries:
   slskd:
   - apiVersion: v2
     appVersion: 0.23.1
+    created: "2025-07-08T16:13:42.960428941Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: An slskd Helm chart for Kubernetes
+    digest: d2efa829821d8875877266230d226242b5d7fc7e71a9b669fc51acd6f0443bf7
+    name: slskd
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/slskd-0.6.0/slskd-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
+    appVersion: 0.23.1
     created: "2025-07-08T09:39:22.289792976Z"
     dependencies:
     - name: common
@@ -810,4 +838,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-08T14:01:58.432128618Z"
+generated: "2025-07-08T16:13:42.960559508Z"
