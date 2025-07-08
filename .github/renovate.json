@@ -27,7 +27,8 @@
       "matchPackageNames": [
         "linuxserver/prowlarr",
         "linuxserver/radarr",
-        "linuxserver/sonarr"
+        "linuxserver/sonarr",
+        "linuxserver/lidarr"
       ],
       "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+-ls\\d+)$",
       "versioning": "loose"
