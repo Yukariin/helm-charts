@@ -1,6 +1,6 @@
 # lidarr
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.4.4658-ls46](https://img.shields.io/badge/AppVersion-2.12.4.4658--ls46-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.4.4658-ls46](https://img.shields.io/badge/AppVersion-2.12.4.4658--ls46-informational?style=flat-square)
 
 A Lidarr Helm chart for Kubernetes
 
@@ -20,9 +20,6 @@ A Lidarr Helm chart for Kubernetes
 | controllers.main.containers.main.image.tag | string | `"2.12.4.4658-ls46"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
-| controllers.main.containers.main.resources.limits.memory | string | `"2Gi"` |  |
-| controllers.main.containers.main.resources.requests.cpu | string | `"10m"` |  |
-| controllers.main.containers.main.resources.requests.memory | string | `"128Mi"` |  |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
