@@ -34,6 +34,7 @@ controllers:
       
       # Configure the gluetun sidecar
       gluetun:
+        dependsOn: main
         image:
           # -- image repository
           repository: qmcgaw/gluetun
@@ -59,7 +60,6 @@ controllers:
 service:
   main:
     controller: main
-    type: LoadBalancer
     ports:
       http:
         port: 5030
