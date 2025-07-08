@@ -151,6 +151,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/flaresolverr-0.1.1/flaresolverr-0.1.1.tgz
     version: 0.1.1
+  lidarr:
+  - apiVersion: v2
+    appVersion: 2.12.4.4658-ls46
+    created: "2025-07-08T14:01:58.258531874Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A Lidarr Helm chart for Kubernetes
+    digest: f9eda330811391d0957636c8cf315a14ad573ba63fd484d1d8bf0dc98ddd4845
+    name: lidarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
+    version: 0.1.0
   navidrome:
   - apiVersion: v2
     appVersion: 0.57.0
@@ -795,4 +810,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-08T09:39:22.28994026Z"
+generated: "2025-07-08T14:01:58.432128618Z"
