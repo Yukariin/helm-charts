@@ -136,6 +136,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
+  flaresolverr:
+  - apiVersion: v2
+    appVersion: v3.3.25
+    created: "2025-07-08T07:01:10.193797383Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A Flaresolverr Helm chart for Kubernetes
+    digest: 4969264c5b534d84008317fafd298c6efaeefc50cc4091fd0f54a385a28500ef
+    name: flaresolverr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/flaresolverr-0.1.1/flaresolverr-0.1.1.tgz
+    version: 0.1.1
   navidrome:
   - apiVersion: v2
     appVersion: 0.57.0
@@ -766,4 +781,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T20:49:53.442410383Z"
+generated: "2025-07-08T07:01:10.569867299Z"
