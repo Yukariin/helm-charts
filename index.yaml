@@ -151,6 +151,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/flaresolverr-0.1.1/flaresolverr-0.1.1.tgz
     version: 0.1.1
+  freshrss:
+  - apiVersion: v2
+    appVersion: 1.26.3
+    created: "2025-07-09T17:18:52.188430555Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A FreshRSS Helm chart for Kubernetes
+    digest: b645a97b37c197df2220c165a2ffecd6844ca84bf2c15140db8a83b9abb410a7
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/freshrss-0.1.0/freshrss-0.1.0.tgz
+    version: 0.1.0
   lidarr:
   - apiVersion: v2
     appVersion: 2.12.4.4658-ls46
@@ -852,4 +867,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-09T06:42:17.100387803Z"
+generated: "2025-07-09T17:18:53.173821634Z"
