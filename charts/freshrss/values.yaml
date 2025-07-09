@@ -1,0 +1,83 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+
+controllers:
+  main:
+    # -- Set the controller upgrade strategy
+    strategy: Recreate
+
+    containers:
+      # Configure the main application container
+      main:
+        image: &image
+          # -- image repository
+          repository: freshrss/freshrss
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+          # -- image tag
+          tag: 1.26.3
+
+        probes:
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /i/
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /i/
+  
+  updater:
+    type: cronjob
+    cronjob:
+      backoffLimit: 3
+      concurrencyPolicy: Forbid
+      failedJobsHistory: 1
+      schedule: "*/20 * * * *"
+      startingDeadlineSeconds: 30
+      successfulJobsHistory: 1
+      suspend: false
+    
+    containers:
+      main:
+        image: *image
+
+        command: /usr/bin/su
+        args:
+          - www-data
+          - -s
+          - /bin/sh
+          - -c
+          - "php /var/www/FreshRSS/app/actualize_script.php"
+
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 80
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See [values.yaml](./values.yaml)
+  main:
+    enabled: false
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
+
+persistence:
+  data:
+    retain: true
+    accessMode: ReadWriteOnce
+    size: 500Mi
+    globalMounts:
+      - path: /var/www/FreshRSS/data
+    # storageClass: ""
