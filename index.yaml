@@ -154,6 +154,20 @@ entries:
   freshrss:
   - apiVersion: v2
     appVersion: 1.26.3
+    created: "2025-07-09T17:47:20.423681857Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A FreshRSS Helm chart for Kubernetes
+    digest: 30c99f25a47945b701728a11a203b6a4b05e0768d586252e999092cde310f00b
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/freshrss-0.2.0/freshrss-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.26.3
     created: "2025-07-09T17:18:52.188430555Z"
     dependencies:
     - name: common
@@ -867,4 +881,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-09T17:18:53.173821634Z"
+generated: "2025-07-09T17:47:20.42377087Z"
