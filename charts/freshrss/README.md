@@ -1,6 +1,6 @@
 # freshrss
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.26.3](https://img.shields.io/badge/AppVersion-1.26.3-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.26.3](https://img.shields.io/badge/AppVersion-1.26.3-informational?style=flat-square)
 
 A FreshRSS Helm chart for Kubernetes
 
@@ -42,5 +42,8 @@ A FreshRSS Helm chart for Kubernetes
 | persistence.data.globalMounts[0].path | string | `"/var/www/FreshRSS/data"` |  |
 | persistence.data.retain | bool | `true` |  |
 | persistence.data.size | string | `"500Mi"` |  |
+| persistence.extensions.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.extensions.globalMounts[0].path | string | `"/var/www/FreshRSS/extensions"` |  |
+| persistence.extensions.size | string | `"500Mi"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 

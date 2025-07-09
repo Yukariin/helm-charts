@@ -81,3 +81,8 @@ persistence:
     globalMounts:
       - path: /var/www/FreshRSS/data
     # storageClass: ""
+  extensions:
+    accessMode: ReadWriteOnce
+    size: 500Mi
+    globalMounts:
+      - path: /var/www/FreshRSS/extensions
