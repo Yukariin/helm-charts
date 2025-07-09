@@ -1,6 +1,6 @@
 # slskd
 
-![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
+![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
 
 An slskd Helm chart for Kubernetes
 
@@ -27,11 +27,23 @@ An slskd Helm chart for Kubernetes
 | controllers.main.containers.slskd.probes.liveness | object | `{"path":"/health","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.slskd.probes.readiness | object | `{"path":"/health","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
+| controllers.soularr.containers.main.args[0] | string | `"-u"` |  |
+| controllers.soularr.containers.main.args[1] | string | `"/app/soularr.py"` |  |
+| controllers.soularr.containers.main.command | string | `"python"` |  |
+| controllers.soularr.containers.main.image.repository | string | `"mrusse08/soularr"` | image repository |
+| controllers.soularr.containers.main.image.tag | string | `"latest"` | image tag |
+| controllers.soularr.cronjob.schedule | string | `"*/5 * * * *"` |  |
+| controllers.soularr.type | string | `"cronjob"` |  |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.app.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.app.advancedMounts.main.slskd[0].path | string | `"/app"` |  |
 | persistence.app.retain | bool | `true` |  |
 | persistence.app.size | string | `"500Mi"` |  |
+| persistence.soularr-config.advancedMounts.soularr.main[0].path | string | `"/data/config.ini"` |  |
+| persistence.soularr-config.advancedMounts.soularr.main[0].readOnly | bool | `true` |  |
+| persistence.soularr-config.advancedMounts.soularr.main[0].subPath | string | `"config.ini"` |  |
+| persistence.soularr-config.name | string | `"soularr-config"` |  |
+| persistence.soularr-config.type | string | `"secret"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 
 ----------------------------------------------
