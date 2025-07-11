@@ -9,7 +9,7 @@ An RSShub Helm chart for Kubernetes
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s-labs.github.io/helm-charts | common | 4.1.2 |
-| https://charts.bitnami.com/bitnami | redis | 21.2.9 |
+| https://charts.bitnami.com/bitnami | redis | 21.2.10 |
 
 ## Values
 
