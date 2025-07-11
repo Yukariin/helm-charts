@@ -902,6 +902,28 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.34.1
+    created: "2025-07-11T19:47:28.637198183Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.7.17
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 21.0.2
+    description: A Vaultwarden Helm chart for Kubernetes
+    digest: e6ce7acea0f950cf930d4e44350cdf6da305d52b050f797c7f1f9fb27119167d
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.3/vaultwarden-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.34.1
     created: "2025-07-11T19:33:55.824912727Z"
     dependencies:
     - name: common
@@ -944,4 +966,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-11T19:33:55.825087834Z"
+generated: "2025-07-11T19:47:28.63734662Z"
