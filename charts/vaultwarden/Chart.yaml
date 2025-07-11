@@ -18,6 +18,6 @@ dependencies:
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
   - name: mariadb
-    version: 20.1.1
+    version: 20.5.9
     repository: https://charts.bitnami.com/bitnami
     condition: mariadb.enabled
