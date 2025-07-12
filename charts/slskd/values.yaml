@@ -34,7 +34,6 @@ controllers:
       
       # Configure the gluetun sidecar
       gluetun:
-        dependsOn: main
         image:
           # -- image repository
           repository: qmcgaw/gluetun

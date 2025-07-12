@@ -1,6 +1,6 @@
 # slskd
 
-![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
+![Version: 0.8.1](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
 
 An slskd Helm chart for Kubernetes
 
@@ -14,7 +14,6 @@ An slskd Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| controllers.main.containers.gluetun.dependsOn | string | `"main"` |  |
 | controllers.main.containers.gluetun.env | object | See [values.yaml](./values.yaml) | environment variables. [[ref]](https://github.com/qdm12/gluetun-wiki) |
 | controllers.main.containers.gluetun.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.gluetun.image.repository | string | `"qmcgaw/gluetun"` | image repository |
