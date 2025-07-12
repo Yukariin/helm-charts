@@ -4,7 +4,7 @@
 controllers:
   main:
     # -- Set the controller upgrade strategy
-    strategy: RollingUpdate
+    strategy: Recreate
 
     containers:
       # Configure the main application container
@@ -54,22 +54,6 @@ controllers:
           capabilities:
             add:
               - NET_ADMIN
-  soularr:
-    type: cronjob
-    cronjob:
-      schedule: "*/5 * * * *"
-
-    containers:
-      # Configure cronjob container
-      main:
-        image:
-          # -- image repository
-          repository: mrusse08/soularr
-          # -- image tag
-          tag: latest
-        
-        command: python
-        args: ["-u", "/app/soularr.py"]
 
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
@@ -106,12 +90,3 @@ persistence:
         slskd:
           - path: /app
     # storageClass: ""
-  soularr-config:
-    type: secret
-    name: soularr-config
-    advancedMounts:
-      soularr:
-        main:
-          - path: /data/config.ini
-            subPath: config.ini
-            readOnly: true
