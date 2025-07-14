@@ -50,6 +50,44 @@ jobs:
           fi
         env:
           TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+      
+      - name: Bump chart version on any change inside chart dir
+        if: steps.list-changed.outputs.changed == 'true'
+        env:
+          CHART: ${{ steps.list-changed.outputs.changed_list }}
+        run: |
+          if [[ ! -d "$CHART" ]]; then
+            echo "$CHART directory not found"
+            exit 0
+          fi
+
+          set -euo pipefail
+
+          BASE_COMMIT=$(git merge-base origin/main HEAD)
+          changed_files_in_chart=$(git diff --name-only "$BASE_COMMIT" -- "$CHART")
+
+          only_chart_yaml_changed=true
+          for f in $changed_files_in_chart; do
+            [[ "$f" == "$CHART/Chart.yaml" ]] && continue
+            [[ "$f" == "$CHART/README.md" ]] && continue   # auto-docs
+            [[ "$f" == "$CHART" ]] && continue             # directory name itself
+            only_chart_yaml_changed=false
+            break
+          done
+
+          if $only_chart_yaml_changed; then
+            # Nothing relevant changed → exit
+            echo "Only Chart.yaml or README.md changed – skipping bump"
+            exit 0
+          fi
+
+          current_version=$(yq eval '.version' "$CHART/Chart.yaml")
+          IFS=. read -r major minor patch <<<"$current_version"
+          patch=$((patch + 1))
+          new_version="${major}.${minor}.${patch}"
+
+          yq eval ".version = \"$new_version\"" -i "$CHART/Chart.yaml"
+          echo "Bumped $CHART from $current_version to $new_version"
 
       - name: Bump chart version
         if: steps.list-changed.outputs.changed == 'true'
@@ -106,44 +144,6 @@ jobs:
 
           # Generate chart README.md file
           pre-commit run --all-files || echo "Ignoring pre-commit failure as it is expected due to helm-docs file modifications"
-
-      - name: Bump chart version on any change inside chart dir
-        if: steps.list-changed.outputs.changed == 'true'
-        env:
-          CHART: ${{ steps.list-changed.outputs.changed_list }}
-        run: |
-          if [[ ! -d "$CHART" ]]; then
-            echo "$CHART directory not found"
-            exit 0
-          fi
-
-          set -euo pipefail
-
-          BASE_COMMIT=$(git merge-base origin/main HEAD)
-          changed_files_in_chart=$(git diff --name-only "$BASE_COMMIT" -- "$CHART")
-
-          only_chart_yaml_changed=true
-          for f in $changed_files_in_chart; do
-            [[ "$f" == "$CHART/Chart.yaml" ]] && continue
-            [[ "$f" == "$CHART/README.md" ]] && continue   # auto-docs
-            [[ "$f" == "$CHART" ]] && continue             # directory name itself
-            only_chart_yaml_changed=false
-            break
-          done
-
-          if $only_chart_yaml_changed; then
-            # Nothing relevant changed → exit
-            echo "Only Chart.yaml or README.md changed – skipping bump"
-            exit 0
-          fi
-
-          current_version=$(yq eval '.version' "$CHART/Chart.yaml")
-          IFS=. read -r major minor patch <<<"$current_version"
-          patch=$((patch + 1))
-          new_version="${major}.${minor}.${patch}"
-
-          yq eval ".version = \"$new_version\"" -i "$CHART/Chart.yaml"
-          echo "Bumped $CHART from $current_version to $new_version"
       
       - name: Commit changes
         if: steps.list-changed.outputs.changed == 'true'
