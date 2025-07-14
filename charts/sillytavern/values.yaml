@@ -1,0 +1,73 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+
+controllers:
+  main:
+    # -- Set the controller upgrade strategy
+    strategy: RollingUpdate
+
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: ghcr.io/sillytavern/sillytavern
+          # -- image pull policy
+          pullPolicy: Always
+          # -- image tag
+          tag: "staging"
+        
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env:
+          NODE_ENV: production
+        
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "128Mi"
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8000
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See [values.yaml](./values.yaml)
+  main:
+    enabled: false
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
+
+persistence:
+  main:
+    enabled: true
+    retain: true
+    accessMode: ReadWriteOnce
+    size: 500Mi
+    globalMounts:
+      - subPath: data
+        path: /home/node/app/data
+      - subPath: plugins
+        path: /home/node/app/plugins
+      - subPath: extensions
+        path: /home/node/app/public/scripts/extensions/third-party
+  config:
+    type: configMap
+    name: sillytavern-config
+    items:
+      - key: config.yaml
+        path: /home/node/app/config.yaml
