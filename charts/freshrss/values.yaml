@@ -16,6 +16,9 @@ controllers:
           pullPolicy: IfNotPresent
           # -- image tag
           tag: 1.26.3
+        
+        env:
+          CRON_MIN: '*/20'
 
         probes:
           # -- Configures liveness probe
@@ -26,29 +29,6 @@ controllers:
           readiness:
             type: HTTP
             path: /i/
-  
-  updater:
-    type: cronjob
-    cronjob:
-      backoffLimit: 3
-      concurrencyPolicy: Forbid
-      failedJobsHistory: 1
-      schedule: "*/20 * * * *"
-      startingDeadlineSeconds: 30
-      successfulJobsHistory: 1
-      suspend: false
-    
-    containers:
-      main:
-        image: *image
-
-        command: /usr/bin/su
-        args:
-          - www-data
-          - -s
-          - /bin/sh
-          - -c
-          - "php /var/www/FreshRSS/app/actualize_script.php"
 
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
