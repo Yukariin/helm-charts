@@ -1,6 +1,6 @@
 # sillytavern
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: staging](https://img.shields.io/badge/AppVersion-staging-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: staging](https://img.shields.io/badge/AppVersion-staging-informational?style=flat-square)
 
 A SillyTavern Helm chart for Kubernetes
 
@@ -24,8 +24,8 @@ A SillyTavern Helm chart for Kubernetes
 | controllers.main.containers.main.resources.requests.memory | string | `"128Mi"` |  |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
-| persistence.config.items[0].key | string | `"config.yaml"` |  |
-| persistence.config.items[0].path | string | `"/home/node/app/config.yaml"` |  |
+| persistence.config.globalMounts[0].path | string | `"/home/node/app/config/config.yaml"` |  |
+| persistence.config.globalMounts[0].subPath | string | `"config.yaml"` |  |
 | persistence.config.name | string | `"sillytavern-config"` |  |
 | persistence.config.type | string | `"configMap"` |  |
 | persistence.main.accessMode | string | `"ReadWriteOnce"` |  |
@@ -37,6 +37,6 @@ A SillyTavern Helm chart for Kubernetes
 | persistence.main.globalMounts[2].path | string | `"/home/node/app/public/scripts/extensions/third-party"` |  |
 | persistence.main.globalMounts[2].subPath | string | `"extensions"` |  |
 | persistence.main.retain | bool | `true` |  |
-| persistence.main.size | string | `"500Mi"` |  |
+| persistence.main.size | string | `"1Gi"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 

@@ -57,7 +57,7 @@ persistence:
     enabled: true
     retain: true
     accessMode: ReadWriteOnce
-    size: 500Mi
+    size: 1Gi
     globalMounts:
       - subPath: data
         path: /home/node/app/data
@@ -68,6 +68,6 @@ persistence:
   config:
     type: configMap
     name: sillytavern-config
-    items:
-      - key: config.yaml
-        path: /home/node/app/config.yaml
+    globalMounts:
+      - subPath: config.yaml
+        path: /home/node/app/config/config.yaml
