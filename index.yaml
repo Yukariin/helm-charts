@@ -627,6 +627,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/rsshub-0.1.3/rsshub-0.1.3.tgz
     version: 0.1.3
+  sillytavern:
+  - apiVersion: v2
+    appVersion: staging
+    created: "2025-07-14T07:54:48.408432336Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A SillyTavern Helm chart for Kubernetes
+    digest: 9adca7940901c0fbf7993cc30e18c3815f16c40e216f2bcb3ed21fd0de835bf7
+    name: sillytavern
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/sillytavern-0.1.0/sillytavern-0.1.0.tgz
+    version: 0.1.0
   slskd:
   - apiVersion: v2
     appVersion: 0.23.1
@@ -994,4 +1009,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-12T13:18:04.541305791Z"
+generated: "2025-07-14T07:54:48.408568833Z"
