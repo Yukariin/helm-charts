@@ -14,7 +14,7 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: "2025-07-15"
+          tag: "2025-07-16"
 
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
