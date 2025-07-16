@@ -25,12 +25,7 @@
     {
       "description": "Handle LSIO version tags",
       "matchDatasources": ["docker"],
-      "matchPackageNames": [
-        "linuxserver/prowlarr",
-        "linuxserver/radarr",
-        "linuxserver/sonarr",
-        "linuxserver/lidarr"
-      ],
+      "matchPackagePatterns": ["^linuxserver/"],
       "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+-ls\\d+)$",
       "versioning": "loose"
     },
