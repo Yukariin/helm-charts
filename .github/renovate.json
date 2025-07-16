@@ -23,6 +23,7 @@
   ],
   "packageRules": [
     {
+      "description": "Handle LSIO version tags",
       "matchDatasources": ["docker"],
       "matchPackageNames": [
         "linuxserver/prowlarr",
@@ -32,6 +33,14 @@
       ],
       "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+-ls\\d+)$",
       "versioning": "loose"
+    },
+    {
+      "description": "Handle YYYY-MM-DD version tags",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "diygod/rsshub"
+      ],
+      "versioning": "regex:^v?(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})$"
     }
   ]
 }
