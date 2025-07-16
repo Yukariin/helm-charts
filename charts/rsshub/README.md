@@ -1,6 +1,6 @@
 # rsshub
 
-![Version: 0.2.6](https://img.shields.io/badge/Version-0.2.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025-07-05](https://img.shields.io/badge/AppVersion-2025--07--05-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025-07-15](https://img.shields.io/badge/AppVersion-2025--07--15-informational?style=flat-square)
 
 An RSShub Helm chart for Kubernetes
 
@@ -25,7 +25,7 @@ An RSShub Helm chart for Kubernetes
 | controllers.main.containers.rsshub.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.rsshub.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.rsshub.image.repository | string | `"diygod/rsshub"` | image repository |
-| controllers.main.containers.rsshub.image.tag | string | `"2025-07-04"` | image tag |
+| controllers.main.containers.rsshub.image.tag | string | `"2025-07-15"` | image tag |
 | controllers.main.containers.rsshub.probes.liveness | object | `{"path":"/healthz","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.rsshub.probes.readiness | object | `{"path":"/healthz","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
