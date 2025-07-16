@@ -15,7 +15,7 @@ controllers:
           pullPolicy: IfNotPresent
           # -- image tag
           tag: "2025-07-04"
-        
+
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
         env:
@@ -31,15 +31,15 @@ controllers:
           readiness:
             type: HTTP
             path: /healthz
-      
+
       browserless:
         image:
           repository: browserless/chrome
           tag: latest
-        
+
         ports:
           - containerPort: 3000
-        
+
         probes:
           liveness:
             type: HTTP
