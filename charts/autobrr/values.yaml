@@ -14,8 +14,8 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: v1.63.1
-        
+          tag: v1.64.0
+
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
         env: {}
@@ -61,4 +61,3 @@ persistence:
     globalMounts:
       - path: /config
     # storageClass: ""
-
