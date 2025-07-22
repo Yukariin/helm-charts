@@ -7,7 +7,7 @@ type: application
 version: 0.4.2
 
 # renovate: image=ghcr.io/autobrr/autobrr
-appVersion: "v1.63.1"
+appVersion: "v1.64.0"
 
 dependencies:
   - name: common
