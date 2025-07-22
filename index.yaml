@@ -2,6 +2,20 @@ apiVersion: v1
 entries:
   autobrr:
   - apiVersion: v2
+    appVersion: v1.64.0
+    created: "2025-07-22T06:43:54.48706214Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: An Autobrr Helm chart for Kubernetes
+    digest: 36f62bc06227684b2c76366b9b9feaa990faa9ff6bb55f2513b55afe59cf7b91
+    name: autobrr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/autobrr-0.5.0/autobrr-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
     appVersion: v1.63.1
     created: "2025-07-07T17:25:18.206801617Z"
     dependencies:
@@ -1193,4 +1207,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-18T12:26:24.915443607Z"
+generated: "2025-07-22T06:43:54.4871952Z"
