@@ -12,9 +12,9 @@ controllers:
           # -- image repository
           repository: diygod/rsshub
           # -- image pull policy
-          pullPolicy: IfNotPresent
+          pullPolicy: Always
           # -- image tag
-          tag: "2025-07-15"
+          tag: latest
 
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
