@@ -6,24 +6,15 @@
     "replacements:k8s-registry-move",
     ":automergePr",
     ":automergePatch",
-    ":semanticCommitTypeAll(chore)"
+    ":semanticCommits",
+    "github>yukariin/helm-charts//.github/renovate/helm.json5",
+    "github>yukariin/helm-charts//.github/renovate/labels.json5"
   ],
   "postUpdateOptions": [
     "helmUpdateSubChartArchives"
   ],
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
-  "customManagers": [
-    {
-      "description": ["Process Helm charts"],
-      "customType": "regex",
-      "managerFilePatterns": ["/(^|/)Chart\\.ya?ml$/"],
-      "matchStrings": [
-        "#\\s*renovate:\\s*image=(?<depName>.*?)\\n\\s*appVersion:\\s*\"?(?<currentValue>[\\w.-]+)\"?"
-      ],
-      "datasourceTemplate": "docker"
-    }
-  ],
   "packageRules": [
     {
       "description": "Handle LSIO version tags",
