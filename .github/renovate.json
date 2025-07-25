@@ -2,7 +2,10 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    "docker:enableMajor",
     "replacements:k8s-registry-move",
+    ":automergePr",
+    ":automergePatch",
     ":semanticCommitTypeAll(chore)"
   ],
   "postUpdateOptions": [
