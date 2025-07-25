@@ -14,19 +14,28 @@
   "postUpdateOptions": [
     "helmUpdateSubChartArchives"
   ],
-  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
+  "suppressNotifications": [
+    "prEditedNotification",
+    "prIgnoreNotification"
+  ],
   "rebaseWhen": "conflicted",
   "packageRules": [
     {
       "description": "Handle LSIO version tags",
-      "matchDatasources": ["docker"],
-      "matchPackagePatterns": ["^linuxserver/"],
+      "matchDatasources": [
+        "docker"
+      ],
       "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+-ls\\d+)$",
-      "versioning": "loose"
+      "versioning": "loose",
+      "matchPackageNames": [
+        "/^linuxserver//"
+      ]
     },
     {
       "description": "Handle YYYY-MM-DD version tags",
-      "matchDatasources": ["docker"],
+      "matchDatasources": [
+        "docker"
+      ],
       "matchPackageNames": [
         "diygod/rsshub"
       ],
