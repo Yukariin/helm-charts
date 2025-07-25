@@ -7,9 +7,9 @@
     ":automergePr",
     ":automergePatch",
     ":semanticCommits",
-    "github>yukariin/helm-charts//.github/renovate/helm.json",
-    "github>yukariin/helm-charts//.github/renovate/labels.json",
-    "github>yukariin/helm-charts//.github/renovate/semantic_commits.json"
+    "github>yukariin/helm-charts//.github/renovate/helm.json5",
+    "github>yukariin/helm-charts//.github/renovate/labels.json5",
+    "github>yukariin/helm-charts//.github/renovate/semantic_commits.json5"
   ],
   "postUpdateOptions": [
     "helmUpdateSubChartArchives"

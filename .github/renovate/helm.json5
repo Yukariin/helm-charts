@@ -9,6 +9,6 @@
         "#\\s*renovate:\\s*image=(?<depName>.*?)\\n\\s*appVersion:\\s*\"?(?<currentValue>[\\w.-]+)\"?"
       ],
       "datasourceTemplate": "docker"
-    }
+    },
   ]
 }

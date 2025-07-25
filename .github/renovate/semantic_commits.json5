@@ -77,6 +77,6 @@
       "semanticCommitScope": "github-action",
       "commitMessageTopic": "{{depName}}",
       "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
-    }
+    },
   ]
 }
