@@ -1,1 +1,15 @@
+{{/* Append the hardcoded settings */}}
+{{- define "flaresolverr.harcodedValues" -}}
+{{- with .Values.serviceMonitor.main }}
+{{- if .enabled }}
+service:
+  main:
+    ports:
+      prom:
+        port: 8192
+{{- end }}
+{{- end }}
+{{- end -}}
+{{- $_ := merge .Values (include "flaresolverr.harcodedValues" . | fromYaml) -}}
+
 {{ include "bjw-s.common.loader.all" . }}
