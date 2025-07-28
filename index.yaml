@@ -153,6 +153,20 @@ entries:
   flaresolverr:
   - apiVersion: v2
     appVersion: v3.3.25
+    created: "2025-07-28T16:13:11.858626183Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A Flaresolverr Helm chart for Kubernetes
+    digest: e48b5f83ce77b9c1aeb25850f6828a3b0fabe6519272a0a63b3d1a0b684c8ae5
+    name: flaresolverr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/flaresolverr-0.2.2/flaresolverr-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: v3.3.25
     created: "2025-07-28T16:05:12.583961822Z"
     dependencies:
     - name: common
@@ -1341,4 +1355,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-28T16:05:12.971999233Z"
+generated: "2025-07-28T16:13:11.858807823Z"
