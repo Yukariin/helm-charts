@@ -1,6 +1,6 @@
 # rsshub
 
-![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 An RSShub Helm chart for Kubernetes
 
@@ -22,6 +22,9 @@ An RSShub Helm chart for Kubernetes
 | controllers.main.containers.browserless.probes.liveness.type | string | `"HTTP"` |  |
 | controllers.main.containers.browserless.probes.readiness.path | string | `"/pressure"` |  |
 | controllers.main.containers.browserless.probes.readiness.type | string | `"HTTP"` |  |
+| controllers.main.containers.browserless.resources.limits.memory | string | `"2Gi"` |  |
+| controllers.main.containers.browserless.resources.requests.cpu | string | `"10m"` |  |
+| controllers.main.containers.browserless.resources.requests.memory | string | `"128Mi"` |  |
 | controllers.main.containers.rsshub.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.rsshub.image.pullPolicy | string | `"Always"` | image pull policy |
 | controllers.main.containers.rsshub.image.repository | string | `"diygod/rsshub"` | image repository |

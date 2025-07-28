@@ -40,6 +40,13 @@ controllers:
         ports:
           - containerPort: 3000
 
+        resources:
+          requests:
+            cpu: 10m
+            memory: 128Mi
+          limits:
+            memory: 2Gi
+
         probes:
           liveness:
             type: HTTP
