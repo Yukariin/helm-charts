@@ -1,6 +1,6 @@
 # flaresolverr
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.3.25](https://img.shields.io/badge/AppVersion-v3.3.25-informational?style=flat-square)
+![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.3.25](https://img.shields.io/badge/AppVersion-v3.3.25-informational?style=flat-square)
 
 A Flaresolverr Helm chart for Kubernetes
 
@@ -26,4 +26,7 @@ A Flaresolverr Helm chart for Kubernetes
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
+| serviceMonitor | object | See [values.yaml](./values.yaml) | Configure the ServiceMonitors for the chart here. |
+| serviceMonitor.main.enabled | bool | `false` | Enables or disables the serviceMonitor. |
+| serviceMonitor.main.endpoints | list | See [values.yaml](./values.yaml) | Configures the endpoints for the serviceMonitor. Helm templates can be used. |
 
