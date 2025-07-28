@@ -46,7 +46,7 @@ serviceMonitor:
     # -- Configures the endpoints for the serviceMonitor. Helm templates can be used.
     # @default -- See [values.yaml](./values.yaml)
     endpoints:
-      - port: 8192
+      - port: http
         scheme: http
         path: /metrics
         interval: 30s
