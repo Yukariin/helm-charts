@@ -7,6 +7,7 @@
     ":automergePr",
     ":automergePatch",
     ":semanticCommits",
+    ":timezone(Europe/Greece)",
     "github>yukariin/helm-charts//.github/renovate/helm.json5",
     "github>yukariin/helm-charts//.github/renovate/labels.json5",
     "github>yukariin/helm-charts//.github/renovate/semantic_commits.json5"
@@ -19,6 +20,12 @@
     "prIgnoreNotification"
   ],
   "rebaseWhen": "conflicted",
+  "schedule": [
+    "before 9pm on friday"
+  ],
+  "labels": [
+    "dependencies"
+  ],
   "packageRules": [
     {
       "description": "Handle LSIO version tags",
