@@ -1,6 +1,6 @@
 # vaultwarden
 
-![Version: 0.1.10](https://img.shields.io/badge/Version-0.1.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.2](https://img.shields.io/badge/AppVersion-1.34.2-informational?style=flat-square)
+![Version: 0.1.11](https://img.shields.io/badge/Version-0.1.11-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.2](https://img.shields.io/badge/AppVersion-1.34.2-informational?style=flat-square)
 
 A Vaultwarden Helm chart for Kubernetes
 
@@ -16,13 +16,13 @@ A Vaultwarden Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
+| controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. [[ref]](https://github.com/dani-garcia/vaultwarden/blob/main/.env.template) |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/dani-garcia/vaultwarden"` | image repository |
 | controllers.main.containers.main.image.tag | string | `"1.34.2"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/alive","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/alive","type":"HTTP"}` | Configures readiness probe |
-| controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
+| controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | ingress | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | mariadb | object | See [values.yaml](./values.yaml) | Enable and configure mariadb database subchart under this key. |
 | persistence | object | See [values.yaml](./values.yaml) | Configure persistence settings for the chart under this key. |
