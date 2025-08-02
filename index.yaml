@@ -250,6 +250,25 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/freshrss-0.1.0/freshrss-0.1.0.tgz
     version: 0.1.0
+  gotify:
+  - apiVersion: v2
+    appVersion: 2.6.3
+    created: "2025-08-02T17:03:16.344330431Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.7.21
+    description: A Gotify Helm chart for Kubernetes
+    digest: 060f826f9f92decf05a80bf737b00d068df96d658b28c069a61fcee5f43fb358
+    name: gotify
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/gotify-0.1.0/gotify-0.1.0.tgz
+    version: 0.1.0
   lidarr:
   - apiVersion: v2
     appVersion: 2.12.4.4658-ls46
@@ -1369,4 +1388,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-28T17:08:44.525848824Z"
+generated: "2025-08-02T17:03:16.344518324Z"
