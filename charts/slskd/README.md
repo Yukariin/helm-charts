@@ -1,6 +1,6 @@
 # slskd
 
-![Version: 0.8.1](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
+![Version: 0.8.2](https://img.shields.io/badge/Version-0.8.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.23.1](https://img.shields.io/badge/AppVersion-0.23.1-informational?style=flat-square)
 
 An slskd Helm chart for Kubernetes
 
@@ -32,4 +32,7 @@ An slskd Helm chart for Kubernetes
 | persistence.app.retain | bool | `true` |  |
 | persistence.app.size | string | `"500Mi"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
+| serviceMonitor | object | See [values.yaml](./values.yaml) | Configure the ServiceMonitors for the chart here. |
+| serviceMonitor.main.enabled | bool | `false` | Enables or disables the serviceMonitor. |
+| serviceMonitor.main.endpoints | list | See [values.yaml](./values.yaml) | Configures the endpoints for the serviceMonitor. Helm templates can be used. |
 

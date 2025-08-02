@@ -54,6 +54,20 @@ controllers:
             add:
               - NET_ADMIN
 
+
+# -- Configure the ServiceMonitors for the chart here.
+# @default -- See [values.yaml](./values.yaml)
+serviceMonitor:
+  main:
+    # -- Enables or disables the serviceMonitor.
+    enabled: false
+    # -- Configures the endpoints for the serviceMonitor. Helm templates can be used.
+    # @default -- See [values.yaml](./values.yaml)
+    endpoints:
+      - port: http
+        scheme: http
+        path: /metrics
+
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
 service:
