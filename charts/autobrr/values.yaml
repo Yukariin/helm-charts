@@ -4,7 +4,7 @@
 controllers:
   main:
     # -- Set the controller upgrade strategy
-    strategy: RollingUpdate
+    strategy: Recreate
 
     containers:
       autobrr:
