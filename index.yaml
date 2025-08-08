@@ -2,6 +2,20 @@ apiVersion: v1
 entries:
   autobrr:
   - apiVersion: v2
+    appVersion: v1.65.0
+    created: "2025-08-08T07:04:26.059244534Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: An Autobrr Helm chart for Kubernetes
+    digest: edd4b9a60759651e3eb29d21b5d936774fe510c954c082b731c0a548c85cd9dd
+    name: autobrr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/autobrr-0.6.0/autobrr-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
     appVersion: v1.64.0
     created: "2025-07-22T06:43:54.48706214Z"
     dependencies:
@@ -299,6 +313,20 @@ entries:
     - https://github.com/Yukariin/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
     version: 0.1.0
   navidrome:
+  - apiVersion: v2
+    appVersion: 0.58.0
+    created: "2025-08-08T07:04:26.265738121Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: A Helm chart for Kubernetes
+    digest: 79f07562a6d54f20094b1305cb23b9f9898838b5344a0de0bfbfee85d0299ef6
+    name: navidrome
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/navidrome-0.4.0/navidrome-0.4.0.tgz
+    version: 0.4.0
   - apiVersion: v2
     appVersion: 0.57.0
     created: "2025-07-07T17:25:18.309022529Z"
@@ -1428,4 +1456,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-08T07:03:47.138459848Z"
+generated: "2025-08-08T07:04:26.265968972Z"
