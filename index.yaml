@@ -634,6 +634,24 @@ entries:
   rsshub:
   - apiVersion: v2
     appVersion: latest
+    created: "2025-08-08T16:12:46.486483597Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 22.0.0
+    description: An RSShub Helm chart for Kubernetes
+    digest: d8cf3c9c070ce3f3207a65660294e8937df289ec6b1bc2f9d5ab4b70f4dc38ac
+    name: rsshub
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/rsshub-1.1.4/rsshub-1.1.4.tgz
+    version: 1.1.4
+  - apiVersion: v2
+    appVersion: latest
     created: "2025-08-06T15:23:49.177782142Z"
     dependencies:
     - name: common
@@ -1528,4 +1546,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-08T13:55:59.269954428Z"
+generated: "2025-08-08T16:12:46.48669967Z"
