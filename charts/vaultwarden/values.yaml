@@ -15,7 +15,7 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: 1.34.2
+          tag: 1.34.3
 
         # -- environment variables. [[ref]](https://github.com/dani-garcia/vaultwarden/blob/main/.env.template)
         # @default -- See [values.yaml](./values.yaml)
