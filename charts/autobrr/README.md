@@ -1,6 +1,6 @@
 # autobrr
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.64.0](https://img.shields.io/badge/AppVersion-v1.64.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.65.0](https://img.shields.io/badge/AppVersion-v1.65.0-informational?style=flat-square)
 
 An Autobrr Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ An Autobrr Helm chart for Kubernetes
 | controllers.main.containers.autobrr.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.autobrr.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.autobrr.image.repository | string | `"ghcr.io/autobrr/autobrr"` | image repository |
-| controllers.main.containers.autobrr.image.tag | string | `"v1.64.0"` | image tag |
+| controllers.main.containers.autobrr.image.tag | string | `"v1.65.0"` | image tag |
 | controllers.main.containers.autobrr.probes.liveness | object | `{"path":"/api/healthz/liveness","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.autobrr.probes.readiness | object | `{"path":"/api/healthz/readiness","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
