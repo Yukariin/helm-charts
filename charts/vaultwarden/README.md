@@ -1,6 +1,6 @@
 # vaultwarden
 
-![Version: 0.1.12](https://img.shields.io/badge/Version-0.1.12-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.2](https://img.shields.io/badge/AppVersion-1.34.2-informational?style=flat-square)
+![Version: 0.1.14](https://img.shields.io/badge/Version-0.1.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.3](https://img.shields.io/badge/AppVersion-1.34.3-informational?style=flat-square)
 
 A Vaultwarden Helm chart for Kubernetes
 
@@ -19,7 +19,7 @@ A Vaultwarden Helm chart for Kubernetes
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. [[ref]](https://github.com/dani-garcia/vaultwarden/blob/main/.env.template) |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/dani-garcia/vaultwarden"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"1.34.2"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"1.34.3"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/alive","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/alive","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
