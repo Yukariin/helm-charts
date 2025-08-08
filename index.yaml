@@ -916,6 +916,20 @@ entries:
   slskd:
   - apiVersion: v2
     appVersion: 0.23.1
+    created: "2025-08-08T07:47:08.641461643Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.1.2
+    description: An slskd Helm chart for Kubernetes
+    digest: 7a9a49d45dd9d7c168e4ea3db456b15a38a05232919adb08529e8f3e705373d4
+    name: slskd
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/slskd-0.8.2/slskd-0.8.2.tgz
+    version: 0.8.2
+  - apiVersion: v2
+    appVersion: 0.23.1
     created: "2025-07-12T13:18:04.541104131Z"
     dependencies:
     - name: common
@@ -1478,4 +1492,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-08T07:43:20.705248369Z"
+generated: "2025-08-08T07:47:08.641676354Z"
