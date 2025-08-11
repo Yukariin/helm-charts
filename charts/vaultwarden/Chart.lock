@@ -1,12 +1,12 @@
 dependencies:
 - name: common
   repository: https://bjw-s-labs.github.io/helm-charts
-  version: 4.1.2
+  version: 4.2.0
 - name: postgresql
   repository: https://charts.bitnami.com/bitnami
   version: 16.7.24
 - name: mariadb
   repository: https://charts.bitnami.com/bitnami
   version: 21.0.6
-digest: sha256:c9a92d34f6b06831bffe03078fce63d0468aed150fc122f3b496f3f48c37a0d9
-generated: "2025-08-08T16:51:36.038186347Z"
+digest: sha256:00d059e9e167c74a96ba16dff7b3fc2cd6962653ade464d2e74ce37dddb6bc77
+generated: "2025-08-11T11:11:09.928021499Z"
