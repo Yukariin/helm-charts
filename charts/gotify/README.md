@@ -9,7 +9,7 @@ A Gotify Helm chart for Kubernetes
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s-labs.github.io/helm-charts | common | 4.2.0 |
-| https://charts.bitnami.com/bitnami | postgresql | 16.7.24 |
+| https://charts.bitnami.com/bitnami | postgresql | 16.7.26 |
 
 ## Values
 
