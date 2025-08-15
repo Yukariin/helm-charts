@@ -8,7 +8,7 @@ A Sonarr Helm chart for Kubernetes
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://bjw-s-labs.github.io/helm-charts | common | 4.1.2 |
+| https://bjw-s-labs.github.io/helm-charts | common | 4.2.0 |
 
 ## Values
 
