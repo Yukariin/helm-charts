@@ -237,6 +237,20 @@ entries:
     version: 0.1.1
   freshrss:
   - apiVersion: v2
+    appVersion: 1.27.0
+    created: "2025-08-22T06:43:23.181199317Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.2.0
+    description: A FreshRSS Helm chart for Kubernetes
+    digest: 34f5f9a3f3f5d6a2faf04f9c0bd8b58b78dbf00ec68d462dc6eaf46688d4daeb
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/freshrss-0.4.0/freshrss-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
     appVersion: 1.26.3
     created: "2025-07-14T16:08:34.245972918Z"
     dependencies:
@@ -1600,4 +1614,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-15T17:19:54.180183562Z"
+generated: "2025-08-22T06:43:23.474436491Z"
