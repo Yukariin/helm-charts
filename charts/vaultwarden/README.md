@@ -1,6 +1,6 @@
 # vaultwarden
 
-![Version: 0.1.16](https://img.shields.io/badge/Version-0.1.16-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.3](https://img.shields.io/badge/AppVersion-1.34.3-informational?style=flat-square)
+![Version: 0.1.17](https://img.shields.io/badge/Version-0.1.17-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.3](https://img.shields.io/badge/AppVersion-1.34.3-informational?style=flat-square)
 
 A Vaultwarden Helm chart for Kubernetes
 
@@ -9,7 +9,7 @@ A Vaultwarden Helm chart for Kubernetes
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s-labs.github.io/helm-charts | common | 4.2.0 |
-| https://charts.bitnami.com/bitnami | mariadb | 21.0.8 |
+| https://charts.bitnami.com/bitnami | mariadb | 22.0.0 |
 | https://charts.bitnami.com/bitnami | postgresql | 16.7.26 |
 
 ## Values
