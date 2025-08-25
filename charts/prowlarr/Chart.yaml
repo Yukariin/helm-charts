@@ -7,7 +7,7 @@ type: application
 version: 0.4.1
 
 # renovate: image=ghcr.io/linuxserver/prowlarr
-appVersion: "1.37.0.5076-ls120"
+appVersion: "2.0.5.5160-ls125"
 
 dependencies:
   - name: common
