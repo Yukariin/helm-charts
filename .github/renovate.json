@@ -31,7 +31,7 @@
       "matchDatasources": [
         "docker"
       ],
-      "matchPackageNames": ["/^(gh|ls)cr\\.io\\/linuxserver\\//"],
+      "matchPackageNames": ["/^(gh|ls)cr\\.io\\/linuxserver/"],
       "extractVersion": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)-ls(?<revision>\\d+)$"
     },
     {
