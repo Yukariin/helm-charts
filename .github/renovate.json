@@ -31,11 +31,10 @@
       "matchDatasources": [
         "docker"
       ],
-      "extractVersion": "^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)-ls(?<revision>\\d+)$",
-      "versioning": "loose",
       "matchPackageNames": [
-        "^ghcr.io\\/linuxserver\\/"
-      ]
+        "^(gh|ls)cr\\.io\\/linuxserver\\/"
+      ],
+      "extractVersion": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)-ls(?<revision>\\d+)$"
     },
     {
       "description": "Handle YYYY-MM-DD version tags",
