@@ -34,7 +34,7 @@
       "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+-ls\\d+)$",
       "versioning": "loose",
       "matchPackageNames": [
-        "/^linuxserver//"
+        "^ghcr.io\\/linuxserver\\/"
       ]
     },
     {
