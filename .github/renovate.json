@@ -28,17 +28,13 @@
   "packageRules": [
     {
       "description": "Handle LSIO version tags",
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchPackageNames": ["/^(gh|ls)cr\\.io\\/linuxserver/"],
+      "matchDatasources": ["docker"],
+      "packagePatterns": ["^(gh|ls)cr\\.io\\/linuxserver\\/"],
       "extractVersion": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)-ls(?<revision>\\d+)$"
     },
     {
       "description": "Handle YYYY-MM-DD version tags",
-      "matchDatasources": [
-        "docker"
-      ],
+      "matchDatasources": ["docker"],
       "matchPackageNames": [
         "diygod/rsshub"
       ],
