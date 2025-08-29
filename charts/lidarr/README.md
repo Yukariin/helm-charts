@@ -1,6 +1,6 @@
 # lidarr
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.4.4658-ls50](https://img.shields.io/badge/AppVersion-2.12.4.4658--ls50-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.13.3.4711-ls1](https://img.shields.io/badge/AppVersion-2.13.3.4711--ls1-informational?style=flat-square)
 
 A Lidarr Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ A Lidarr Helm chart for Kubernetes
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/linuxserver/lidarr"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"2.12.4.4658-ls50"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"2.13.3.4711-ls1"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
