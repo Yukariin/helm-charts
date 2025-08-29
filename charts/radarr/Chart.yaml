@@ -7,7 +7,7 @@ type: application
 version: 0.2.0
 
 # renovate: image=ghcr.io/linuxserver/radarr
-appVersion: "5.26.2.10099-ls276"
+appVersion: "5.26.2.10099-ls281"
 
 dependencies:
   - name: common
