@@ -14,8 +14,8 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: 2.12.4.4658-ls46
-        
+          tag: 2.12.4.4658-ls50
+
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
         env: {}
