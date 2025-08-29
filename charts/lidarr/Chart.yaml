@@ -7,7 +7,7 @@ type: application
 version: 0.1.1
 
 # renovate: image=ghcr.io/linuxserver/lidarr
-appVersion: "2.12.4.4658-ls46"
+appVersion: "2.12.4.4658-ls50"
 
 dependencies:
   - name: common
