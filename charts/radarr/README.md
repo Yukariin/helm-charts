@@ -1,6 +1,6 @@
 # radarr
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.26.2.10099-ls276](https://img.shields.io/badge/AppVersion-5.26.2.10099--ls276-informational?style=flat-square)
+![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.26.2.10099-ls281](https://img.shields.io/badge/AppVersion-5.26.2.10099--ls281-informational?style=flat-square)
 
 A Radarr Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ A Radarr Helm chart for Kubernetes
 | controllers.main.containers.radarr.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.radarr.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.radarr.image.repository | string | `"ghcr.io/linuxserver/radarr"` | image repository |
-| controllers.main.containers.radarr.image.tag | string | `"5.26.2.10099-ls276"` | image tag |
+| controllers.main.containers.radarr.image.tag | string | `"5.26.2.10099-ls281"` | image tag |
 | controllers.main.containers.radarr.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.radarr.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
