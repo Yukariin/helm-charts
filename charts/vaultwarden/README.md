@@ -10,7 +10,7 @@ A Vaultwarden Helm chart for Kubernetes
 |------------|------|---------|
 | https://bjw-s-labs.github.io/helm-charts | common | 4.2.0 |
 | https://charts.bitnami.com/bitnami | mariadb | 22.0.0 |
-| https://charts.bitnami.com/bitnami | postgresql | 16.7.26 |
+| https://charts.bitnami.com/bitnami | postgresql | 16.7.27 |
 
 ## Values
 
