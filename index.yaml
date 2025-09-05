@@ -1332,6 +1332,20 @@ entries:
     version: 0.1.1
   sonarr:
   - apiVersion: v2
+    appVersion: 4.0.15.2941-ls291
+    created: "2025-09-05T06:12:29.658507187Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.2.0
+    description: A Sonarr Helm chart for Kubernetes
+    digest: 3546dc22599d0969c61f59588f5f9b0eb7df36f7fedc0052df4901cf106399ad
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/sonarr-0.3.2/sonarr-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
     appVersion: 4.0.15.2941-ls290
     created: "2025-08-29T15:02:43.288572825Z"
     dependencies:
@@ -1770,4 +1784,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-05T05:55:35.243021086Z"
+generated: "2025-09-05T06:12:29.658739863Z"
