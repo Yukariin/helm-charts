@@ -504,6 +504,20 @@ entries:
   prowlarr:
   - apiVersion: v2
     appVersion: 2.0.5.5160-ls125
+    created: "2025-09-06T16:30:09.710909279Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.2.0
+    description: A Prowlarr Helm chart for Kubernetes
+    digest: 4787e862dfaad9589bc5746961c8d46ff329e2b2764897a80a6a1785283c2d67
+    name: prowlarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/prowlarr-2.0.1/prowlarr-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
+    appVersion: 2.0.5.5160-ls125
     created: "2025-09-06T16:27:16.829008182Z"
     dependencies:
     - name: common
@@ -1812,4 +1826,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-06T16:27:16.951881114Z"
+generated: "2025-09-06T16:30:09.711134879Z"
