@@ -7,7 +7,7 @@ controllers:
     strategy: RollingUpdate
 
     containers:
-      prowlarr:
+      main:
         image:
           # -- image repository
           repository: ghcr.io/linuxserver/prowlarr

@@ -1,6 +1,6 @@
 # prowlarr
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.0.5.5160-ls125](https://img.shields.io/badge/AppVersion-2.0.5.5160--ls125-informational?style=flat-square)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.0.5.5160-ls125](https://img.shields.io/badge/AppVersion-2.0.5.5160--ls125-informational?style=flat-square)
 
 A Prowlarr Helm chart for Kubernetes
 
@@ -14,12 +14,12 @@ A Prowlarr Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| controllers.main.containers.prowlarr.env | object | See [values.yaml](./values.yaml) | environment variables. |
-| controllers.main.containers.prowlarr.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
-| controllers.main.containers.prowlarr.image.repository | string | `"ghcr.io/linuxserver/prowlarr"` | image repository |
-| controllers.main.containers.prowlarr.image.tag | string | `"2.0.5.5160-ls125"` | image tag |
-| controllers.main.containers.prowlarr.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
-| controllers.main.containers.prowlarr.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
+| controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
+| controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
+| controllers.main.containers.main.image.repository | string | `"ghcr.io/linuxserver/prowlarr"` | image repository |
+| controllers.main.containers.main.image.tag | string | `"2.0.5.5160-ls125"` | image tag |
+| controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
+| controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
