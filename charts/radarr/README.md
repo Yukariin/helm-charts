@@ -8,7 +8,7 @@ A Radarr Helm chart for Kubernetes
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://bjw-s-labs.github.io/helm-charts | common | 4.2.0 |
+| https://bjw-s-labs.github.io/helm-charts | common | 4.3.0 |
 
 ## Values
 
