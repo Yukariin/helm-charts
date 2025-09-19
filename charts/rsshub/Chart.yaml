@@ -7,7 +7,7 @@ version: 1.1.7
 appVersion: "latest"
 dependencies:
   - name: common
-    version: 4.2.0
+    version: 4.3.0
     repository: https://bjw-s-labs.github.io/helm-charts
   - name: redis
     version: 22.0.7
