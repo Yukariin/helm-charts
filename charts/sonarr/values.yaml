@@ -7,7 +7,7 @@ controllers:
     strategy: RollingUpdate
 
     containers:
-      sonarr:
+      main:
         image:
           # -- image repository
           repository: ghcr.io/linuxserver/sonarr
