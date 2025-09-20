@@ -1,0 +1,94 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.3.0/charts/other/app-template/values.schema.json
+
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: docker.io/ollama/ollama
+          # -- image tag
+          tag: 0.1.29
+
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env: {}
+
+        probes:
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /health
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /health
+  
+  ui:
+    containers:
+      main:
+        image:
+          repository: ghcr.io/open-webui/open-webui
+          pullPolicy: Always
+          tag: main
+        
+        env:
+          OLLAMA_BASE_URL: http://ollama:11434
+        
+        probes:
+          liveness:
+            type: HTTP
+            path: /health
+          readiness:
+            type: HTTP
+            path: /health
+
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 11434
+  ui:
+    controller: ui
+    ports:
+      http:
+        port: 8080
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See [values.yaml](./values.yaml)
+  main:
+    enabled: false
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
+  ui:
+    enabled: false
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
+
+persistence:
+  data:
+    retain: true
+    accessMode: ReadWriteOnce
+    size: 10Gi
+    advancedMounts:
+      main:
+        main:
+          - path: /root/.ollama
+    # storageClass: ""
