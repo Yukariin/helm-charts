@@ -7,7 +7,7 @@ controllers:
     strategy: RollingUpdate
 
     containers:
-      navidrome:
+      main:
         image:
           # -- image repository
           repository: deluan/navidrome
@@ -58,7 +58,7 @@ persistence:
   config:
     retain: true
     accessMode: ReadWriteOnce
-    size: 800Mi
+    size: 1Gi
     globalMounts:
       - path: /config
     # storageClass: ""
