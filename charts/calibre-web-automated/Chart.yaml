@@ -1,0 +1,11 @@
+apiVersion: v2
+name: calibre-web-automated
+description: A Calibre-Web-Automated Helm chart for Kubernetes
+type: application
+version: 1.0.0
+# renovate: image=ghcr.io/crocodilestick/calibre-web-automated
+appVersion: "V3.1.4"
+dependencies:
+  - name: common
+    version: 4.3.0
+    repository: https://bjw-s-labs.github.io/helm-charts
