@@ -385,6 +385,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/gotify-0.1.0/gotify-0.1.0.tgz
     version: 0.1.0
+  jellyseerr:
+  - apiVersion: v2
+    appVersion: 2.7.3
+    created: "2025-09-20T11:42:30.731209378Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.3.0
+    description: A Jellyseerr Helm chart for Kubernetes
+    digest: 91a1624280a3976994fc41ef43e414762acdd41688d0a6bf12070297c340f516
+    name: jellyseerr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/jellyseerr-0.0.1/jellyseerr-0.0.1.tgz
+    version: 0.0.1
   lidarr:
   - apiVersion: v2
     appVersion: 2.13.3.4711-ls2
@@ -1957,4 +1972,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-20T11:19:39.804301382Z"
+generated: "2025-09-20T11:42:30.731432336Z"
