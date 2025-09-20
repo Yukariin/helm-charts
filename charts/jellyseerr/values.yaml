@@ -1,0 +1,58 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.3.0/charts/other/app-template/values.schema.json
+
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: docker.io/fallenbagel/jellyseerr
+          # -- image tag
+          tag: 2.7.3
+
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env: {}
+
+        probes:
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /health
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /health
+
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 5055
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See [values.yaml](./values.yaml)
+  main:
+    enabled: false
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
+
+persistence:
+  config:
+    retain: true
+    accessMode: ReadWriteOnce
+    size: 500Mi
+    globalMounts:
+      - path: /app/config
+    # storageClass: ""
