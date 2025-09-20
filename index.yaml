@@ -185,6 +185,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/autobrr-0.1.0/autobrr-0.1.0.tgz
     version: 0.1.0
+  calibre-web-automated:
+  - apiVersion: v2
+    appVersion: V3.1.4
+    created: "2025-09-20T17:55:29.281257424Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.3.0
+    description: A Calibre-Web-Automated Helm chart for Kubernetes
+    digest: ebd00c8059ff3cb9621be7a9e85b78b03c0bc745a65d10a1f29bfb2358250cc3
+    name: calibre-web-automated
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/calibre-web-automated-1.0.0/calibre-web-automated-1.0.0.tgz
+    version: 1.0.0
   common:
   - apiVersion: v2
     appVersion: "1.0"
@@ -1986,4 +2001,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-20T11:48:00.15912294Z"
+generated: "2025-09-20T17:55:29.281492553Z"
