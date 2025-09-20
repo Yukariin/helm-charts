@@ -9,7 +9,7 @@ controllers:
           # -- image repository
           repository: docker.io/ollama/ollama
           # -- image tag
-          tag: 0.1.29
+          tag: 0.12.0
 
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
@@ -24,7 +24,7 @@ controllers:
           readiness:
             type: HTTP
             path: /health
-  
+
   ui:
     containers:
       main:
@@ -32,10 +32,10 @@ controllers:
           repository: ghcr.io/open-webui/open-webui
           pullPolicy: Always
           tag: main
-        
+
         env:
           OLLAMA_BASE_URL: http://ollama:11434
-        
+
         probes:
           liveness:
             type: HTTP
