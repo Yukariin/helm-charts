@@ -19,11 +19,11 @@ controllers:
           # -- Configures liveness probe
           liveness:
             type: HTTP
-            path: /health
+            path: /api/v1/status
           # -- Configures readiness probe
           readiness:
             type: HTTP
-            path: /health
+            path: /api/v1/status
 
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
