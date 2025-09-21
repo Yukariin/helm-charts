@@ -1,6 +1,6 @@
 # ollama
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.0](https://img.shields.io/badge/AppVersion-0.12.0-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.0](https://img.shields.io/badge/AppVersion-0.12.0-informational?style=flat-square)
 
 An ollama Helm chart for Kubernetes
 
@@ -19,7 +19,7 @@ An ollama Helm chart for Kubernetes
 | controllers.main.containers.main.image.tag | string | `"0.12.0"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/health","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/health","type":"HTTP"}` | Configures readiness probe |
-| controllers.ui.containers.main.env.OLLAMA_BASE_URL | string | `"http://ollama:11434"` |  |
+| controllers.ui.containers.main.env.OLLAMA_BASE_URL | string | `"http://ollama-main:11434"` |  |
 | controllers.ui.containers.main.image.pullPolicy | string | `"Always"` |  |
 | controllers.ui.containers.main.image.repository | string | `"ghcr.io/open-webui/open-webui"` |  |
 | controllers.ui.containers.main.image.tag | string | `"main"` |  |
