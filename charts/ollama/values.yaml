@@ -83,7 +83,7 @@ ingress:
     #       - chart-example.local
 
 persistence:
-  data:
+  config:
     retain: true
     accessMode: ReadWriteOnce
     size: 10Gi
@@ -91,4 +91,14 @@ persistence:
       main:
         main:
           - path: /root/.ollama
+    # storageClass: ""
+  
+  data:
+    retain: true
+    accessMode: ReadWriteOnce
+    size: 500Mi
+    advancedMounts:
+      ui:
+        main:
+          - path: /app/backend/data
     # storageClass: ""

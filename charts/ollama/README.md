@@ -1,6 +1,6 @@
 # ollama
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.0](https://img.shields.io/badge/AppVersion-0.12.0-informational?style=flat-square)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.0](https://img.shields.io/badge/AppVersion-0.12.0-informational?style=flat-square)
 
 An ollama Helm chart for Kubernetes
 
@@ -29,9 +29,13 @@ An ollama Helm chart for Kubernetes
 | controllers.ui.containers.main.probes.readiness.type | string | `"HTTP"` |  |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | ingress.ui.enabled | bool | `false` |  |
+| persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.config.advancedMounts.main.main[0].path | string | `"/root/.ollama"` |  |
+| persistence.config.retain | bool | `true` |  |
+| persistence.config.size | string | `"10Gi"` |  |
 | persistence.data.accessMode | string | `"ReadWriteOnce"` |  |
-| persistence.data.advancedMounts.main.main[0].path | string | `"/root/.ollama"` |  |
+| persistence.data.advancedMounts.ui.main[0].path | string | `"/app/backend/data"` |  |
 | persistence.data.retain | bool | `true` |  |
-| persistence.data.size | string | `"10Gi"` |  |
+| persistence.data.size | string | `"500Mi"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 
