@@ -20,7 +20,7 @@ A Lidarr Helm chart for Kubernetes
 | controllers.main.containers.main.image.tag | string | `"2.13.3.4711-ls2"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
-| controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
+| controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.config.globalMounts[0].path | string | `"/config"` |  |

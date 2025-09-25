@@ -1,10 +1,10 @@
 ---
-# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.3.0/charts/other/app-template/values.schema.json
 
 controllers:
   main:
     # -- Set the controller upgrade strategy
-    strategy: RollingUpdate
+    strategy: Recreate
 
     containers:
       main:
