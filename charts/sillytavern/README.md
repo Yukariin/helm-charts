@@ -1,6 +1,6 @@
 # sillytavern
 
-![Version: 0.3.1](https://img.shields.io/badge/Version-0.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: staging](https://img.shields.io/badge/AppVersion-staging-informational?style=flat-square)
+![Version: 0.3.2](https://img.shields.io/badge/Version-0.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: staging](https://img.shields.io/badge/AppVersion-staging-informational?style=flat-square)
 
 A SillyTavern Helm chart for Kubernetes
 
@@ -21,7 +21,7 @@ A SillyTavern Helm chart for Kubernetes
 | controllers.main.containers.main.resources.limits.memory | string | `"1Gi"` |  |
 | controllers.main.containers.main.resources.requests.cpu | string | `"10m"` |  |
 | controllers.main.containers.main.resources.requests.memory | string | `"128Mi"` |  |
-| controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
+| controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.config.globalMounts[0].path | string | `"/home/node/app/config/config.yaml"` |  |
 | persistence.config.globalMounts[0].subPath | string | `"config.yaml"` |  |
