@@ -19,7 +19,7 @@ controllers:
 
         env:
           CRON_MIN: '*/20'
-        
+
         resources:
           requests:
             cpu: 10m
