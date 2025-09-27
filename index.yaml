@@ -1376,6 +1376,20 @@ entries:
   sillytavern:
   - apiVersion: v2
     appVersion: staging
+    created: "2025-09-27T09:10:26.485922754Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.3.0
+    description: A SillyTavern Helm chart for Kubernetes
+    digest: b04bce31f1933cc3e8b57b10083f622d8472de80010ed1f15c0dfedf6727a858
+    name: sillytavern
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/sillytavern-0.3.1/sillytavern-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: staging
     created: "2025-07-14T08:09:26.933562124Z"
     dependencies:
     - name: common
@@ -2131,4 +2145,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-26T07:24:34.296986222Z"
+generated: "2025-09-27T09:10:26.930020313Z"
