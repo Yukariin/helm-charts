@@ -25,7 +25,7 @@ controllers:
             cpu: 10m
             memory: 256Mi
           limits:
-            memory: 4Gi
+            memory: 1Gi
 
         probes:
           # -- Configures liveness probe

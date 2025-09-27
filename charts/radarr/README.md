@@ -20,7 +20,7 @@ A Radarr Helm chart for Kubernetes
 | controllers.main.containers.main.image.tag | string | `"5.27.5.10198-ls283"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
-| controllers.main.containers.main.resources.limits.memory | string | `"4Gi"` |  |
+| controllers.main.containers.main.resources.limits.memory | string | `"1Gi"` |  |
 | controllers.main.containers.main.resources.requests.cpu | string | `"10m"` |  |
 | controllers.main.containers.main.resources.requests.memory | string | `"256Mi"` |  |
 | controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
