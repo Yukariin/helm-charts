@@ -1,6 +1,6 @@
 # sillytavern
 
-![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: staging](https://img.shields.io/badge/AppVersion-staging-informational?style=flat-square)
+![Version: 0.3.1](https://img.shields.io/badge/Version-0.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: staging](https://img.shields.io/badge/AppVersion-staging-informational?style=flat-square)
 
 A SillyTavern Helm chart for Kubernetes
 
@@ -18,7 +18,6 @@ A SillyTavern Helm chart for Kubernetes
 | controllers.main.containers.main.image.pullPolicy | string | `"Always"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/sillytavern/sillytavern"` | image repository |
 | controllers.main.containers.main.image.tag | string | `"staging"` | image tag |
-| controllers.main.containers.main.resources.limits.cpu | string | `"1"` |  |
 | controllers.main.containers.main.resources.limits.memory | string | `"1Gi"` |  |
 | controllers.main.containers.main.resources.requests.cpu | string | `"10m"` |  |
 | controllers.main.containers.main.resources.requests.memory | string | `"128Mi"` |  |

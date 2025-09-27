@@ -14,7 +14,7 @@ controllers:
           # -- image pull policy
           pullPolicy: Always
           # -- image tag
-          tag: "staging"
+          tag: staging
         
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
@@ -23,11 +23,10 @@ controllers:
         
         resources:
           requests:
-            cpu: "10m"
-            memory: "128Mi"
+            cpu: 10m
+            memory: 128Mi
           limits:
-            cpu: "1"
-            memory: "1Gi"
+            memory: 1Gi
 
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
