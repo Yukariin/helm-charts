@@ -15,11 +15,11 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: 1.27.0
+          tag: 1.27.1
 
         env:
           CRON_MIN: '*/20'
-        
+
         resources:
           requests:
             cpu: 10m
