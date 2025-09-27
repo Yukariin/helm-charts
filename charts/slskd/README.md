@@ -25,6 +25,9 @@ An slskd Helm chart for Kubernetes
 | controllers.main.containers.slskd.image.tag | string | `"0.23.2"` | image tag |
 | controllers.main.containers.slskd.probes.liveness | object | `{"path":"/health","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.slskd.probes.readiness | object | `{"path":"/health","type":"HTTP"}` | Configures readiness probe |
+| controllers.main.containers.slskd.resources.limits.memory | string | `"1Gi"` |  |
+| controllers.main.containers.slskd.resources.requests.cpu | string | `"10m"` |  |
+| controllers.main.containers.slskd.resources.requests.memory | string | `"128Mi"` |  |
 | controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.app.accessMode | string | `"ReadWriteOnce"` |  |

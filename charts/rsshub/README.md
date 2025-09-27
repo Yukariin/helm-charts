@@ -15,6 +15,7 @@ An RSShub Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| controllers.main.containers.browserless.image.pullPolicy | string | `"Always"` |  |
 | controllers.main.containers.browserless.image.repository | string | `"browserless/chrome"` |  |
 | controllers.main.containers.browserless.image.tag | string | `"latest"` |  |
 | controllers.main.containers.browserless.ports[0].containerPort | int | `3000` |  |

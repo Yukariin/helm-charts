@@ -20,6 +20,9 @@ A FreshRSS Helm chart for Kubernetes
 | controllers.main.containers.main.image.tag | string | `"1.27.0"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/i/","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/i/","type":"HTTP"}` | Configures readiness probe |
+| controllers.main.containers.main.resources.limits.memory | string | `"256Mi"` |  |
+| controllers.main.containers.main.resources.requests.cpu | string | `"10m"` |  |
+| controllers.main.containers.main.resources.requests.memory | string | `"64Mi"` |  |
 | controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.data.accessMode | string | `"ReadWriteOnce"` |  |

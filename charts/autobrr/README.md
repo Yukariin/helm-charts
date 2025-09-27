@@ -20,6 +20,9 @@ An Autobrr Helm chart for Kubernetes
 | controllers.main.containers.autobrr.image.tag | string | `"v1.66.1"` | image tag |
 | controllers.main.containers.autobrr.probes.liveness | object | `{"path":"/api/healthz/liveness","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.autobrr.probes.readiness | object | `{"path":"/api/healthz/readiness","type":"HTTP"}` | Configures readiness probe |
+| controllers.main.containers.autobrr.resources.limits.memory | string | `"256Mi"` |  |
+| controllers.main.containers.autobrr.resources.requests.cpu | string | `"10m"` |  |
+| controllers.main.containers.autobrr.resources.requests.memory | string | `"64Mi"` |  |
 | controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |

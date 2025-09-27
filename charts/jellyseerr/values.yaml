@@ -15,6 +15,13 @@ controllers:
         # @default -- See [values.yaml](./values.yaml)
         env: {}
 
+        resources:
+          requests:
+            cpu: 10m
+            memory: 256Mi
+          limits:
+            memory: 2Gi
+
         probes:
           # -- Configures liveness probe
           liveness:
