@@ -1,6 +1,6 @@
 # freshrss
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.27.0](https://img.shields.io/badge/AppVersion-1.27.0-informational?style=flat-square)
+![Version: 0.4.2](https://img.shields.io/badge/Version-0.4.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.27.1](https://img.shields.io/badge/AppVersion-1.27.1-informational?style=flat-square)
 
 A FreshRSS Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ A FreshRSS Helm chart for Kubernetes
 | controllers.main.containers.main.env.CRON_MIN | string | `"*/20"` |  |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"freshrss/freshrss"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"1.27.0"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"1.27.1"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/i/","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/i/","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.containers.main.resources.limits.memory | string | `"256Mi"` |  |
