@@ -1,6 +1,6 @@
 # rsshub
 
-![Version: 2.0.1](https://img.shields.io/badge/Version-2.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 2.0.2](https://img.shields.io/badge/Version-2.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 An RSShub Helm chart for Kubernetes
 
@@ -32,7 +32,7 @@ An RSShub Helm chart for Kubernetes
 | controllers.main.containers.redis.resources.requests.memory | string | `"64Mi"` |  |
 | controllers.main.containers.rsshub.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.rsshub.image.pullPolicy | string | `"Always"` | image pull policy |
-| controllers.main.containers.rsshub.image.repository | string | `"diygod/rsshub"` | image repository |
+| controllers.main.containers.rsshub.image.repository | string | `"ghcr.io/diygod/rsshub"` | image repository |
 | controllers.main.containers.rsshub.image.tag | string | `"latest"` | image tag |
 | controllers.main.containers.rsshub.probes.liveness | object | `{"path":"/healthz","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.rsshub.probes.readiness | object | `{"path":"/healthz","type":"HTTP"}` | Configures readiness probe |
