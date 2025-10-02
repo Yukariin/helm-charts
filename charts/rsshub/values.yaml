@@ -32,11 +32,25 @@ controllers:
             type: HTTP
             path: /healthz
 
+      redis:
+        image:
+          repository: ghcr.io/valkey-io/valkey
+          tag: 8.1.3
+
+        ports:
+          - containerPort: 6379
+
+        resources:
+          requests:
+            cpu: 5m
+            memory: 64Mi
+          limits:
+            memory: 256Mi
+
       browserless:
         image:
-          repository: browserless/chrome
-          pullPolicy: Always
-          tag: latest
+          repository: ghcr.io/browserless/chrome
+          tag: v2.37.0
 
         ports:
           - containerPort: 3000
@@ -78,11 +92,3 @@ ingress:
     #   - secretName: chart-example.local-tls
     #     hosts:
     #       - chart-example.local
-
-# -- Enable and configure redis subchart under this key.
-#    For more options see [redis chart documentation](https://github.com/bitnami/charts/tree/main/bitnami/redis)
-# @default -- See [values.yaml](./values.yaml)
-redis:
-  enabled: true
-  replica:
-    replicaCount: 0
