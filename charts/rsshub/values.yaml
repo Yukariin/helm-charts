@@ -49,6 +49,7 @@ controllers:
             memory: 256Mi
 
   browserless:
+    strategy: RollingUpdate
     containers:
       main:
         image:
