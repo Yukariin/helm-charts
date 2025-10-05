@@ -1,13 +1,13 @@
 ---
-# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.3.0/charts/other/app-template/values.schema.json
 
 controllers:
-  main:
+  rsshub:
     # -- Set the controller upgrade strategy
     strategy: RollingUpdate
 
     containers:
-      rsshub:
+      main:
         image:
           # -- image repository
           repository: ghcr.io/diygod/rsshub
@@ -21,8 +21,8 @@ controllers:
         env:
           NODE_ENV: production
           CACHE_TYPE: redis
-          REDIS_URL: "redis://localhost:6379/"
-          PUPPETEER_WS_ENDPOINT: ws://localhost:3000
+          REDIS_URL: "redis://redis:6379/"
+          PUPPETEER_WS_ENDPOINT: ws://browserless:3000
 
         probes:
           # -- Configures liveness probe
@@ -34,13 +34,12 @@ controllers:
             type: HTTP
             path: /healthz
 
-      redis:
+  redis:
+    containers:
+      main:
         image:
           repository: ghcr.io/valkey-io/valkey
           tag: 8.1.3
-
-        ports:
-          - containerPort: 6379
 
         resources:
           requests:
@@ -49,13 +48,12 @@ controllers:
           limits:
             memory: 256Mi
 
-      browserless:
+  browserless:
+    containers:
+      main:
         image:
           repository: ghcr.io/browserless/chrome
           tag: v2.37.0
-
-        ports:
-          - containerPort: 3000
 
         resources:
           requests:
@@ -75,11 +73,21 @@ controllers:
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
 service:
-  main:
-    controller: main
+  rsshub:
+    controller: rsshub
     ports:
       http:
         port: 1200
+  redis:
+    controller: redis
+    ports:
+      redis:
+        port: 6379
+  browserless:
+    controller: browserless
+    ports:
+      ws:
+        port: 3000
 
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
