@@ -21,8 +21,8 @@ controllers:
         env:
           NODE_ENV: production
           CACHE_TYPE: redis
-          REDIS_URL: "redis://redis:6379/"
-          PUPPETEER_WS_ENDPOINT: ws://browserless:3000
+          REDIS_URL: "redis://rsshub-redis:6379/"
+          PUPPETEER_WS_ENDPOINT: ws://rsshub-browserless:3000
 
         probes:
           # -- Configures liveness probe
@@ -98,6 +98,9 @@ ingress:
     #   - host: chart-example.local
     #     paths:
     #       - path: /
+    #         service:
+    #           identifier: rsshub
+    #           port: http
     # tls:
     #   - secretName: chart-example.local-tls
     #     hosts:
