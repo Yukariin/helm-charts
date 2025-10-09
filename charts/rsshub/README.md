@@ -1,6 +1,6 @@
 # rsshub
 
-![Version: 3.0.2](https://img.shields.io/badge/Version-3.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 3.0.3](https://img.shields.io/badge/Version-3.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 An RSShub Helm chart for Kubernetes
 
@@ -25,7 +25,7 @@ An RSShub Helm chart for Kubernetes
 | controllers.browserless.containers.main.resources.requests.memory | string | `"128Mi"` |  |
 | controllers.browserless.strategy | string | `"RollingUpdate"` |  |
 | controllers.redis.containers.main.image.repository | string | `"ghcr.io/valkey-io/valkey"` |  |
-| controllers.redis.containers.main.image.tag | string | `"8.1.3"` |  |
+| controllers.redis.containers.main.image.tag | string | `"8.1.4"` |  |
 | controllers.redis.containers.main.resources.limits.memory | string | `"256Mi"` |  |
 | controllers.redis.containers.main.resources.requests.cpu | string | `"5m"` |  |
 | controllers.redis.containers.main.resources.requests.memory | string | `"64Mi"` |  |
