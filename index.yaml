@@ -1121,6 +1121,20 @@ entries:
   rsshub:
   - apiVersion: v2
     appVersion: latest
+    created: "2025-10-09T17:47:43.804093271Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.3.0
+    description: An RSShub Helm chart for Kubernetes
+    digest: b320d3173d584a80d21846191cb1fceb90e8c8ea3a4f6776195ed240149f9360
+    name: rsshub
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/rsshub-3.0.3/rsshub-3.0.3.tgz
+    version: 3.0.3
+  - apiVersion: v2
+    appVersion: latest
     created: "2025-10-05T15:44:53.793314661Z"
     dependencies:
     - name: common
@@ -2327,4 +2341,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-09T17:46:05.099415903Z"
+generated: "2025-10-09T17:47:43.804415472Z"
