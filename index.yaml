@@ -1017,6 +1017,20 @@ entries:
     version: 0.1.0
   radarr:
   - apiVersion: v2
+    appVersion: 5.27.5.10198-ls284
+    created: "2025-10-10T07:20:22.054488137Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.3.0
+    description: A Radarr Helm chart for Kubernetes
+    digest: 1c963686c7dfd0950b1bd8dee5ad540fb650cf298f0384614471206720163f3a
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/radarr-1.0.2/radarr-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
     appVersion: 5.27.5.10198-ls283
     created: "2025-09-19T06:20:11.021453647Z"
     dependencies:
@@ -2383,4 +2397,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-10T07:18:24.357773595Z"
+generated: "2025-10-10T07:20:22.054884318Z"
