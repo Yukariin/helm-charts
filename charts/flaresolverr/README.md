@@ -1,6 +1,6 @@
 # flaresolverr
 
-![Version: 0.4.2](https://img.shields.io/badge/Version-0.4.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.4.1](https://img.shields.io/badge/AppVersion-v3.4.1-informational?style=flat-square)
+![Version: 0.4.4](https://img.shields.io/badge/Version-0.4.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.4.2](https://img.shields.io/badge/AppVersion-v3.4.2-informational?style=flat-square)
 
 A Flaresolverr Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ A Flaresolverr Helm chart for Kubernetes
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/flaresolverr/flaresolverr"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"v3.4.1"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"v3.4.2"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/health","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/health","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.containers.main.resources.limits.memory | string | `"2Gi"` |  |
