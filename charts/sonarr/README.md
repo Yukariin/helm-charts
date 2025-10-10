@@ -1,6 +1,6 @@
 # sonarr
 
-![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 4.0.15.2941-ls293](https://img.shields.io/badge/AppVersion-4.0.15.2941--ls293-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 4.0.15.2941-ls293](https://img.shields.io/badge/AppVersion-4.0.15.2941--ls293-informational?style=flat-square)
 
 A Sonarr Helm chart for Kubernetes
 
@@ -23,7 +23,7 @@ A Sonarr Helm chart for Kubernetes
 | controllers.main.containers.main.resources.limits.memory | string | `"4Gi"` |  |
 | controllers.main.containers.main.resources.requests.cpu | string | `"10m"` |  |
 | controllers.main.containers.main.resources.requests.memory | string | `"256Mi"` |  |
-| controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
+| controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.config.globalMounts[0].path | string | `"/config"` |  |
