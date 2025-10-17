@@ -1,6 +1,6 @@
 # prowlarr
 
-![Version: 2.0.4](https://img.shields.io/badge/Version-2.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.0.5.5160-ls128](https://img.shields.io/badge/AppVersion-2.0.5.5160--ls128-informational?style=flat-square)
+![Version: 2.0.5](https://img.shields.io/badge/Version-2.0.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.0.5.5160-ls129](https://img.shields.io/badge/AppVersion-2.0.5.5160--ls129-informational?style=flat-square)
 
 A Prowlarr Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ A Prowlarr Helm chart for Kubernetes
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/linuxserver/prowlarr"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"2.0.5.5160-ls128"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"2.0.5.5160-ls129"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.containers.main.resources.limits.memory | string | `"1Gi"` |  |
