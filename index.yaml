@@ -862,6 +862,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/ollama-0.0.1/ollama-0.0.1.tgz
     version: 0.0.1
+  paperless:
+  - apiVersion: v2
+    appVersion: 2.18.4
+    created: "2025-10-18T19:37:00.891188416Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.3.0
+    description: A Paperless Helm chart for Kubernetes
+    digest: ad2ed4b73b2238a67483c4bc9ffab5a916ca7ae0626429ca5f55540d95b0c8e0
+    name: paperless
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/paperless-0.0.1/paperless-0.0.1.tgz
+    version: 0.0.1
   prowlarr:
   - apiVersion: v2
     appVersion: 2.0.5.5160-ls128
@@ -2467,4 +2482,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-18T15:01:43.308932604Z"
+generated: "2025-10-18T19:37:01.761825258Z"
