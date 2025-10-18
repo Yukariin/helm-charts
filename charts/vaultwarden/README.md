@@ -8,7 +8,7 @@ A Vaultwarden Helm chart for Kubernetes
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://bjw-s-labs.github.io/helm-charts | common | 4.3.0 |
+| https://bjw-s-labs.github.io/helm-charts | common | 4.4.0 |
 | https://charts.bitnami.com/bitnami | mariadb | 22.0.0 |
 | https://charts.bitnami.com/bitnami | postgresql | 16.7.27 |
 
