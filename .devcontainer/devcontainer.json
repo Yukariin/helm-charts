@@ -1,36 +1,35 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "enableNonRootDocker": "true",
-			"moby": "true"
-    },
-    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
-      "version": "latest",
-      "helm": "latest",
-      "minikube": "latest"
-    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
     "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
+    "ghcr.io/dirsigler/devcontainer-features/helm-docs:1": {},
     "ghcr.io/mpriscella/features/helm-chart-testing:1": {}
   },
 
   "remoteUser": "vscode",
-  "runArgs": [
-    "--userns=keep-id"
-  ],
 
   "containerEnv": {
     "HOME": "/home/vscode",
     "SHELL": "/bin/bash"
   },
 
+  "postAttachCommand": "minikube start",
+  "postCreateCommand": "/bin/bash .devcontainer/postCreateCommand.sh",
+
   "customizations": {
     "vscode": {
       "extensions": [
         "github.vscode-github-actions",
-        "ms-kubernetes-tools.vscode-kubernetes-tools"
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "tim-koehler.helm-intellisense"
       ]
     }
-  }
+  },
+
+  "mounts": [
+    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,readonly"
+  ]
 }
