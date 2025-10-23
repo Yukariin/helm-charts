@@ -1,6 +1,6 @@
 # paperless
 
-![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.18.4](https://img.shields.io/badge/AppVersion-2.18.4-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.19.1](https://img.shields.io/badge/AppVersion-2.19.1-informational?style=flat-square)
 
 A Paperless Helm chart for Kubernetes
 
@@ -19,7 +19,7 @@ A Paperless Helm chart for Kubernetes
 | controllers.main.containers.main.env.PAPERLESS_REDIS | string | `"redis://paperless-redis"` | Redis to use |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/paperless-ngx/paperless-ngx"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"2.18.4"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"2.19.1"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.containers.main.resources.limits.memory | string | `"4Gi"` |  |
