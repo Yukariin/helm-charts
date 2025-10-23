@@ -73,7 +73,7 @@ persistence:
   config:
     enabled: true
     accessMode: ReadWriteOnce
-    size: 500Mi
+    size: 2Gi
     globalMounts:
       - path: /config
     # storageClass: ""
