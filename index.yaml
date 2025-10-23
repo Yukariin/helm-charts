@@ -879,6 +879,20 @@ entries:
   paperless:
   - apiVersion: v2
     appVersion: 2.18.4
+    created: "2025-10-23T14:44:06.075380035Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.3.0
+    description: A Paperless Helm chart for Kubernetes
+    digest: 21647734896a9a99916a84ef0580dedcfd5c996f00895953c2ca5731f0252d59
+    name: paperless
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/paperless-0.0.3/paperless-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 2.18.4
     created: "2025-10-23T13:08:05.664157261Z"
     dependencies:
     - name: common
@@ -1274,6 +1288,20 @@ entries:
     - https://github.com/Yukariin/helm-charts/releases/download/radarr-0.1.0/radarr-0.1.0.tgz
     version: 0.1.0
   rsshub:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2025-10-23T14:44:06.26630169Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: An RSShub Helm chart for Kubernetes
+    digest: 86e5affc6e2b897f128a9a5d7d2fee22cd8100197e4efad61621fd7a1e13127e
+    name: rsshub
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/rsshub-3.0.5/rsshub-3.0.5.tgz
+    version: 3.0.5
   - apiVersion: v2
     appVersion: latest
     created: "2025-10-09T17:53:11.571658909Z"
@@ -2538,4 +2566,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-23T13:08:05.664368666Z"
+generated: "2025-10-23T14:44:06.266673814Z"
