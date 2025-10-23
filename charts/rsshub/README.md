@@ -25,7 +25,7 @@ An RSShub Helm chart for Kubernetes
 | controllers.browserless.containers.main.resources.requests.memory | string | `"128Mi"` |  |
 | controllers.browserless.strategy | string | `"RollingUpdate"` |  |
 | controllers.redis.containers.main.image.repository | string | `"ghcr.io/valkey-io/valkey"` |  |
-| controllers.redis.containers.main.image.tag | string | `"8.1.4"` |  |
+| controllers.redis.containers.main.image.tag | string | `"9.0.0"` |  |
 | controllers.redis.containers.main.resources.limits.memory | string | `"256Mi"` |  |
 | controllers.redis.containers.main.resources.requests.cpu | string | `"5m"` |  |
 | controllers.redis.containers.main.resources.requests.memory | string | `"64Mi"` |  |
