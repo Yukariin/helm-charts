@@ -474,6 +474,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/gotify-0.1.0/gotify-0.1.0.tgz
     version: 0.1.0
+  jellyfin:
+  - apiVersion: v2
+    appVersion: 10.11.0
+    created: "2025-10-23T19:48:01.305575018Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A Jellyfin Helm chart for Kubernetes
+    digest: 5ee082051c3bf195c16d729106bf6b807b92f444babbc29e81e162d39e19b384
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/jellyfin-0.0.1/jellyfin-0.0.1.tgz
+    version: 0.0.1
   jellyseerr:
   - apiVersion: v2
     appVersion: 2.7.3
@@ -2580,4 +2595,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-23T15:26:41.993492165Z"
+generated: "2025-10-23T19:48:01.305836257Z"
