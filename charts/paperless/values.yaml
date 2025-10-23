@@ -40,14 +40,14 @@ controllers:
           readiness:
             type: HTTP
             path: /
-  
+
   redis:
     containers:
       main:
         image:
           repository: ghcr.io/valkey-io/valkey
-          tag: 8.1.3
-        
+          tag: 8.1.4
+
         resources:
           requests:
             cpu: 5m
