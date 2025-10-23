@@ -1,6 +1,6 @@
 # paperless
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.18.4](https://img.shields.io/badge/AppVersion-2.18.4-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.18.4](https://img.shields.io/badge/AppVersion-2.18.4-informational?style=flat-square)
 
 A Paperless Helm chart for Kubernetes
 
@@ -27,7 +27,7 @@ A Paperless Helm chart for Kubernetes
 | controllers.main.containers.main.resources.requests.memory | string | `"1Gi"` |  |
 | controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | controllers.redis.containers.main.image.repository | string | `"ghcr.io/valkey-io/valkey"` |  |
-| controllers.redis.containers.main.image.tag | string | `"8.1.3"` |  |
+| controllers.redis.containers.main.image.tag | string | `"8.1.4"` |  |
 | controllers.redis.containers.main.resources.limits.memory | string | `"128Mi"` |  |
 | controllers.redis.containers.main.resources.requests.cpu | string | `"5m"` |  |
 | controllers.redis.containers.main.resources.requests.memory | string | `"32Mi"` |  |
