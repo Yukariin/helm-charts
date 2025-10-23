@@ -1,0 +1,79 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.4.0/charts/other/app-template/values.schema.json
+
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: ghcr.io/linuxserver/jellyfin
+          # -- image tag
+          tag: 10.11.0
+
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env: {}
+
+        resources:
+          requests:
+            cpu: 1
+            memory: 512Mi
+          limits:
+            memory: 2Gi
+
+        probes:
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /health
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /health
+
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8096
+
+serviceMonitor:
+  main:
+    # -- Enables or disables the serviceMonitor.
+    enabled: false
+    # -- Configures the endpoints for the serviceMonitor.
+    # @default -- See [values.yaml](./values.yaml)
+    serviceName: jellyfin
+    endpoints:
+      - port: http
+        scheme: http
+        path: /metrics
+        interval: 1m
+        scrapeTimeout: 10s
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See [values.yaml](./values.yaml)
+  main:
+    enabled: false
+    # hosts:
+    #   - host: chart-example.local
+    #     paths:
+    #       - path: /
+    # tls:
+    #   - secretName: chart-example.local-tls
+    #     hosts:
+    #       - chart-example.local
+
+persistence:
+  config:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 500Mi
+    globalMounts:
+      - path: /config
+    # storageClass: ""
