@@ -4,7 +4,7 @@ description: A Prowlarr Helm chart for Kubernetes
 type: application
 version: 2.0.5
 # renovate: image=ghcr.io/linuxserver/prowlarr
-appVersion: "2.0.5.5160-ls129"
+appVersion: "2.0.5.5160-ls130"
 dependencies:
   - name: common
     version: 4.4.0
