@@ -534,6 +534,20 @@ entries:
     version: 0.0.1
   lidarr:
   - apiVersion: v2
+    appVersion: 2.14.5.4836-ls8
+    created: "2025-10-24T06:30:46.271160361Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A Lidarr Helm chart for Kubernetes
+    digest: 2ce3e19e1b0f0bfc2261f8ca07a30b80e8b573938c7fe2dda681d5f54d9d2272
+    name: lidarr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/lidarr-0.3.2/lidarr-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
     appVersion: 2.14.5.4836-ls7
     created: "2025-10-19T19:05:38.958918626Z"
     dependencies:
@@ -2623,4 +2637,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-24T06:02:15.520651155Z"
+generated: "2025-10-24T06:30:46.271566572Z"
