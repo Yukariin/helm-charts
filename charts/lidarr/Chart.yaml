@@ -2,9 +2,9 @@ apiVersion: v2
 name: lidarr
 description: A Lidarr Helm chart for Kubernetes
 type: application
-version: 0.3.1
+version: 0.3.2
 # renovate: image=ghcr.io/linuxserver/lidarr
-appVersion: "2.14.5.4836-ls7"
+appVersion: "2.14.5.4836-ls8"
 dependencies:
   - name: common
     version: 4.4.0
