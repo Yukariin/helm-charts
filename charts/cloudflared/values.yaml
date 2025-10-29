@@ -1,0 +1,85 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.4.0/charts/other/app-template/values.schema.json
+
+controllers:
+  main:
+    strategy: RollingUpdate
+
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: docker.io/cloudflare/cloudflared
+          # -- image tag
+          tag: 2025.4.2
+        
+        # -- environment variables.
+        # @default -- See [values.yaml](./values.yaml)
+        env:
+          NO_AUTOUPDATE: true
+          TUNNEL_CRED_FILE: /etc/cloudflared/credentials.json
+          TUNNEL_METRICS: 0.0.0.0:8080
+
+        args:
+          - tunnel
+          - --config
+          - /etc/cloudflared/config.yaml
+          - run
+        
+        resources:
+          requests:
+            cpu: 10m
+            memory: 128Mi
+          limits:
+            memory: 256Mi
+        
+        probes:
+          # -- Configures liveness probe
+          liveness:
+            type: HTTP
+            path: /ready
+          # -- Configures readiness probe
+          readiness:
+            type: HTTP
+            path: /ready
+
+# -- Configures service settings for the chart.
+# @default -- See [values.yaml](./values.yaml)
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 8080
+
+serviceMonitor:
+  main:
+    # -- Enables or disables the serviceMonitor.
+    enabled: false
+    # -- Configures the endpoints for the serviceMonitor.
+    # @default -- See [values.yaml](./values.yaml)
+    serviceName: jellyfin
+    endpoints:
+      - port: http
+        scheme: http
+        path: /metrics
+        interval: 1m
+        scrapeTimeout: 10s
+
+persistence:
+  config:
+    enabled: true
+    type: configMap
+    name: cloudflared-config
+    globalMounts:
+      - path: /etc/cloudflared/config.yaml
+        subPath: config.yaml
+        readOnly: true
+  credentials:
+    enabled: true
+    type: secret
+    name: cloudflared-credentials
+    globalMounts:
+      - path: /etc/cloudflared/credentials.json
+        subPath: credentials.json
+        readOnly: true
