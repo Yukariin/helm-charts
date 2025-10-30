@@ -228,6 +228,21 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/calibre-web-automated-1.0.0/calibre-web-automated-1.0.0.tgz
     version: 1.0.0
+  cloudflared:
+  - apiVersion: v2
+    appVersion: 2025.4.2
+    created: "2025-10-30T06:14:47.741248094Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A cloudflared Helm chart for Kubernetes
+    digest: 4c004cc195347f6854f30583e9016c61ae0fe3ebd7ecb0a035bf463152d0bb72
+    name: cloudflared
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/cloudflared-0.0.1/cloudflared-0.0.1.tgz
+    version: 0.0.1
   common:
   - apiVersion: v2
     appVersion: "1.0"
@@ -2665,4 +2680,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-24T07:13:51.085014935Z"
+generated: "2025-10-30T06:14:47.741516541Z"
