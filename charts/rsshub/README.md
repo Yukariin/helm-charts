@@ -1,6 +1,6 @@
 # rsshub
 
-![Version: 3.0.5](https://img.shields.io/badge/Version-3.0.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 3.0.6](https://img.shields.io/badge/Version-3.0.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 An RSShub Helm chart for Kubernetes
 
@@ -15,7 +15,7 @@ An RSShub Helm chart for Kubernetes
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | controllers.browserless.containers.main.image.repository | string | `"ghcr.io/browserless/chrome"` |  |
-| controllers.browserless.containers.main.image.tag | string | `"v2.37.1"` |  |
+| controllers.browserless.containers.main.image.tag | string | `"v2.38.2"` |  |
 | controllers.browserless.containers.main.probes.liveness.path | string | `"/pressure"` |  |
 | controllers.browserless.containers.main.probes.liveness.type | string | `"HTTP"` |  |
 | controllers.browserless.containers.main.probes.readiness.path | string | `"/pressure"` |  |
