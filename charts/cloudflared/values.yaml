@@ -11,8 +11,8 @@ controllers:
           # -- image repository
           repository: docker.io/cloudflare/cloudflared
           # -- image tag
-          tag: 2025.4.2
-        
+          tag: 2025.10.1
+
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
         env:
@@ -25,14 +25,14 @@ controllers:
           - --config
           - /etc/cloudflared/config.yaml
           - run
-        
+
         resources:
           requests:
             cpu: 10m
             memory: 128Mi
           limits:
             memory: 256Mi
-        
+
         probes:
           # -- Configures liveness probe
           liveness:
