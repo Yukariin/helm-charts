@@ -1,6 +1,6 @@
 # sonarr
 
-![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 4.0.15.2941-ls295](https://img.shields.io/badge/AppVersion-4.0.15.2941--ls295-informational?style=flat-square)
+![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 4.0.15.2941-ls296](https://img.shields.io/badge/AppVersion-4.0.15.2941--ls296-informational?style=flat-square)
 
 A Sonarr Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ A Sonarr Helm chart for Kubernetes
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/linuxserver/sonarr"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"4.0.15.2941-ls295"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"4.0.15.2941-ls296"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.containers.main.resources.limits.memory | string | `"4Gi"` |  |
