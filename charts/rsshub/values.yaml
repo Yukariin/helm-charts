@@ -54,7 +54,7 @@ controllers:
       main:
         image:
           repository: ghcr.io/browserless/chrome
-          tag: v2.37.1
+          tag: v2.38.2
 
         resources:
           requests:
