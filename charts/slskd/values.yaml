@@ -15,13 +15,13 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: 0.23.2
+          tag: 0.24.0
 
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
         env:
           SLSKD_REMOTE_CONFIGURATION: true
-        
+
         resources:
           requests:
             cpu: 10m
