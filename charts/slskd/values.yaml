@@ -21,7 +21,7 @@ controllers:
         # @default -- See [values.yaml](./values.yaml)
         env:
           SLSKD_REMOTE_CONFIGURATION: true
-        
+
         resources:
           requests:
             cpu: 10m
