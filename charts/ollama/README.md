@@ -1,6 +1,6 @@
 # ollama
 
-![Version: 3.0.10](https://img.shields.io/badge/Version-3.0.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.7](https://img.shields.io/badge/AppVersion-0.12.7-informational?style=flat-square)
+![Version: 3.0.12](https://img.shields.io/badge/Version-3.0.12-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.10](https://img.shields.io/badge/AppVersion-0.12.10-informational?style=flat-square)
 
 An ollama Helm chart for Kubernetes
 
@@ -16,7 +16,7 @@ An ollama Helm chart for Kubernetes
 |-----|------|---------|-------------|
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.main.image.repository | string | `"docker.io/ollama/ollama"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"0.12.7"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"0.12.10"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/health","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/health","type":"HTTP"}` | Configures readiness probe |
 | controllers.ui.containers.main.env.OLLAMA_BASE_URL | string | `"http://ollama-main:11434"` |  |
