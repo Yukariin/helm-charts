@@ -9,7 +9,7 @@ controllers:
           # -- image repository
           repository: docker.io/ollama/ollama
           # -- image tag
-          tag: 0.12.7
+          tag: 0.12.10
 
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
