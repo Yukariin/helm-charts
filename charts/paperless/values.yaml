@@ -15,7 +15,7 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: 2.19.3
+          tag: 2.19.5
 
         env:
           # -- Project name
