@@ -1006,6 +1006,20 @@ entries:
     version: 0.0.1
   paperless:
   - apiVersion: v2
+    appVersion: 2.19.5
+    created: "2025-11-07T10:10:31.094890869Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A Paperless Helm chart for Kubernetes
+    digest: a84cc51dc4ff35e1930b571b4c4a17ded02e492001f260d6588d23133653a296
+    name: paperless
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/paperless-0.1.7/paperless-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     appVersion: 2.19.3
     created: "2025-10-31T17:51:01.004993043Z"
     dependencies:
@@ -2848,4 +2862,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-07T10:08:57.205221825Z"
+generated: "2025-11-07T10:10:31.095218592Z"
