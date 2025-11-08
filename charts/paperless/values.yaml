@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.3.0/charts/other/app-template/values.schema.json
 
 controllers:
-  main:
+  paperless:
     # -- Set the controller upgrade strategy
     strategy: Recreate
 
@@ -56,8 +56,8 @@ controllers:
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
 service:
-  main:
-    controller: main
+  paperless:
+    controller: paperless
     ports:
       http:
         port: 8000
@@ -76,6 +76,9 @@ ingress:
     #   - host: chart-example.local
     #     paths:
     #       - path: /
+    #         service:
+    #           identifier: paperless
+    #           port: http
     # tls:
     #   - secretName: chart-example.local-tls
     #     hosts:

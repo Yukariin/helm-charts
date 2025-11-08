@@ -1,6 +1,6 @@
 # paperless
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.19.5](https://img.shields.io/badge/AppVersion-2.19.5-informational?style=flat-square)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.19.5](https://img.shields.io/badge/AppVersion-2.19.5-informational?style=flat-square)
 
 A Paperless Helm chart for Kubernetes
 
@@ -16,16 +16,16 @@ A Paperless Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| controllers.main.containers.main.env.COMPOSE_PROJECT_NAME | string | `"paperless"` | Project name |
-| controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
-| controllers.main.containers.main.image.repository | string | `"ghcr.io/paperless-ngx/paperless-ngx"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"2.19.5"` | image tag |
-| controllers.main.containers.main.probes.liveness | object | `{"path":"/","type":"HTTP"}` | Configures liveness probe |
-| controllers.main.containers.main.probes.readiness | object | `{"path":"/","type":"HTTP"}` | Configures readiness probe |
-| controllers.main.containers.main.resources.limits.memory | string | `"4Gi"` |  |
-| controllers.main.containers.main.resources.requests.cpu | string | `"25m"` |  |
-| controllers.main.containers.main.resources.requests.memory | string | `"1Gi"` |  |
-| controllers.main.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
+| controllers.paperless.containers.main.env.COMPOSE_PROJECT_NAME | string | `"paperless"` | Project name |
+| controllers.paperless.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
+| controllers.paperless.containers.main.image.repository | string | `"ghcr.io/paperless-ngx/paperless-ngx"` | image repository |
+| controllers.paperless.containers.main.image.tag | string | `"2.19.5"` | image tag |
+| controllers.paperless.containers.main.probes.liveness | object | `{"path":"/","type":"HTTP"}` | Configures liveness probe |
+| controllers.paperless.containers.main.probes.readiness | object | `{"path":"/","type":"HTTP"}` | Configures readiness probe |
+| controllers.paperless.containers.main.resources.limits.memory | string | `"4Gi"` |  |
+| controllers.paperless.containers.main.resources.requests.cpu | string | `"25m"` |  |
+| controllers.paperless.containers.main.resources.requests.memory | string | `"1Gi"` |  |
+| controllers.paperless.strategy | string | `"Recreate"` | Set the controller upgrade strategy |
 | controllers.redis.containers.main.image.repository | string | `"ghcr.io/valkey-io/valkey"` |  |
 | controllers.redis.containers.main.image.tag | string | `"9.0.0"` |  |
 | controllers.redis.containers.main.resources.limits.memory | string | `"128Mi"` |  |

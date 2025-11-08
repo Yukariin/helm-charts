@@ -2,7 +2,7 @@ apiVersion: v2
 name: paperless
 description: A Paperless Helm chart for Kubernetes
 type: application
-version: 1.0.0
+version: 2.0.0
 # renovate: image=ghcr.io/paperless-ngx/paperless-ngx
 appVersion: 2.19.5
 dependencies:
