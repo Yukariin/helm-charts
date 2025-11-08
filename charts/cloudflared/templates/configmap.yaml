@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+data:
+  config.yaml: |
+    # Cloudflared tunnel configuration
+    # This is a basic configuration - customize as needed
+    tunnel: {{ .Values.tunnelName | default "your-tunnel-name" }}
+    credentials-file: /etc/cloudflared/credentials.json
+    
+    # Example ingress configuration
+    ingress:
+      - hostname: example.yourdomain.com
+        service: http://localhost:8080
+      - service: http_status:404
