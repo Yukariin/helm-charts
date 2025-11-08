@@ -91,7 +91,7 @@ persistence:
     accessMode: ReadWriteOnce
     size: 500Mi
     advancedMounts:
-      main:
+      paperless:
         main:
           - path: /usr/src/paperless/data
     # storageClass: ""
@@ -101,7 +101,7 @@ persistence:
     accessMode: ReadWriteOnce
     size: 10Gi
     advancedMounts:
-      main:
+      paperless:
         main:
           - path: /usr/src/paperless/media
     # storageClass: ""
@@ -110,7 +110,7 @@ persistence:
     accessMode: ReadWriteOnce
     size: 2Gi
     advancedMounts:
-      main:
+      paperless:
         main:
           - path: /usr/src/paperless/export
   consume:
@@ -118,7 +118,7 @@ persistence:
     accessMode: ReadWriteOnce
     size: 2Gi
     advancedMounts:
-      main:
+      paperless:
         main:
           - path: /usr/src/paperless/consume
 
