@@ -1,7 +1,7 @@
 {{/* Append the hardcoded settings */}}
 {{- define "paperless.harcodedValues" -}}
 controllers:
-  main:
+  paperless:
     containers:
       main:
         env:
