@@ -231,6 +231,20 @@ entries:
   cloudflared:
   - apiVersion: v2
     appVersion: 2025.10.1
+    created: "2025-11-08T14:25:49.018949534Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A cloudflared Helm chart for Kubernetes
+    digest: c61ce813b08767d84a16dea7263ece24619c694eda54e32d3d13e639f7c86975
+    name: cloudflared
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/cloudflared-1.0.0/cloudflared-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 2025.10.1
     created: "2025-10-31T18:01:31.442569448Z"
     dependencies:
     - name: common
@@ -2876,4 +2890,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-07T12:03:04.644195411Z"
+generated: "2025-11-08T14:25:49.019238585Z"
