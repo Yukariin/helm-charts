@@ -20,9 +20,6 @@ controllers:
         env:
           # -- Project name
           COMPOSE_PROJECT_NAME: paperless
-          # -- Redis to use
-          PAPERLESS_REDIS: redis://paperless-redis
-          PAPERLESS_PORT: &port 8000
 
         resources:
           requests:
@@ -42,6 +39,7 @@ controllers:
             path: /
 
   redis:
+    strategy: Recreate
     containers:
       main:
         image:
@@ -62,7 +60,7 @@ service:
     controller: main
     ports:
       http:
-        port: *port
+        port: 8000
   redis:
     controller: redis
     ports:
@@ -88,7 +86,7 @@ persistence:
   data:
     enabled: true
     accessMode: ReadWriteOnce
-    size: 1Gi
+    size: 500Mi
     advancedMounts:
       main:
         main:
@@ -96,7 +94,7 @@ persistence:
     # storageClass: ""
   # -- Paperless media directory (documents and thumbnails)
   media:
-    enabled: true
+    enabled: false
     accessMode: ReadWriteOnce
     size: 10Gi
     advancedMounts:
@@ -120,3 +118,19 @@ persistence:
       main:
         main:
           - path: /usr/src/paperless/consume
+
+gotenberg:
+  enabled: false
+  ingress:
+    enabled: false
+  chromium:
+    disableJavaScript: true
+    allowList: "file:///tmp/.*"
+    maxQueueSize: 2
+
+tika:
+  enabled: false
+  ingress:
+    enabled: false
+  #config:
+    #base_url: "http://{{.Release.Name}}-{{.Release.Name}}/"

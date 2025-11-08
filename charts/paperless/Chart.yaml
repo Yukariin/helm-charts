@@ -2,10 +2,18 @@ apiVersion: v2
 name: paperless
 description: A Paperless Helm chart for Kubernetes
 type: application
-version: 0.1.7
+version: 1.0.0
 # renovate: image=ghcr.io/paperless-ngx/paperless-ngx
 appVersion: 2.19.5
 dependencies:
   - name: common
     version: 4.4.0
     repository: https://bjw-s-labs.github.io/helm-charts
+  - name: tika
+    version: 2.9.0
+    repository: https://apache.jfrog.io/artifactory/tika
+    condition: tika.enabled
+  - name: gotenberg
+    version: 1.9.1
+    repository: https://maikumori.github.io/helm-charts
+    condition: gotenberg.enabled

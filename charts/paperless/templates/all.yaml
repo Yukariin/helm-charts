@@ -1,1 +1,26 @@
+{{/* Append the hardcoded settings */}}
+{{- define "paperless.harcodedValues" -}}
+controllers:
+  main:
+    containers:
+      main:
+        env:
+          # -- Redis configuration
+          PAPERLESS_REDIS: redis://{{ .Release.Name }}-paperless-redis:6379
+          PAPERLESS_PORT: {{ quote .Values.service.main.ports.http.port }}
+
+          # -- Tika configuration (if enabled)
+          {{- if .Values.tika.enabled }}
+          PAPERLESS_TIKA_ENABLED: "1"
+          PAPERLESS_TIKA_ENDPOINT: http://{{ .Release.Name }}-tika:9998
+          {{- end }}
+
+          # -- Gotenberg configuration (if enabled)
+          {{- if .Values.gotenberg.enabled }}
+          PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://{{ .Release.Name }}-gotenberg:3000
+          {{- end }}
+{{- end -}}
+{{- $_ := merge .Values (include "paperless.harcodedValues" . | fromYaml) -}}
+
+{{/* Render the templates */}}
 {{ include "bjw-s.common.loader.all" . }}
