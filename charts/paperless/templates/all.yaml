@@ -7,7 +7,7 @@ controllers:
         env:
           # -- Redis configuration
           PAPERLESS_REDIS: redis://{{ .Release.Name }}-redis:6379
-          PAPERLESS_PORT: {{ quote .Values.service.main.ports.http.port }}
+          PAPERLESS_PORT: {{ quote .Values.service.paperless.ports.http.port }}
 
           # -- Tika configuration (if enabled)
           {{- if .Values.tika.enabled }}
