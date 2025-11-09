@@ -89,7 +89,7 @@ persistence:
   data:
     enabled: true
     accessMode: ReadWriteOnce
-    size: 500Mi
+    size: 2Gi
     advancedMounts:
       paperless:
         main:

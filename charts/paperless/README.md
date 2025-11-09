@@ -1,6 +1,6 @@
 # paperless
 
-![Version: 2.3.2](https://img.shields.io/badge/Version-2.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.19.5](https://img.shields.io/badge/AppVersion-2.19.5-informational?style=flat-square)
+![Version: 2.4.0](https://img.shields.io/badge/Version-2.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.19.5](https://img.shields.io/badge/AppVersion-2.19.5-informational?style=flat-square)
 
 A Paperless Helm chart for Kubernetes
 
@@ -42,7 +42,7 @@ A Paperless Helm chart for Kubernetes
 | persistence.consume.advancedMounts.paperless.main[0].path | string | `"/usr/src/paperless/consume"` |  |
 | persistence.consume.enabled | bool | `false` |  |
 | persistence.consume.size | string | `"2Gi"` |  |
-| persistence.data | object | `{"accessMode":"ReadWriteOnce","advancedMounts":{"paperless":{"main":[{"path":"/usr/src/paperless/data"}]}},"enabled":true,"size":"500Mi"}` | Paperless data directory (search index, classification model, etc.) |
+| persistence.data | object | `{"accessMode":"ReadWriteOnce","advancedMounts":{"paperless":{"main":[{"path":"/usr/src/paperless/data"}]}},"enabled":true,"size":"2Gi"}` | Paperless data directory (search index, classification model, etc.) |
 | persistence.export.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.export.advancedMounts.paperless.main[0].path | string | `"/usr/src/paperless/export"` |  |
 | persistence.export.enabled | bool | `false` |  |
