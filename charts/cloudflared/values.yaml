@@ -11,7 +11,7 @@ controllers:
           # -- image repository
           repository: docker.io/cloudflare/cloudflared
           # -- image tag
-          tag: 2025.10.1
+          tag: 2025.11.1
 
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
