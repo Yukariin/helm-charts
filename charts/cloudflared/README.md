@@ -1,6 +1,6 @@
 # cloudflared
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025.10.1](https://img.shields.io/badge/AppVersion-2025.10.1-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025.11.1](https://img.shields.io/badge/AppVersion-2025.11.1-informational?style=flat-square)
 
 A cloudflared Helm chart for Kubernetes
 
@@ -20,7 +20,7 @@ A cloudflared Helm chart for Kubernetes
 | controllers.main.containers.main.args[3] | string | `"run"` |  |
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.main.image.repository | string | `"docker.io/cloudflare/cloudflared"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"2025.10.1"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"2025.11.1"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ready","port":8080,"type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ready","port":8080,"type":"HTTP"}` | Configures readiness probe |
 | controllers.main.containers.main.resources.limits.cpu | string | `"100m"` |  |
