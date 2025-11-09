@@ -10,7 +10,7 @@ dependencies:
     version: 4.4.0
     repository: https://bjw-s-labs.github.io/helm-charts
   - name: tika
-    version: 2.9.0
+    version: 3.2.2
     repository: https://apache.jfrog.io/artifactory/tika
     condition: tika.enabled
   - name: gotenberg
