@@ -4,9 +4,9 @@ dependencies:
   version: 4.4.0
 - name: tika
   repository: https://apache.jfrog.io/artifactory/tika
-  version: 2.9.0
+  version: 3.2.2
 - name: gotenberg
   repository: https://maikumori.github.io/helm-charts
   version: 1.9.1
-digest: sha256:db4c0c8543d7f3ed8f69458e162b5883ce115219ec3eeca0f253d64dba0d5ab5
-generated: "2025-11-08T18:28:39.3614+03:00"
+digest: sha256:509e6d78abe693359409d6a7c963e4a5f2918052663d300493063fe07ced90d9
+generated: "2025-11-09T16:23:45.088868345Z"
