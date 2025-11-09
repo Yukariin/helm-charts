@@ -135,5 +135,3 @@ tika:
   enabled: false
   ingress:
     enabled: false
-  #config:
-    #base_url: "http://{{.Release.Name}}-{{.Release.Name}}/"
