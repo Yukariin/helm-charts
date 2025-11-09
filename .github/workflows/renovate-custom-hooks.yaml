@@ -16,9 +16,15 @@ jobs:
       pull-requests: write
     if: github.actor == 'renovate[bot]'
     steps:
-      - uses: actions/checkout@v5.0.0
+      - name: Checkout
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
+      - name: Set up python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
 
       # Using a GitHub App token, because GitHub Actions doesn't run on commits from github-actions bot
       - uses: actions/create-github-app-token@v2.1.4
@@ -26,10 +32,6 @@ jobs:
         with:
           app-id: 1514274
           private-key: ${{ secrets.APP_RENOVATE_HELPER_PRIVATE_KEY }}
-
-      - uses: actions/setup-python@v6.0.0
-        with:
-          python-version: '3.13'
       
       - name: Install and setup pre-commit
         run: |
