@@ -88,7 +88,7 @@ persistence:
     enabled: true
     type: emptyDir
     globalMounts:
-      - path: /cache
+      - path: /config/cache
   transcode:
     enabled: true
     type: emptyDir

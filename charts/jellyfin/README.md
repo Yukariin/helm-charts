@@ -1,6 +1,6 @@
 # jellyfin
 
-![Version: 2.2.0](https://img.shields.io/badge/Version-2.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.11.0](https://img.shields.io/badge/AppVersion-10.11.0-informational?style=flat-square)
+![Version: 2.3.0](https://img.shields.io/badge/Version-2.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.11.0](https://img.shields.io/badge/AppVersion-10.11.0-informational?style=flat-square)
 
 A Jellyfin Helm chart for Kubernetes
 
@@ -24,7 +24,7 @@ A Jellyfin Helm chart for Kubernetes
 | controllers.main.containers.main.resources.requests.memory | string | `"512Mi"` |  |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.cache.enabled | bool | `true` |  |
-| persistence.cache.globalMounts[0].path | string | `"/cache"` |  |
+| persistence.cache.globalMounts[0].path | string | `"/config/cache"` |  |
 | persistence.cache.type | string | `"emptyDir"` |  |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.config.enabled | bool | `true` |  |
