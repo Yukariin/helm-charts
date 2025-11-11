@@ -507,6 +507,24 @@ entries:
   gotify:
   - apiVersion: v2
     appVersion: 2.7.3
+    created: "2025-11-11T14:37:46.39416619Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 16.7.26
+    description: A Gotify Helm chart for Kubernetes
+    digest: 70f23a1f4130543db500c6f92e0f8a87ca4613dba462071b6e62e8624473430f
+    name: gotify
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/gotify-2.0.0/gotify-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 2.7.3
     created: "2025-11-11T14:23:52.374525259Z"
     dependencies:
     - name: common
@@ -3098,4 +3116,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-11T14:23:52.374844036Z"
+generated: "2025-11-11T14:37:46.394636706Z"
