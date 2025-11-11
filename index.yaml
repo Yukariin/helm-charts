@@ -2860,6 +2860,20 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.34.3
+    created: "2025-11-11T15:18:27.188031829Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A Vaultwarden Helm chart for Kubernetes
+    digest: f8ece18f3c4a0068b3339f460150b461af3d39a0a049d171e7e22602a783f46c
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-1.0.0/vaultwarden-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 1.34.3
     created: "2025-08-22T06:44:26.335052021Z"
     dependencies:
     - name: common
@@ -3188,4 +3202,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-11T15:05:59.943958988Z"
+generated: "2025-11-11T15:18:27.188294889Z"
