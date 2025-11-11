@@ -89,6 +89,11 @@ postgresql:
     database: gotify
     postgresPassword: gotify
   primary:
+    args:
+      - -c
+      - config_file=/bitnami/postgresql/conf/postgresql.conf
+      - -c
+      - hba_file=/bitnami/postgresql/conf/pg_hba.conf
     persistence:
       enabled: false
       # storageClass: ""
