@@ -1,1 +1,12 @@
+{{/* Append the hardcoded settings */}}
+{{- define "jellyseerr.harcodedValues" -}}
+controllers:
+  main:
+    containers:
+      main:
+        env:
+          PORT: {{ quote .Values.service.main.ports.http.port }}
+{{- end -}}
+{{- $_ := merge .Values (include "jellyseerr.harcodedValues" . | fromYaml) -}}
+
 {{ include "bjw-s.common.loader.all" . }}
