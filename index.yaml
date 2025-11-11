@@ -755,6 +755,20 @@ entries:
   jellyseerr:
   - apiVersion: v2
     appVersion: 2.7.3
+    created: "2025-11-11T20:35:06.607811895Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A Jellyseerr Helm chart for Kubernetes
+    digest: 510de14c82e304e1c42ed56be3b19069b8cd880bdbf8ab12e6bccd4394bb9a56
+    name: jellyseerr
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/jellyseerr-1.1.0/jellyseerr-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 2.7.3
     created: "2025-09-20T11:48:00.158968712Z"
     dependencies:
     - name: common
@@ -3258,4 +3272,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-11T20:24:48.82682422Z"
+generated: "2025-11-11T20:35:06.608143612Z"
