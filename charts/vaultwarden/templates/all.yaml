@@ -12,24 +12,6 @@ controllers:
           {{- end }}
 
           ROCKET_PORT: {{ quote .Values.service.main.ports.http.port }}
-
-          {{- if .Values.postgresql.enabled }}
-          {{- with .Values.postgresql }}
-          DATABASE_PASSWORD:
-            secretKeyRef:
-              name: {{ $.Release.Name }}-postgresql
-              key: {{ if not .auth.password }}postgres-{{ end }}password
-          DATABASE_URL: postgresql://{{ default "postgres" .auth.username }}:$(DATABASE_PASSWORD)@{{ $.Release.Name }}-postgresql/{{ .auth.database }}
-          {{- end }}
-          {{- else if .Values.mariadb.enabled }}
-          {{- with .Values.mariadb}}
-          DATABASE_PASSWORD:
-            secretKeyRef:
-              name: {{ $.Release.Name }}-mariadb
-              key: mariadb-password
-          DATABASE_URL: mysql://{{ .auth.username }}:$(DATABASE_PASSWORD)@{{ $.Release.Name }}-mariadb/{{ .auth.database }}
-          {{- end }}
-          {{- end }}
 {{- end -}}
 {{- $_ := merge .Values (include "vaultwarden.harcodedValues" . | fromYaml) -}}
 

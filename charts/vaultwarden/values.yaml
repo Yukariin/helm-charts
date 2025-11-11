@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.4.0/charts/other/app-template/values.schema.json
 
 controllers:
   main:
@@ -73,31 +73,3 @@ persistence:
     globalMounts:
       - path: /data
     # storageClass: ""
-
-# -- Enable and configure postgresql database subchart under this key.
-# @default -- See [values.yaml](./values.yaml)
-postgresql:
-  enabled: false
-  auth:
-    database: vaultwarden
-    postgresPassword: changeme
-  primary:
-    persistence:
-      enabled: false
-      # storageClass: ""
-      # size: 8Gi
-
-# -- Enable and configure mariadb database subchart under this key.
-# @default -- See [values.yaml](./values.yaml)
-mariadb:
-  enabled: false
-  auth:
-    database: vaultwarden
-    username: vaultwarden
-    password: changeme
-    rootPassword: changeme
-  primary:
-    persistence:
-      enabled: false
-      # storageClass: ""
-      # size: 8Gi
