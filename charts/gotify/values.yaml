@@ -76,6 +76,10 @@ persistence:
 # @default -- See [values.yaml](./values.yaml)
 postgresql:
   enabled: false
+  image:
+    registry: docker.io
+    repository: library/postgres
+    tag: "17.6-bookworm"
   auth:
     database: gotify
     postgresPassword: gotify
