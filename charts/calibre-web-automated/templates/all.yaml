@@ -1,1 +1,12 @@
+{{/* Append the hardcoded settings */}}
+{{- define "cwa.harcodedValues" -}}
+controllers:
+  main:
+    containers:
+      main:
+        env:
+          CWA_PORT_OVERRIDE: {{ quote .Values.service.main.ports.http.port }}
+{{- end -}}
+{{- $_ := merge .Values (include "cwa.harcodedValues" . | fromYaml) -}}
+
 {{ include "bjw-s.common.loader.all" . }}

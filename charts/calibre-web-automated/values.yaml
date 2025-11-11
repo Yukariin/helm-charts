@@ -16,8 +16,7 @@ controllers:
 
         # -- environment variables.
         # @default -- See [values.yaml](./values.yaml)
-        env:
-          CWA_PORT_OVERRIDE: &port 8083
+        env: {}
 
         resources:
           requests:
@@ -43,7 +42,7 @@ service:
     controller: main
     ports:
       http:
-        port: *port
+        port: 8083
 
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
