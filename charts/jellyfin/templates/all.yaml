@@ -1,5 +1,5 @@
 {{/* Append the hardcoded settings */}}
-{{- define "vaultwarden.harcodedValues" -}}
+{{- define "jellyfin.harcodedValues" -}}
 controllers:
   main:
     containers:
@@ -11,6 +11,6 @@ controllers:
           {{- end }}
           {{- end }}
 {{- end -}}
-{{- $_ := merge .Values (include "vaultwarden.harcodedValues" . | fromYaml) -}}
+{{- $_ := merge .Values (include "jellyfin.harcodedValues" . | fromYaml) -}}
 
 {{ include "bjw-s.common.loader.all" . }}
