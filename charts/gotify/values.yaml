@@ -116,6 +116,9 @@ postgresql:
     extraEnvVars:
       - name: POSTGRES_DB
         value: '{{ (include "postgresql.v1.database" .) }}'
+    resourcesPreset: "none"
+    containerSecurityContext:
+      readOnlyRootFilesystem: false
     persistence:
       enabled: false
       # storageClass: ""
