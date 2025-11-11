@@ -23,10 +23,16 @@ A Jellyfin Helm chart for Kubernetes
 | controllers.main.containers.main.resources.requests.cpu | int | `1` |  |
 | controllers.main.containers.main.resources.requests.memory | string | `"512Mi"` |  |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
+| persistence.cache.enabled | bool | `true` |  |
+| persistence.cache.globalMounts[0].path | string | `"/cache"` |  |
+| persistence.cache.type | string | `"emptyDir"` |  |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.config.enabled | bool | `true` |  |
 | persistence.config.globalMounts[0].path | string | `"/config"` |  |
 | persistence.config.size | string | `"2Gi"` |  |
+| persistence.transcode.enabled | bool | `true` |  |
+| persistence.transcode.globalMounts[0].path | string | `"/config/transcodes"` |  |
+| persistence.transcode.type | string | `"emptyDir"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 | serviceMonitor.main.enabled | bool | `false` | Enables or disables the serviceMonitor. |
 | serviceMonitor.main.endpoints[0].interval | string | `"1m"` |  |
