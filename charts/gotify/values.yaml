@@ -1,6 +1,11 @@
 ---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.4.0/charts/other/app-template/values.schema.json
 
+global:
+  # To override bitnami images
+  security:
+    allowInsecureImages: true
+
 controllers:
   main:
     # -- Set the controller upgrade strategy

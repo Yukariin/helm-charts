@@ -1,6 +1,6 @@
 # gotify
 
-![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.3](https://img.shields.io/badge/AppVersion-2.7.3-informational?style=flat-square)
+![Version: 3.0.0](https://img.shields.io/badge/Version-3.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.3](https://img.shields.io/badge/AppVersion-2.7.3-informational?style=flat-square)
 
 A Gotify Helm chart for Kubernetes
 
@@ -25,6 +25,7 @@ A Gotify Helm chart for Kubernetes
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/health","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/health","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
+| global.security.allowInsecureImages | bool | `true` |  |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence | object | See [values.yaml](./values.yaml) | Configure persistence settings for the chart under this key. |
 | postgresql | object | See [values.yaml](./values.yaml) | Enable and configure postgresql database subchart under this key.    [[ref]](https://github.com/bitnami/charts/tree/main/bitnami/postgresql) |
