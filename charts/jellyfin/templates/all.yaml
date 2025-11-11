@@ -1,1 +1,16 @@
+{{/* Append the hardcoded settings */}}
+{{- define "vaultwarden.harcodedValues" -}}
+controllers:
+  main:
+    containers:
+      main:
+        env:
+          {{- with .Values.ingress.main }}
+          {{- if .enabled }}
+          JELLYFIN_PublishedServerUrl: http{{ if .tls }}s{{ end }}://{{ (first .hosts).host }}
+          {{- end }}
+          {{- end }}
+{{- end -}}
+{{- $_ := merge .Values (include "vaultwarden.harcodedValues" . | fromYaml) -}}
+
 {{ include "bjw-s.common.loader.all" . }}
