@@ -88,9 +88,4 @@ persistence:
     enabled: true
     type: emptyDir
     globalMounts:
-      - path: /config/cache
-  transcode:
-    enabled: true
-    type: emptyDir
-    globalMounts:
-      - path: /config/transcodes
+      - path: /config/cache # default path for both cache and transcodes

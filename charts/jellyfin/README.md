@@ -1,6 +1,6 @@
 # jellyfin
 
-![Version: 2.3.0](https://img.shields.io/badge/Version-2.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.11.0](https://img.shields.io/badge/AppVersion-10.11.0-informational?style=flat-square)
+![Version: 2.4.0](https://img.shields.io/badge/Version-2.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.11.0](https://img.shields.io/badge/AppVersion-10.11.0-informational?style=flat-square)
 
 A Jellyfin Helm chart for Kubernetes
 
@@ -30,9 +30,6 @@ A Jellyfin Helm chart for Kubernetes
 | persistence.config.enabled | bool | `true` |  |
 | persistence.config.globalMounts[0].path | string | `"/config"` |  |
 | persistence.config.size | string | `"2Gi"` |  |
-| persistence.transcode.enabled | bool | `true` |  |
-| persistence.transcode.globalMounts[0].path | string | `"/config/transcodes"` |  |
-| persistence.transcode.type | string | `"emptyDir"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 | serviceMonitor.main.enabled | bool | `false` | Enables or disables the serviceMonitor. |
 | serviceMonitor.main.endpoints[0].interval | string | `"1m"` |  |
