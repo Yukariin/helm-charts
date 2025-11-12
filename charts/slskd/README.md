@@ -1,6 +1,6 @@
 # slskd
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.24.0](https://img.shields.io/badge/AppVersion-0.24.0-informational?style=flat-square)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.24.0](https://img.shields.io/badge/AppVersion-0.24.0-informational?style=flat-square)
 
 An slskd Helm chart for Kubernetes
 
@@ -38,4 +38,10 @@ An slskd Helm chart for Kubernetes
 | serviceMonitor | object | See [values.yaml](./values.yaml) | Configure the ServiceMonitors for the chart here. |
 | serviceMonitor.main.enabled | bool | `false` | Enables or disables the serviceMonitor. |
 | serviceMonitor.main.endpoints | list | See [values.yaml](./values.yaml) | Configures the endpoints for the serviceMonitor. Helm templates can be used. |
+| soulseek.password | string | `""` | Soulseek password |
+| soulseek.user | string | `""` | Soulseek username |
+| webui.auth.disabled | bool | `false` | Disable WebUI authentication |
+| webui.auth.jwt_key | string | `""` | JWT secret key for authentication (optional) |
+| webui.auth.password | string | `"admin123"` | WebUI password |
+| webui.auth.user | string | `"admin"` | WebUI username |
 

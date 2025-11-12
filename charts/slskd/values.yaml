@@ -114,3 +114,20 @@ persistence:
         slskd:
           - path: /app
     # storageClass: ""
+
+webui:
+  auth:
+    # -- Disable WebUI authentication
+    disabled: false
+    # -- WebUI username
+    user: admin
+    # -- WebUI password
+    password: admin123
+    # -- JWT secret key for authentication (optional)
+    jwt_key: ""
+
+soulseek:
+  # -- Soulseek username
+  user: ""
+  # -- Soulseek password
+  password: ""

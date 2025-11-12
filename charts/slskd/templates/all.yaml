@@ -7,6 +7,41 @@ controllers:
         env:
           SLSKD_SLSK_LISTEN_PORT: {{ quote .Values.service.soulseek.ports.tcp.port }}
           SLSKD_HTTP_PORT: {{ quote .Values.service.main.ports.http.port }}
+
+          {{- if .Values.webui.auth.disabled }}
+          SLSKD_NO_AUTH: "true"
+          {{- else }}
+          SLSKD_USERNAME:
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-webui-user
+                key: username
+          SLSKD_PASSWORD:
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-webui-user
+                key: password
+          {{- if .Values.webui.auth.jwt_key }}
+          SLSKD_JWT_KEY:
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-jwt-secret
+                key: secret-key
+          {{- end }}
+          {{- end }}
+
+          {{- if and .Values.soulseek.user .Values.soulseek.password }}
+          SLSKD_SLSK_USERNAME:
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-slsk-user
+                key: username
+          SLSKD_SLSK_PASSWORD:
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-slsk-user
+                key: password
+          {{- end }}
 {{- end -}}
 {{- $_ := merge .Values (include "slskd.harcodedValues" . | fromYaml) -}}
 
