@@ -1,1 +1,13 @@
+{{/* Append the hardcoded settings */}}
+{{- define "slskd.harcodedValues" -}}
+controllers:
+  main:
+    containers:
+      slskd:
+        env:
+          SLSKD_SLSK_LISTEN_PORT: {{ quote .Values.service.soulseek.ports.tcp.port }}
+          SLSKD_HTTP_PORT: {{ quote .Values.service.main.ports.http.port }}
+{{- end -}}
+{{- $_ := merge .Values (include "slskd.harcodedValues" . | fromYaml) -}}
+
 {{ include "bjw-s.common.loader.all" . }}

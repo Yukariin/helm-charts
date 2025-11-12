@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.1.2/charts/other/app-template/values.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.4.0/charts/other/app-template/values.schema.json
 
 controllers:
   main:
@@ -21,6 +21,7 @@ controllers:
         # @default -- See [values.yaml](./values.yaml)
         env:
           SLSKD_REMOTE_CONFIGURATION: true
+          SLSKD_REMOTE_FILE_MANAGEMENT: true
 
         resources:
           requests:
@@ -61,20 +62,6 @@ controllers:
             add:
               - NET_ADMIN
 
-
-# -- Configure the ServiceMonitors for the chart here.
-# @default -- See [values.yaml](./values.yaml)
-serviceMonitor:
-  main:
-    # -- Enables or disables the serviceMonitor.
-    enabled: false
-    # -- Configures the endpoints for the serviceMonitor. Helm templates can be used.
-    # @default -- See [values.yaml](./values.yaml)
-    endpoints:
-      - port: http
-        scheme: http
-        path: /metrics
-
 # -- Configures service settings for the chart.
 # @default -- See [values.yaml](./values.yaml)
 service:
@@ -83,8 +70,25 @@ service:
     ports:
       http:
         port: 5030
-      slsk:
+  soulseek:
+    controller: main
+    ports:
+      tcp:
         port: 50300
+
+# -- Configure the ServiceMonitors for the chart here.
+# @default -- See [values.yaml](./values.yaml)
+serviceMonitor:
+  main:
+    # -- Enables or disables the serviceMonitor.
+    enabled: false
+    serviceName: "{{ .Release.Name }}-main"
+    # -- Configures the endpoints for the serviceMonitor. Helm templates can be used.
+    # @default -- See [values.yaml](./values.yaml)
+    endpoints:
+      - port: http
+        scheme: http
+        path: /metrics
 
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
@@ -102,7 +106,7 @@ ingress:
 
 persistence:
   app:
-    retain: true
+    enabled: true
     accessMode: ReadWriteOnce
     size: 500Mi
     advancedMounts:

@@ -1,6 +1,6 @@
 # slskd
 
-![Version: 0.9.0](https://img.shields.io/badge/Version-0.9.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.24.0](https://img.shields.io/badge/AppVersion-0.24.0-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.24.0](https://img.shields.io/badge/AppVersion-0.24.0-informational?style=flat-square)
 
 An slskd Helm chart for Kubernetes
 
@@ -32,7 +32,7 @@ An slskd Helm chart for Kubernetes
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.app.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.app.advancedMounts.main.slskd[0].path | string | `"/app"` |  |
-| persistence.app.retain | bool | `true` |  |
+| persistence.app.enabled | bool | `true` |  |
 | persistence.app.size | string | `"500Mi"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 | serviceMonitor | object | See [values.yaml](./values.yaml) | Configure the ServiceMonitors for the chart here. |
