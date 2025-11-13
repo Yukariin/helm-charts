@@ -57,9 +57,14 @@ ingress:
 
 persistence:
   config:
-    retain: true
+    enabled: true
     accessMode: ReadWriteOnce
     size: 500Mi
     globalMounts:
       - path: /app/config
     # storageClass: ""
+  logs:
+    enabled: true
+    type: emptyDir
+    globalMounts:
+      - path: /app/config/logs

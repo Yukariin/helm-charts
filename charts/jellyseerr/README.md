@@ -1,6 +1,6 @@
 # jellyseerr
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.3](https://img.shields.io/badge/AppVersion-2.7.3-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.3](https://img.shields.io/badge/AppVersion-2.7.3-informational?style=flat-square)
 
 A Jellyseerr Helm chart for Kubernetes
 
@@ -24,8 +24,11 @@ A Jellyseerr Helm chart for Kubernetes
 | controllers.main.containers.main.resources.requests.memory | string | `"256Mi"` |  |
 | ingress.main | object | See [values.yaml](./values.yaml) | Enable and configure ingress settings for the chart under this key. |
 | persistence.config.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.config.enabled | bool | `true` |  |
 | persistence.config.globalMounts[0].path | string | `"/app/config"` |  |
-| persistence.config.retain | bool | `true` |  |
 | persistence.config.size | string | `"500Mi"` |  |
+| persistence.logs.enabled | bool | `true` |  |
+| persistence.logs.globalMounts[0].path | string | `"/app/config/logs"` |  |
+| persistence.logs.type | string | `"emptyDir"` |  |
 | service | object | See [values.yaml](./values.yaml) | Configures service settings for the chart. |
 
