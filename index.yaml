@@ -1113,6 +1113,20 @@ entries:
     version: 0.1.0
   ollama:
   - apiVersion: v2
+    appVersion: 0.12.11
+    created: "2025-11-14T05:58:45.866575086Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: An ollama Helm chart for Kubernetes
+    digest: 35279e9694bb530a36347a51db2d5b55ecaf3ab6dcca17db76264c3bed4ed95d
+    name: ollama
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/ollama-3.0.14/ollama-3.0.14.tgz
+    version: 3.0.14
+  - apiVersion: v2
     appVersion: 0.12.10
     created: "2025-11-07T12:03:04.643919876Z"
     dependencies:
@@ -3328,4 +3342,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-13T11:48:06.033497485Z"
+generated: "2025-11-14T05:58:45.866854296Z"
