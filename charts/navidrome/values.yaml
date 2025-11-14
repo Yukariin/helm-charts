@@ -20,7 +20,7 @@ controllers:
         # @default -- See [values.yaml](./values.yaml)
         env:
           ND_ENABLEINSIGHTSCOLLECTOR: false
-        
+
         resources:
           requests:
             cpu: 10m
