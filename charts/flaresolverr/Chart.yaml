@@ -4,7 +4,7 @@ description: A Flaresolverr Helm chart for Kubernetes
 type: application
 version: 0.4.8
 # renovate: image=ghcr.io/flaresolverr/flaresolverr
-appVersion: "v3.4.4"
+appVersion: "v3.4.5"
 dependencies:
   - name: common
     version: 4.4.0
