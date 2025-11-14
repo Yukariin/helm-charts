@@ -1,6 +1,6 @@
 # gotify
 
-![Version: 6.0.0](https://img.shields.io/badge/Version-6.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.3](https://img.shields.io/badge/AppVersion-2.7.3-informational?style=flat-square)
+![Version: 6.0.1](https://img.shields.io/badge/Version-6.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.7.3](https://img.shields.io/badge/AppVersion-2.7.3-informational?style=flat-square)
 
 A Gotify Helm chart for Kubernetes
 
@@ -9,7 +9,7 @@ A Gotify Helm chart for Kubernetes
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s-labs.github.io/helm-charts | common | 4.4.0 |
-| oci://registry-1.docker.io/bitnamicharts | postgresql | 16.7.26 |
+| oci://registry-1.docker.io/bitnamicharts | postgresql | 16.7.27 |
 
 ## Values
 
