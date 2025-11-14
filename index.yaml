@@ -980,6 +980,20 @@ entries:
     version: 0.1.0
   navidrome:
   - apiVersion: v2
+    appVersion: 0.58.5
+    created: "2025-11-14T06:00:21.791088242Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A Navidrome chart for Kubernetes
+    digest: 1aa97ce34e7ac6caa857daece837996345ccae1a86d5cff443fb12a13aeab5ba
+    name: navidrome
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/navidrome-1.0.2/navidrome-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
     appVersion: 0.58.0
     created: "2025-09-20T19:00:22.512145874Z"
     dependencies:
@@ -3342,4 +3356,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-14T05:58:45.866854296Z"
+generated: "2025-11-14T06:00:21.791373055Z"
