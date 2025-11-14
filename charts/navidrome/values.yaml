@@ -14,7 +14,7 @@ controllers:
           # -- image pull policy
           pullPolicy: IfNotPresent
           # -- image tag
-          tag: 0.58.0
+          tag: 0.58.5
 
         # -- environment variables. [[ref]](https://www.navidrome.org/docs/usage/configuration-options/#environment-variables)
         # @default -- See [values.yaml](./values.yaml)
