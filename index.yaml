@@ -712,6 +712,20 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 10.11.0
+    created: "2025-11-15T20:53:47.942791028Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    description: A Jellyfin Helm chart for Kubernetes
+    digest: efe6b3bf19e2407b672453c6d8d7770ad2e1711f7a4b7c3d65efab40bcf203b8
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/jellyfin-3.0.0/jellyfin-3.0.0.tgz
+    version: 3.0.0
+  - apiVersion: v2
+    appVersion: 10.11.0
     created: "2025-11-11T20:24:48.826532512Z"
     dependencies:
     - name: common
@@ -3370,4 +3384,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-14T06:01:18.880834075Z"
+generated: "2025-11-15T20:53:47.943147774Z"
