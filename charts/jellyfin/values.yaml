@@ -42,9 +42,13 @@ service:
       http:
         port: 8096
   autodiscovery:
+    type: LoadBalancer
     controller: main
     ports:
-      autodiscovery:
+      dlna:
+        port: 1900
+        protocol: UDP
+      discovery:
         port: 7359
         protocol: UDP
 
