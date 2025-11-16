@@ -1310,6 +1310,28 @@ entries:
     version: 0.0.1
   paperless:
   - apiVersion: v2
+    appVersion: 2.19.6
+    created: "2025-11-16T12:51:10.990818683Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 4.4.0
+    - condition: tika.enabled
+      name: tika
+      repository: https://apache.jfrog.io/artifactory/tika
+      version: 3.2.2
+    - condition: gotenberg.enabled
+      name: gotenberg
+      repository: https://maikumori.github.io/helm-charts
+      version: 1.13.0
+    description: A Paperless Helm chart for Kubernetes
+    digest: 6d6a016459540c45aea71fed16c8e4ccb7deca46ba685eeae2b0a8b30643c4cb
+    name: paperless
+    type: application
+    urls:
+    - https://github.com/Yukariin/helm-charts/releases/download/paperless-2.4.2/paperless-2.4.2.tgz
+    version: 2.4.2
+  - apiVersion: v2
     appVersion: 2.19.5
     created: "2025-11-09T17:12:40.069253885Z"
     dependencies:
@@ -3384,4 +3406,4 @@ entries:
     urls:
     - https://github.com/Yukariin/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-15T20:53:47.943147774Z"
+generated: "2025-11-16T12:51:10.991159251Z"
