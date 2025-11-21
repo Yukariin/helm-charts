@@ -2,7 +2,7 @@ apiVersion: v2
 name: prowlarr
 description: A Prowlarr Helm chart for Kubernetes
 type: application
-version: 2.1.0
+version: 2.2.0
 # renovate: image=ghcr.io/linuxserver/prowlarr
 appVersion: "2.3.0.5236-ls132"
 dependencies:
