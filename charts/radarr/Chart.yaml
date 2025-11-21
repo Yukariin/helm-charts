@@ -4,7 +4,7 @@ description: A Radarr Helm chart for Kubernetes
 type: application
 version: 1.1.1
 # renovate: image=ghcr.io/linuxserver/radarr
-appVersion: "5.28.0.10274-ls286"
+appVersion: "6.0.4.10291-ls287"
 dependencies:
   - name: common
     version: 4.4.0
