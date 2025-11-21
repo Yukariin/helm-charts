@@ -1,6 +1,6 @@
 # lidarr
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.0.1.4866-ls10](https://img.shields.io/badge/AppVersion-3.0.1.4866--ls10-informational?style=flat-square)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.0.1.4866-ls11](https://img.shields.io/badge/AppVersion-3.0.1.4866--ls11-informational?style=flat-square)
 
 A Lidarr Helm chart for Kubernetes
 
@@ -17,7 +17,7 @@ A Lidarr Helm chart for Kubernetes
 | controllers.main.containers.main.env | object | See [values.yaml](./values.yaml) | environment variables. |
 | controllers.main.containers.main.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | controllers.main.containers.main.image.repository | string | `"ghcr.io/linuxserver/lidarr"` | image repository |
-| controllers.main.containers.main.image.tag | string | `"3.0.1.4866-ls10"` | image tag |
+| controllers.main.containers.main.image.tag | string | `"3.0.1.4866-ls11"` | image tag |
 | controllers.main.containers.main.probes.liveness | object | `{"path":"/ping","type":"HTTP"}` | Configures liveness probe |
 | controllers.main.containers.main.probes.readiness | object | `{"path":"/ping","type":"HTTP"}` | Configures readiness probe |
 | controllers.main.containers.main.resources.limits.memory | string | `"256Mi"` |  |
