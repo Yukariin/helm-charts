@@ -27,7 +27,7 @@ jobs:
           python-version: "3.13"
 
       # Using a GitHub App token, because GitHub Actions doesn't run on commits from github-actions bot
-      - uses: actions/create-github-app-token@v2.1.4
+      - uses: actions/create-github-app-token@v2.2.1
         id: app-token
         with:
           app-id: 1514274
